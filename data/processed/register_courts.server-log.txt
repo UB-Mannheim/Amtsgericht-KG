@@ -1,0 +1,87 @@
+2025-04-04 11:22:54.375 - INFO: [1mQLever Server, compiled on Wed Apr  2 11:08:27 UTC 2025 using git hash 7143ff[22m
+2025-04-04 11:22:54.379 - INFO: Initializing server ...
+2025-04-04 11:22:54.382 - INFO: The git hash used to build this index was "7143ff"
+2025-04-04 11:22:54.383 - INFO: Reading vocabulary from file register_courts.vocabulary ...
+2025-04-04 11:22:54.392 - INFO: Done, number of words: 8
+2025-04-04 11:22:54.392 - INFO: Number of words in external vocabulary: 800
+2025-04-04 11:22:54.404 - INFO: Registered PSO permutation: #relations = 3, #blocks = 1, #triples = 534
+2025-04-04 11:22:54.408 - INFO: Registered PSO permutation: #relations = 9, #blocks = 1, #triples = 1,891
+2025-04-04 11:22:54.414 - INFO: Registered POS permutation: #relations = 3, #blocks = 1, #triples = 534
+2025-04-04 11:22:54.419 - INFO: Registered POS permutation: #relations = 9, #blocks = 1, #triples = 1,891
+2025-04-04 11:22:54.425 - INFO: Registered OPS permutation: #relations = 614, #blocks = 1, #triples = 1,891
+2025-04-04 11:22:54.429 - INFO: Registered OSP permutation: #relations = 614, #blocks = 1, #triples = 1,891
+2025-04-04 11:22:54.434 - INFO: Registered SPO permutation: #relations = 178, #blocks = 1, #triples = 1,891
+2025-04-04 11:22:54.441 - INFO: Registered SOP permutation: #relations = 178, #blocks = 1, #triples = 1,891
+2025-04-04 11:22:54.442 - INFO: Reading patterns from file register_courts.index.patterns ...
+2025-04-04 11:22:54.444 - INFO: Sorting random result tables to estimate the sorting performance of this machine ...
+2025-04-04 11:22:54.448 - INFO: Access token for restricted API calls is ""
+2025-04-04 11:22:54.448 - INFO: The server is ready, listening for requests on port 7019 ...
+2025-04-04 11:22:55.383 - INFO: 
+2025-04-04 11:22:55.384 - INFO: Request received via POST, content type "application/x-www-form-urlencoded"
+2025-04-04 11:22:55.385 - INFO: Alive check with message "from the `qlever` CLI"
+2025-04-04 11:22:55.398 - INFO: 
+2025-04-04 11:22:55.399 - INFO: Request received via GET, no content type specified
+2025-04-04 11:22:55.399 - ERROR: Access token was provided but server was started without --access-token
+2025-04-04 11:22:55.412 - INFO: 
+2025-04-04 11:22:55.412 - INFO: Request received via GET, no content type specified
+2025-04-04 11:22:55.412 - ERROR: Access token was provided but server was started without --access-token
+2025-04-04 11:22:55.422 - INFO: 
+2025-04-04 11:22:55.422 - INFO: Request received via POST, content type "application/x-www-form-urlencoded"
+2025-04-04 11:22:55.422 - INFO: Processing command "cache-stats": get cache statistics
+2025-04-04 11:22:55.430 - INFO: 
+2025-04-04 11:22:55.430 - INFO: Request received via POST, content type "application/x-www-form-urlencoded"
+2025-04-04 11:22:55.430 - INFO: Processing command "get-settings": get server settings
+2025-04-04 11:24:25.485 - INFO: 
+2025-04-04 11:24:25.485 - INFO: Request received via GET, no content type specified
+2025-04-04 11:24:25.486 - INFO: Processing command "stats": get index statistics
+2025-04-04 11:25:16.729 - INFO: 
+2025-04-04 11:25:16.730 - INFO: Request received via OPTIONS, allowing everything
+2025-04-04 11:25:16.732 - INFO: 
+2025-04-04 11:25:16.733 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-04-04 11:25:16.762 - INFO: Processing the following SPARQL Query:
+PREFIX ex: <http://example.org/schema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?courtLabel ?xJustizID ?postalCode ?futureCode ?registerType
+WHERE {
+    ?court a ex:RegisterCourt ;
+           rdfs:label ?courtLabel ;
+           ex:hasXJustizID ?xJustizID ;
+           ex:hasPostalCode ?postalCode ;
+           ex:hasFutureCode ?futureCode ;
+           ex:hasRegisterType ?registerType .
+}
+
+2025-04-04 11:25:16.765 - INFO: Requested media type of result is "application/qlever-results+json"
+2025-04-04 11:25:16.801 - INFO: Query planning done in 67 ms
+2025-04-04 11:25:16.816 - INFO: Result has size 994 x 6
+2025-04-04 11:25:16.856 - INFO: Number of bindings exported: 100 of 994
+2025-04-04 11:25:16.859 - INFO: Done processing query and sending result, total time was 125 ms
+2025-04-04 11:25:27.229 - INFO: 
+2025-04-04 11:25:27.229 - INFO: Request received via GET, no content type specified
+2025-04-04 11:25:27.230 - INFO: Processing command "stats": get index statistics
+2025-04-04 11:25:39.183 - INFO: 
+2025-04-04 11:25:39.184 - INFO: Request received via OPTIONS, allowing everything
+2025-04-04 11:25:39.188 - INFO: 
+2025-04-04 11:25:39.189 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-04-04 11:25:39.190 - INFO: Processing the following SPARQL Query:
+PREFIX ex: <http://example.org/schema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?courtLabel ?xJustizID ?postalCode ?futureCode ?registerType
+WHERE {
+    ?court a ex:RegisterCourt ;
+           rdfs:label ?courtLabel ;
+           ex:hasXJustizID ?xJustizID ;
+           ex:hasPostalCode ?postalCode ;
+           ex:hasFutureCode ?futureCode ;
+           ex:hasRegisterType ?registerType .
+}
+
+2025-04-04 11:25:39.191 - INFO: Requested media type of result is "application/qlever-results+json"
+2025-04-04 11:25:39.226 - INFO: Query planning done in 36 ms
+2025-04-04 11:25:39.227 - INFO: Result has size 994 x 6
+2025-04-04 11:25:39.265 - INFO: Number of bindings exported: 100 of 994
+2025-04-04 11:25:39.265 - INFO: Done processing query and sending result, total time was 76 ms
