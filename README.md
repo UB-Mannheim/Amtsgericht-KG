@@ -33,43 +33,58 @@ This repository focuses on **understanding and visualizing company registrations
 - Python 3.10+
 - Poetry (version 1.8.4) for dependency management
 - Docker (for running QLever)
+- WSl (for windows systems)
 
 ### Setup
-1. **Clone the repository**
+0. (**Only for windows users**) **Open WSL**
+
+2. **Start docker**
+   - Start docker engine and verify with these commands:
+
+   ```bash
+   docker --version    # check if it is installed
+   docker info         # see if the Docker daemon is running
+   ```
+   ```bash
+   docker run hello-world     # Run a test container
+   ```  
+   In case there are any issues, check if wsl has enough permissions to communicate with docker engine.
+
+2. **Clone the repository**
    ```bash
    git clone https://github.com/Abhinandan707/KG4CR.git
    cd KG4CR
    ```
 
-2. **Install dependencies**
+3. **Install dependencies**
    ```bash
    poetry install
    ```
 
-3. **Prepare the data**
+4. **Prepare the data**
    - Place the Excel files in the `data/raw_data/` directory.
    - Run the RDF conversion script:
      ```bash
      poetry run python generate_rdf.py
      ```
 
-4. **Index the data using QLever**
+5. **Index the data using QLever**
    ```bash
-   cd data\processed
+   cd data/processed
    qlever index
    ```
 
-5. **Start QLever engine**
+6. **Start QLever engine**
    ```bash
    qlever start
    ```
-5. **Access UI for querying**
+7. **Access UI for querying**
    ```bash
    qlever ui
    ```
    - Access QLever at: [http://localhost:PORT](http://localhost:PORT) 
 
-5. **Integrate backend & start querying**
+8. **Integrate backend & start querying**
    - This is the default Qlever localhost view:
    ![qlever_default_localhost](images\qlever_default_localhost.png)
     - Go to '*Resources*' (right corner) -> '*QLever UI Admin*' 
