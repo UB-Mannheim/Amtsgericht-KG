@@ -53,49 +53,63 @@ def process_excel_files(file_paths):
     for file_path in file_paths:
         # Load Excel data
         df = pd.read_excel(file_path, skiprows=7, dtype=str)  # Skip metadata rows & read as string to avoid type issues
-
-        # Remove the first column with all NaN values
-        df = df.iloc[:, 1:]
+        df = df.iloc[:, 1:]  # Remove the first column with all NaN values
         df.columns = ["XJustizID", "RegisterCourt", "RegisterType", "State", "PLZ", "ValidUntil", "FutureCode"]
+        df = df.dropna(subset=["XJustizID", "RegisterCourt", "RegisterType", "State"])  # Drop rows missing critical info
 
-        # Remove empty rows
-        df = df.dropna(subset=["XJustizID", "RegisterCourt", "RegisterType", "State"])
+        # Extract version number from metadata sheet
+        version_str = extract_version(file_path, "metadaten")
+        version_uri = create_uri("Version", version_str)
+        version_literal = Literal(int(version_str), datatype=XSD.integer)
 
-        # Extract version number from the metadata sheet
-        version = extract_version(file_path, "metadaten")
-        version_literal = Literal(version, datatype=XSD.integer)
-
+        # Add the version number to the RDF graph (for version entity)
+        g.add((version_uri, RDF.type, EX.Version))
+        g.add((version_uri, EX.versionNumber, version_literal))  # Add versionNumber triple
+        
         # Populate the RDF graph
         for _, row in df.iterrows():
-            court_uri = create_uri("RegisterCourt", row["RegisterCourt"])
+            court_label = row["RegisterCourt"].strip()
+            base_court_uri = create_uri("RegisterCourt", court_label)  # Stable ID
+            versioned_court_uri = create_uri("RegisterCourt", f"{court_label}/_v{version_str}")  # Snapshot for version
+
+            # Add type and reference to stable entity
+            g.add((versioned_court_uri, RDF.type, EX.RegisterCourt))
+            g.add((versioned_court_uri, EX.refersTo, base_court_uri))
+            g.add((versioned_court_uri, RDFS.label, Literal(court_label, lang="de")))
+            g.add((versioned_court_uri, EX.version, version_uri))
+
+            # Add state location
             state_uri = create_uri("State", row["State"])
+            g.add((versioned_court_uri, EX.locatedIn, state_uri))
 
-            g.add((court_uri, RDF.type, EX.RegisterCourt))
-            g.add((court_uri, RDFS.label, Literal(row["RegisterCourt"], lang="de")))
-            g.add((court_uri, EX.locatedIn, state_uri))
-            g.add((court_uri, EX.version, version_literal))  # Add version property to each entity
+            # XJustizID
+            g.add((versioned_court_uri, EX.hasXJustizID, Literal(str(row["XJustizID"]), datatype=XSD.string)))
 
-            # Add XJustizID (even if empty)
-            g.add((court_uri, EX.hasXJustizID, Literal(str(row["XJustizID"]), datatype=XSD.string)))
-
-            # Handle multiple register types
+            # Register types (can be multiple)
             register_type_uris = process_register_types(row["RegisterType"])
             for reg_type_uri in register_type_uris:
-                g.add((court_uri, EX.hasRegisterType, reg_type_uri))
+                g.add((versioned_court_uri, EX.hasRegisterType, reg_type_uri))
 
-            # Convert postal code if present
+            # Postal code (as string to preserve leading zeros)
             if pd.notna(row["PLZ"]):
-                g.add((court_uri, EX.hasPostalCode, Literal(str(row["PLZ"]).strip(), datatype=XSD.string)))    # stored as string as conversion to INT might lead to omission of intial zeros (e.g. 01234 -> 1234))
+                g.add((versioned_court_uri, EX.hasPostalCode, Literal(str(row["PLZ"]).strip(), datatype=XSD.string)))
 
-            # Convert and add validUntil date
-            if pd.notna(row["ValidUntil"]):
+            # validUntil date (add only if valid date exists)
+            if pd.notna(row["ValidUntil"]) and row["ValidUntil"].strip():
                 valid_until = convert_date(row["ValidUntil"])
                 if valid_until:
-                    g.add((court_uri, EX.validUntil, valid_until))
+                    g.add((versioned_court_uri, EX.validUntil, valid_until))
+            # Optional: use a fallback like a string-typed blank or skip entirely
+            # else:
+                # g.add((versioned_court_uri, EX.validUntil, Literal("", datatype=XSD.string)))
 
-            # Add Future Code (even if empty)
+            # Future code (may be empty)
             future_code = str(row["FutureCode"]) if pd.notna(row["FutureCode"]) else ""
-            g.add((court_uri, EX.hasFutureCode, Literal(future_code, datatype=XSD.string)))
+            g.add((versioned_court_uri, EX.hasFutureCode, Literal(future_code, datatype=XSD.string)))
+
+            # (Optional) Link base court to versioned snapshots
+            g.add((base_court_uri, EX.hasSnapshot, versioned_court_uri))
+
 
 # Get all Excel file paths from the given directory
 def get_excel_files_from_folder(folder_path):
@@ -127,6 +141,6 @@ if __name__ == "__main__":
         process_excel_files(excel_files)
 
         # Save RDF data to a file
-        output_ttl_file = os.path.join(base_path, "data", "processed", "register_courts_combined.ttl" )   # specify the output file path
+        output_ttl_file = os.path.join(base_path, "data", "processed", "with_ontology", "register_courts_combined.ttl" )   # specify the output file path
         g.serialize(output_ttl_file, format="turtle")
         print(f"RDF Data Saved: {output_ttl_file}")
