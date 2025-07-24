@@ -1,0 +1,2358 @@
+@prefix ex: <http://example.org/schema#> .
+@prefix court: <http://example.org/RegisterCourt/> .
+@prefix xjid: <http://example.org/XJustizID/> .
+@prefix state: <http://example.org/State/> .
+@prefix rtype: <http://example.org/RegisterType/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+### Classes
+ex:RegisterCourt a rdfs:Class ;
+    rdfs:label "Register Court"@en .
+
+ex:XJustizID a rdfs:Class ;
+    rdfs:label "XJustiz Identifier"@en .
+
+ex:RegisterType a rdfs:Class ;
+    rdfs:label "Register Type"@en .
+
+ex:State a rdfs:Class ;
+    rdfs:label "State"@en .
+
+### Properties
+ex:hasXJustizID a rdf:Property ;
+    rdfs:domain ex:RegisterCourt ;
+    rdfs:range ex:XJustizID ;
+    rdfs:label "has XJustiz ID"@en .
+
+ex:hasPostalCode a rdf:Property ;
+    rdfs:domain ex:XJustizID ;
+    rdfs:range xsd:string ;
+    rdfs:label "Postal Code"@en .
+
+ex:hasRegisterType a rdf:Property ;
+    rdfs:domain ex:XJustizID ;
+    rdfs:range ex:RegisterType ;
+    rdfs:label "Has Register Type"@en .
+
+ex:locatedIn a rdf:Property ;
+    rdfs:domain ex:XJustizID ;
+    rdfs:range ex:State ;
+    rdfs:label "Located In"@en .
+
+ex:validUntil a rdf:Property ;
+    rdfs:domain ex:XJustizID ;
+    rdfs:range xsd:date ;
+    rdfs:label "Valid Until"@en .
+
+ex:hasFutureCode a rdf:Property ;
+    rdfs:domain ex:XJustizID ;
+    rdfs:range xsd:string ;
+    rdfs:label "Future Code"@en .
+
+### Instances (Triples)
+
+court:Amtsgericht_Freiburg_im_Breisgau a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Freiburg im Breisgau"@de .
+
+court:Amtsgericht_Mannheim a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Mannheim"@de .
+
+court:Amtsgericht_Stuttgart a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Stuttgart"@de .
+
+court:Amtsgericht_Ulm a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Ulm"@de .
+
+court:Amtsgericht_Augsburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Augsburg"@de .
+
+court:Amtsgericht_Deggendorf a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Deggendorf"@de .
+
+court:Amtsgericht_Kempten_Allgaeu a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Kempten (Allgäu)"@de .
+
+court:Amtsgericht_Landshut a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Landshut"@de .
+
+court:Amtsgericht_Memmingen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Memmingen"@de .
+
+court:Amtsgericht_Muenchen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht München"@de .
+
+court:Amtsgericht_Passau a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Passau"@de .
+
+court:Amtsgericht_Traunstein a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Traunstein"@de .
+
+court:Amtsgericht_Amberg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Amberg"@de .
+
+court:Amtsgericht_Ansbach a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Ansbach"@de .
+
+court:Amtsgericht_Fuerth a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Fürth"@de .
+
+court:Amtsgericht_Nuernberg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Nürnberg"@de .
+
+court:Amtsgericht_Regensburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Regensburg"@de .
+
+court:Amtsgericht_Straubing a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Straubing"@de .
+
+court:Amtsgericht_Weiden_i.d._OPf a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Weiden i.d. OPf"@de .
+
+court:Amtsgericht_Weiden_i.d.OPf a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Weiden i.d.OPf "@de .
+
+court:Amtsgericht_Aschaffenburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Aschaffenburg"@de .
+
+court:Amtsgericht_Bamberg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Bamberg"@de .
+
+court:Amtsgericht_Bayreuth a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Bayreuth"@de .
+
+court:Amtsgericht_Coburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Coburg"@de .
+
+court:Amtsgericht_Hof a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Hof"@de .
+
+court:Amtsgericht_Schweinfurt a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Schweinfurt"@de .
+
+court:Amtsgericht_Wuerzburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Würzburg"@de .
+
+court:Amtsgericht_Ingolstadt a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Ingolstadt"@de .
+
+court:Amtsgericht_Charlottenburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Charlottenburg"@de .
+
+court:Amtsgericht_Cottbus a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Cottbus"@de .
+
+court:Amtsgericht_Frankfurt_Oder a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Frankfurt (Oder)"@de .
+
+court:Amtsgericht_Neuruppin a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Neuruppin"@de .
+
+court:Amtsgericht_Potsdam a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Potsdam"@de .
+
+court:Amtsgericht_Bremen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Bremen"@de .
+
+court:Amtsgericht_Hamburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Hamburg"@de .
+
+court:Amtsgericht_Darmstadt a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Darmstadt"@de .
+
+court:Amtsgericht_Offenbach_am_Main a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Offenbach am Main"@de .
+
+court:Amtsgericht_Frankfurt_am_Main a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Frankfurt am Main"@de .
+
+court:Amtsgericht_Bad_Homburg_v._d._Hoehe a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Bad Homburg v. d. Höhe"@de .
+
+court:Amtsgericht_Koenigstein_im_Taunus a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Königstein im Taunus"@de .
+
+court:Amtsgericht_Fulda a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Fulda"@de .
+
+court:Amtsgericht_Bad_Hersfeld a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Bad Hersfeld"@de .
+
+court:Amtsgericht_Friedberg_Hessen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Friedberg (Hessen)"@de .
+
+court:Amtsgericht_Giessen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Gießen"@de .
+
+court:Amtsgericht_Hanau a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Hanau"@de .
+
+court:Amtsgericht_Eschwege a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Eschwege"@de .
+
+court:Amtsgericht_Fritzlar a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Fritzlar"@de .
+
+court:Amtsgericht_Kassel a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Kassel"@de .
+
+court:Amtsgericht_Korbach a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Korbach"@de .
+
+court:Amtsgericht_Limburg_a._d._Lahn a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Limburg a. d. Lahn"@de .
+
+court:Amtsgericht_Wetzlar a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Wetzlar"@de .
+
+court:Amtsgericht_Marburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Marburg"@de .
+
+court:Amtsgericht_Wiesbaden a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Wiesbaden"@de .
+
+court:Neubrandenburg a ex:RegisterCourt ;
+    rdfs:label "Neubrandenburg"@de .
+
+court:Amtsgericht_Neubrandenburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Neubrandenburg"@de .
+
+court:Pasewalk a ex:RegisterCourt ;
+    rdfs:label "Pasewalk"@de .
+
+court:Waren_Mueritz a ex:RegisterCourt ;
+    rdfs:label "Waren (Müritz)"@de .
+
+court:Greifswald a ex:RegisterCourt ;
+    rdfs:label "Greifswald"@de .
+
+court:Rostock a ex:RegisterCourt ;
+    rdfs:label "Rostock"@de .
+
+court:Amtsgericht_Rostock a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Rostock"@de .
+
+court:Stralsund a ex:RegisterCourt ;
+    rdfs:label "Stralsund"@de .
+
+court:Amtsgericht_Stralsund a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Stralsund"@de .
+
+court:Wismar a ex:RegisterCourt ;
+    rdfs:label "Wismar"@de .
+
+court:Guestrow a ex:RegisterCourt ;
+    rdfs:label "Güstrow"@de .
+
+court:Ludwigslust a ex:RegisterCourt ;
+    rdfs:label "Ludwigslust"@de .
+
+court:Schwerin a ex:RegisterCourt ;
+    rdfs:label "Schwerin"@de .
+
+court:Amtsgericht_Schwerin a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Schwerin"@de .
+
+court:Amtsgericht_Braunschweig a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Braunschweig"@de .
+
+court:Amtsgericht_Stadthagen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Stadthagen"@de .
+
+court:Amtsgericht_Goettingen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Göttingen"@de .
+
+court:Amtsgericht_Hannover a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Hannover"@de .
+
+court:Amtsgericht_Hildesheim a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Hildesheim"@de .
+
+court:Amtsgericht_Lueneburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Lüneburg"@de .
+
+court:Amtsgericht_Tostedt a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Tostedt"@de .
+
+court:Amtsgericht_Walsrode a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Walsrode"@de .
+
+court:Amtsgericht_Aurich a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Aurich"@de .
+
+court:Amtsgericht_Oldenburg_Oldenburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Oldenburg (Oldenburg)"@de .
+
+court:Amtsgericht_Osnabrueck a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Osnabrück"@de .
+
+court:Amtsgericht_Duesseldorf a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Düsseldorf"@de .
+
+court:Amtsgericht_Neuss a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Neuss"@de .
+
+court:Amtsgericht_Ratingen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Ratingen"@de .
+
+court:Amtsgericht_Duisburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Duisburg"@de .
+
+court:Amtsgericht_Oberhausen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Oberhausen"@de .
+
+court:Amtsgericht_Geldern a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Geldern"@de .
+
+court:Amtsgericht_Kleve a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Kleve"@de .
+
+court:Amtsgericht_Krefeld a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Krefeld"@de .
+
+court:Amtsgericht_Erkelenz a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Erkelenz"@de .
+
+court:Amtsgericht_Moenchengladbach a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Mönchengladbach"@de .
+
+court:Amtsgericht_Remscheid a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Remscheid"@de .
+
+court:Amtsgericht_Solingen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Solingen"@de .
+
+court:Amtsgericht_Wuppertal a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Wuppertal"@de .
+
+court:Amtsgericht_Arnsberg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Arnsberg"@de .
+
+court:Amtsgericht_Soest a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Soest"@de .
+
+court:Amtsgericht_Warstein a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Warstein"@de .
+
+court:Amtsgericht_Bielefeld a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Bielefeld"@de .
+
+court:Amtsgericht_Buende a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Bünde"@de .
+
+court:Amtsgericht_Guetersloh a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Gütersloh"@de .
+
+court:Amtsgericht_Herford a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Herford"@de .
+
+court:Amtsgericht_Bad_Oeynhausen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Bad Oeynhausen"@de .
+
+court:Amtsgericht_Bochum a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Bochum"@de .
+
+court:Amtsgericht_Herne a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Herne"@de .
+
+court:Amtsgericht_Recklinghausen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Recklinghausen"@de .
+
+court:Amtsgericht_Witten a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Witten"@de .
+
+court:Amtsgericht_Lemgo a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Lemgo"@de .
+
+court:Amtsgericht_Dortmund a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Dortmund"@de .
+
+court:Amtsgericht_Hamm a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Hamm"@de .
+
+court:Amtsgericht_Luenen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Lünen"@de .
+
+court:Amtsgericht_Essen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Essen"@de .
+
+court:Amtsgericht_Gelsenkirchen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Gelsenkirchen"@de .
+
+court:Amtsgericht_Hagen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Hagen"@de .
+
+court:Amtsgericht_Iserlohn a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Iserlohn"@de .
+
+court:Amtsgericht_Ahlen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Ahlen"@de .
+
+court:Amtsgericht_Steinfurt a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Steinfurt"@de .
+
+court:Amtsgericht_Coesfeld a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Coesfeld"@de .
+
+court:Amtsgericht_Muenster a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Münster"@de .
+
+court:Amtsgericht_Paderborn a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Paderborn"@de .
+
+court:Amtsgericht_Warburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Warburg"@de .
+
+court:Amtsgericht_Siegen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Siegen"@de .
+
+court:Amtsgericht_Aachen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Aachen"@de .
+
+court:Amtsgericht_Dueren a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Düren"@de .
+
+court:Amtsgericht_Schleiden a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Schleiden"@de .
+
+court:Amtsgericht_Bonn a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Bonn"@de .
+
+court:Amtsgericht_Siegburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Siegburg"@de .
+
+court:Amtsgericht_Koeln a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Köln"@de .
+
+court:Amtsgericht_Bad_Kreuznach a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Bad Kreuznach"@de .
+
+court:Amtsgericht_Koblenz a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Koblenz"@de .
+
+court:Amtsgericht_Montabaur a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Montabaur"@de .
+
+court:Amtsgericht_Mainz a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Mainz"@de .
+
+court:Amtsgericht_Wittlich a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Wittlich"@de .
+
+court:Amtsgericht_Ludwigshafen_am_Rhein a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Ludwigshafen am Rhein"@de .
+
+court:Amtsgericht_Kaiserslautern a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Kaiserslautern"@de .
+
+court:Amtsgericht_Landau_in_der_Pfalz a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Landau in der Pfalz"@de .
+
+court:Amtsgericht_Zweibruecken a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Zweibrücken"@de .
+
+court:Amtsgericht_Dresden a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Dresden"@de .
+
+court:Amtsgericht_Chemnitz a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Chemnitz"@de .
+
+court:Amtsgericht_Leipzig a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Leipzig"@de .
+
+court:Amtsgericht_Homburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Homburg"@de .
+
+court:Amtsgericht_Lebach a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Lebach"@de .
+
+court:Amtsgericht_Merzig a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Merzig"@de .
+
+court:Amtsgericht_Neunkirchen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Neunkirchen"@de .
+
+court:Amtsgericht_Ottweiler a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Ottweiler"@de .
+
+court:Amtsgericht_Saarbruecken a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Saarbrücken"@de .
+
+court:Amtsgericht_Saarlouis a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Saarlouis"@de .
+
+court:Amtsgericht_St._Ingbert a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht St. Ingbert"@de .
+
+court:Amtsgericht_St._Wendel a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht St. Wendel"@de .
+
+court:Amtsgericht_Voelklingen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Völklingen"@de .
+
+court:Amtsgericht_Merzig_-_Zweigstelle_Wadern a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Merzig - Zweigstelle Wadern"@de .
+
+court:Amtsgericht_Stendal a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Stendal"@de .
+
+court:Amtsgericht_Flensburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Flensburg"@de .
+
+court:Amtsgericht_Pinneberg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Pinneberg"@de .
+
+court:Amtsgericht_Kiel a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Kiel"@de .
+
+court:Amtsgericht_Luebeck a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Lübeck"@de .
+
+court:Amtsgericht_Apolda a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Apolda"@de .
+
+court:Amtsgericht_Arnstadt a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Arnstadt"@de .
+
+court:Amtsgericht_Eisenach a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Eisenach"@de .
+
+court:Amtsgericht_Erfurt a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Erfurt"@de .
+
+court:Amtsgericht_Gotha a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Gotha"@de .
+
+court:Amtsgericht_Heilbad_Heiligenstadt a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Heilbad Heiligenstadt"@de .
+
+court:Amtsgericht_Muehlhausen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Mühlhausen"@de .
+
+court:Amtsgericht_Nordhausen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Nordhausen"@de .
+
+court:Amtsgericht_Soemmerda a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Sömmerda"@de .
+
+court:Amtsgericht_Sondershausen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Sondershausen"@de .
+
+court:Amtsgericht_Weimar a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Weimar"@de .
+
+court:Amtsgericht_Altenburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Altenburg"@de .
+
+court:Amtsgericht_Gera a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Gera"@de .
+
+court:Amtsgericht_Greiz a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Greiz"@de .
+
+court:Amtsgericht_Jena a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Jena"@de .
+
+court:Amtsgericht_Poessneck_Zweigstelle_Bad_Lobenstein a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Pößneck Zweigstelle Bad Lobenstein"@de .
+
+court:Amtsgericht_Poessneck a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Pößneck"@de .
+
+court:Amtsgericht_Rudolstadt a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Rudolstadt"@de .
+
+court:Amtsgericht_Rudolstadt_-_Zweigstelle_Saalfeld a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Rudolstadt - Zweigstelle Saalfeld"@de .
+
+court:Amtsgericht_Stadtroda a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Stadtroda"@de .
+
+court:Amtsgericht_Bad_Salzungen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Bad Salzungen"@de .
+
+court:Amtsgericht_Hildburghausen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Hildburghausen"@de .
+
+court:Amtsgericht_Arnstadt_Zweigstelle_Ilmenau a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Arnstadt Zweigstelle Ilmenau"@de .
+
+court:Amtsgericht_Meiningen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Meiningen"@de .
+
+court:Amtsgericht_Sonneberg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Sonneberg"@de .
+
+court:Amtsgericht_Suhl a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Suhl"@de .
+
+court:Amtsgericht_Freiburg_im_Breisgau ex:hasXJustizID xjid:B1204 .
+xjid:B1204 a ex:XJustizID ;
+    ex:hasXJustizID "B1204"^^xsd:string ;
+    ex:hasPostalCode "79098"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Baden-Wuerttemberg ;
+    ex:validUntil "2024-06-30"^^xsd:date ;
+    ex:hasFutureCode "B8536"^^xsd:string .
+
+court:Amtsgericht_Mannheim ex:hasXJustizID xjid:B1601 .
+xjid:B1601 a ex:XJustizID ;
+    ex:hasXJustizID "B1601"^^xsd:string ;
+    ex:hasPostalCode "68159"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Baden-Wuerttemberg ;
+    ex:validUntil "2024-06-30"^^xsd:date ;
+    ex:hasFutureCode "B8535"^^xsd:string .
+
+court:Amtsgericht_Stuttgart ex:hasXJustizID xjid:B2609 .
+xjid:B2609 a ex:XJustizID ;
+    ex:hasXJustizID "B2609"^^xsd:string ;
+    ex:hasPostalCode "70190"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Baden-Wuerttemberg ;
+    ex:validUntil "2024-06-30"^^xsd:date ;
+    ex:hasFutureCode "B8534"^^xsd:string .
+
+court:Amtsgericht_Ulm ex:hasXJustizID xjid:B2805 .
+xjid:B2805 a ex:XJustizID ;
+    ex:hasXJustizID "B2805"^^xsd:string ;
+    ex:hasPostalCode "89073"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Baden-Wuerttemberg ;
+    ex:validUntil "2024-06-30"^^xsd:date ;
+    ex:hasFutureCode "B8537"^^xsd:string .
+
+court:Amtsgericht_Stuttgart ex:hasXJustizID xjid:B8534 .
+xjid:B8534 a ex:XJustizID ;
+    ex:hasXJustizID "B8534"^^xsd:string ;
+    ex:hasPostalCode "70190"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Baden-Wuerttemberg .
+
+court:Amtsgericht_Mannheim ex:hasXJustizID xjid:B8535 .
+xjid:B8535 a ex:XJustizID ;
+    ex:hasXJustizID "B8535"^^xsd:string ;
+    ex:hasPostalCode "68159"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Baden-Wuerttemberg .
+
+court:Amtsgericht_Freiburg_im_Breisgau ex:hasXJustizID xjid:B8536 .
+xjid:B8536 a ex:XJustizID ;
+    ex:hasXJustizID "B8536"^^xsd:string ;
+    ex:hasPostalCode "79098"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Baden-Wuerttemberg .
+
+court:Amtsgericht_Ulm ex:hasXJustizID xjid:B8537 .
+xjid:B8537 a ex:XJustizID ;
+    ex:hasXJustizID "B8537"^^xsd:string ;
+    ex:hasPostalCode "89073"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Baden-Wuerttemberg .
+
+court:Amtsgericht_Augsburg ex:hasXJustizID xjid:D2102 .
+xjid:D2102 a ex:XJustizID ;
+    ex:hasXJustizID "D2102"^^xsd:string ;
+    ex:hasPostalCode "86150"^^xsd:string ;
+    ex:hasRegisterType rtype:Partnerschaftsregister, rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D2102V"^^xsd:string .
+
+court:Amtsgericht_Augsburg ex:hasXJustizID xjid:D2102V .
+xjid:D2102V a ex:XJustizID ;
+    ex:hasXJustizID "D2102V"^^xsd:string ;
+    ex:hasPostalCode "86150"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Deggendorf ex:hasXJustizID xjid:D2201 .
+xjid:D2201 a ex:XJustizID ;
+    ex:hasXJustizID "D2201"^^xsd:string ;
+    ex:hasPostalCode "94469"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D2201V"^^xsd:string .
+
+court:Amtsgericht_Deggendorf ex:hasXJustizID xjid:D2201V .
+xjid:D2201V a ex:XJustizID ;
+    ex:hasXJustizID "D2201V"^^xsd:string ;
+    ex:hasPostalCode "94469"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Kempten_Allgaeu ex:hasXJustizID xjid:D2304 .
+xjid:D2304 a ex:XJustizID ;
+    ex:hasXJustizID "D2304"^^xsd:string ;
+    ex:hasPostalCode "87435"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D2304V"^^xsd:string .
+
+court:Amtsgericht_Kempten_Allgaeu ex:hasXJustizID xjid:D2304V .
+xjid:D2304V a ex:XJustizID ;
+    ex:hasXJustizID "D2304V"^^xsd:string ;
+    ex:hasPostalCode "87435"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Landshut ex:hasXJustizID xjid:D2404 .
+xjid:D2404 a ex:XJustizID ;
+    ex:hasXJustizID "D2404"^^xsd:string ;
+    ex:hasPostalCode "84028"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D2404V"^^xsd:string .
+
+court:Amtsgericht_Landshut ex:hasXJustizID xjid:D2404V .
+xjid:D2404V a ex:XJustizID ;
+    ex:hasXJustizID "D2404V"^^xsd:string ;
+    ex:hasPostalCode "84028"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Memmingen ex:hasXJustizID xjid:D2505 .
+xjid:D2505 a ex:XJustizID ;
+    ex:hasXJustizID "D2505"^^xsd:string ;
+    ex:hasPostalCode "87700"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D2505V"^^xsd:string .
+
+court:Amtsgericht_Memmingen ex:hasXJustizID xjid:D2505V .
+xjid:D2505V a ex:XJustizID ;
+    ex:hasXJustizID "D2505V"^^xsd:string ;
+    ex:hasPostalCode "87700"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Muenchen ex:hasXJustizID xjid:D2601 .
+xjid:D2601 a ex:XJustizID ;
+    ex:hasXJustizID "D2601"^^xsd:string ;
+    ex:hasPostalCode "80797"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D2601V"^^xsd:string .
+
+court:Amtsgericht_Muenchen ex:hasXJustizID xjid:D2601V .
+xjid:D2601V a ex:XJustizID ;
+    ex:hasXJustizID "D2601V"^^xsd:string ;
+    ex:hasPostalCode "80797"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Passau ex:hasXJustizID xjid:D2803 .
+xjid:D2803 a ex:XJustizID ;
+    ex:hasXJustizID "D2803"^^xsd:string ;
+    ex:hasPostalCode "94032"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D2803V"^^xsd:string .
+
+court:Amtsgericht_Passau ex:hasXJustizID xjid:D2803V .
+xjid:D2803V a ex:XJustizID ;
+    ex:hasXJustizID "D2803V"^^xsd:string ;
+    ex:hasPostalCode "94032"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Traunstein ex:hasXJustizID xjid:D2910 .
+xjid:D2910 a ex:XJustizID ;
+    ex:hasXJustizID "D2910"^^xsd:string ;
+    ex:hasPostalCode "83278"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D2910V"^^xsd:string .
+
+court:Amtsgericht_Traunstein ex:hasXJustizID xjid:D2910V .
+xjid:D2910V a ex:XJustizID ;
+    ex:hasXJustizID "D2910V"^^xsd:string ;
+    ex:hasPostalCode "83278"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Amberg ex:hasXJustizID xjid:D3101 .
+xjid:D3101 a ex:XJustizID ;
+    ex:hasXJustizID "D3101"^^xsd:string ;
+    ex:hasPostalCode "92224"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Partnerschaftsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D3101V"^^xsd:string .
+
+court:Amtsgericht_Amberg ex:hasXJustizID xjid:D3101V .
+xjid:D3101V a ex:XJustizID ;
+    ex:hasXJustizID "D3101V"^^xsd:string ;
+    ex:hasPostalCode "92224"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Ansbach ex:hasXJustizID xjid:D3201 .
+xjid:D3201 a ex:XJustizID ;
+    ex:hasXJustizID "D3201"^^xsd:string ;
+    ex:hasPostalCode "91522"^^xsd:string ;
+    ex:hasRegisterType rtype:Partnerschaftsregister, rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D3201V"^^xsd:string .
+
+court:Amtsgericht_Ansbach ex:hasXJustizID xjid:D3201V .
+xjid:D3201V a ex:XJustizID ;
+    ex:hasXJustizID "D3201V"^^xsd:string ;
+    ex:hasPostalCode "91522"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Fuerth ex:hasXJustizID xjid:D3304 .
+xjid:D3304 a ex:XJustizID ;
+    ex:hasXJustizID "D3304"^^xsd:string ;
+    ex:hasPostalCode "90762"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D3304V"^^xsd:string .
+
+court:Amtsgericht_Fuerth ex:hasXJustizID xjid:D3304V .
+xjid:D3304V a ex:XJustizID ;
+    ex:hasXJustizID "D3304V"^^xsd:string ;
+    ex:hasPostalCode "90762"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Nuernberg ex:hasXJustizID xjid:D3310 .
+xjid:D3310 a ex:XJustizID ;
+    ex:hasXJustizID "D3310"^^xsd:string ;
+    ex:hasPostalCode "90402"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D3310V"^^xsd:string .
+
+court:Amtsgericht_Nuernberg ex:hasXJustizID xjid:D3310V .
+xjid:D3310V a ex:XJustizID ;
+    ex:hasXJustizID "D3310V"^^xsd:string ;
+    ex:hasPostalCode "90402"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Regensburg ex:hasXJustizID xjid:D3410 .
+xjid:D3410 a ex:XJustizID ;
+    ex:hasXJustizID "D3410"^^xsd:string ;
+    ex:hasPostalCode "93049"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D3410V"^^xsd:string .
+
+court:Amtsgericht_Regensburg ex:hasXJustizID xjid:D3410V .
+xjid:D3410V a ex:XJustizID ;
+    ex:hasXJustizID "D3410V"^^xsd:string ;
+    ex:hasPostalCode "93049"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Straubing ex:hasXJustizID xjid:D3413 .
+xjid:D3413 a ex:XJustizID ;
+    ex:hasXJustizID "D3413"^^xsd:string ;
+    ex:hasPostalCode "94315"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D3413V"^^xsd:string .
+
+court:Amtsgericht_Straubing ex:hasXJustizID xjid:D3413V .
+xjid:D3413V a ex:XJustizID ;
+    ex:hasXJustizID "D3413V"^^xsd:string ;
+    ex:hasPostalCode "94315"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Weiden_i.d._OPf ex:hasXJustizID xjid:D3508 .
+xjid:D3508 a ex:XJustizID ;
+    ex:hasXJustizID "D3508"^^xsd:string ;
+    ex:hasPostalCode "92637"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D3508V"^^xsd:string .
+
+court:Amtsgericht_Weiden_i.d.OPf ex:hasXJustizID xjid:D3508V .
+xjid:D3508V a ex:XJustizID ;
+    ex:hasXJustizID "D3508V"^^xsd:string ;
+    ex:hasPostalCode "92637"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Aschaffenburg ex:hasXJustizID xjid:D4102 .
+xjid:D4102 a ex:XJustizID ;
+    ex:hasXJustizID "D4102"^^xsd:string ;
+    ex:hasPostalCode "63739"^^xsd:string ;
+    ex:hasRegisterType rtype:Partnerschaftsregister, rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D4102V"^^xsd:string .
+
+court:Amtsgericht_Aschaffenburg ex:hasXJustizID xjid:D4102V .
+xjid:D4102V a ex:XJustizID ;
+    ex:hasXJustizID "D4102V"^^xsd:string ;
+    ex:hasPostalCode "63739"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Bamberg ex:hasXJustizID xjid:D4201 .
+xjid:D4201 a ex:XJustizID ;
+    ex:hasXJustizID "D4201"^^xsd:string ;
+    ex:hasPostalCode "96047"^^xsd:string ;
+    ex:hasRegisterType rtype:Partnerschaftsregister, rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D4201V"^^xsd:string .
+
+court:Amtsgericht_Bamberg ex:hasXJustizID xjid:D4201V .
+xjid:D4201V a ex:XJustizID ;
+    ex:hasXJustizID "D4201V"^^xsd:string ;
+    ex:hasPostalCode "96047"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Handels__und_Genossenschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Bayreuth ex:hasXJustizID xjid:D4301 .
+xjid:D4301 a ex:XJustizID ;
+    ex:hasXJustizID "D4301"^^xsd:string ;
+    ex:hasPostalCode "95444"^^xsd:string ;
+    ex:hasRegisterType rtype:Partnerschaftsregister, rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D4301V"^^xsd:string .
+
+court:Amtsgericht_Bayreuth ex:hasXJustizID xjid:D4301V .
+xjid:D4301V a ex:XJustizID ;
+    ex:hasXJustizID "D4301V"^^xsd:string ;
+    ex:hasPostalCode "95444"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Coburg ex:hasXJustizID xjid:D4401 .
+xjid:D4401 a ex:XJustizID ;
+    ex:hasXJustizID "D4401"^^xsd:string ;
+    ex:hasPostalCode "96450"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D4401V"^^xsd:string .
+
+court:Amtsgericht_Coburg ex:hasXJustizID xjid:D4401V .
+xjid:D4401V a ex:XJustizID ;
+    ex:hasXJustizID "D4401V"^^xsd:string ;
+    ex:hasPostalCode "96450"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Hof ex:hasXJustizID xjid:D4501 .
+xjid:D4501 a ex:XJustizID ;
+    ex:hasXJustizID "D4501"^^xsd:string ;
+    ex:hasPostalCode "95030"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D4501V"^^xsd:string .
+
+court:Amtsgericht_Hof ex:hasXJustizID xjid:D4501V .
+xjid:D4501V a ex:XJustizID ;
+    ex:hasXJustizID "D4501V"^^xsd:string ;
+    ex:hasPostalCode "95030"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Schweinfurt ex:hasXJustizID xjid:D4608 .
+xjid:D4608 a ex:XJustizID ;
+    ex:hasXJustizID "D4608"^^xsd:string ;
+    ex:hasPostalCode "97421"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D4608V"^^xsd:string .
+
+court:Amtsgericht_Schweinfurt ex:hasXJustizID xjid:D4608V .
+xjid:D4608V a ex:XJustizID ;
+    ex:hasXJustizID "D4608V"^^xsd:string ;
+    ex:hasPostalCode "97421"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Wuerzburg ex:hasXJustizID xjid:D4708 .
+xjid:D4708 a ex:XJustizID ;
+    ex:hasXJustizID "D4708"^^xsd:string ;
+    ex:hasPostalCode "97070"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D4708V"^^xsd:string .
+
+court:Amtsgericht_Wuerzburg ex:hasXJustizID xjid:D4708V .
+xjid:D4708V a ex:XJustizID ;
+    ex:hasXJustizID "D4708V"^^xsd:string ;
+    ex:hasPostalCode "97070"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Ingolstadt ex:hasXJustizID xjid:D5701 .
+xjid:D5701 a ex:XJustizID ;
+    ex:hasXJustizID "D5701"^^xsd:string ;
+    ex:hasPostalCode "85049"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Bayern ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "D5701V"^^xsd:string .
+
+court:Amtsgericht_Ingolstadt ex:hasXJustizID xjid:D5701V .
+xjid:D5701V a ex:XJustizID ;
+    ex:hasXJustizID "D5701V"^^xsd:string ;
+    ex:hasPostalCode "85049"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bayern .
+
+court:Amtsgericht_Charlottenburg ex:hasXJustizID xjid:F1103 .
+xjid:F1103 a ex:XJustizID ;
+    ex:hasXJustizID "F1103"^^xsd:string ;
+    ex:hasPostalCode "14057"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Berlin .
+
+court:Amtsgericht_Charlottenburg ex:hasXJustizID xjid:F1103R .
+xjid:F1103R a ex:XJustizID ;
+    ex:hasXJustizID "F1103R"^^xsd:string ;
+    ex:hasPostalCode "10623"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Berlin .
+
+court:Amtsgericht_Cottbus ex:hasXJustizID xjid:G1103 .
+xjid:G1103 a ex:XJustizID ;
+    ex:hasXJustizID "G1103"^^xsd:string ;
+    ex:hasPostalCode "03046"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Brandenburg .
+
+court:Amtsgericht_Frankfurt_Oder ex:hasXJustizID xjid:G1207 .
+xjid:G1207 a ex:XJustizID ;
+    ex:hasXJustizID "G1207"^^xsd:string ;
+    ex:hasPostalCode "15236"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Brandenburg .
+
+court:Amtsgericht_Neuruppin ex:hasXJustizID xjid:G1309 .
+xjid:G1309 a ex:XJustizID ;
+    ex:hasXJustizID "G1309"^^xsd:string ;
+    ex:hasPostalCode "16816"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Brandenburg .
+
+court:Amtsgericht_Potsdam ex:hasXJustizID xjid:G1312 .
+xjid:G1312 a ex:XJustizID ;
+    ex:hasXJustizID "G1312"^^xsd:string ;
+    ex:hasPostalCode "14467"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Brandenburg .
+
+court:Amtsgericht_Bremen ex:hasXJustizID xjid:H1101 .
+xjid:H1101 a ex:XJustizID ;
+    ex:hasXJustizID "H1101"^^xsd:string ;
+    ex:hasPostalCode "28195"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Bremen .
+
+court:Amtsgericht_Hamburg ex:hasXJustizID xjid:K1101 .
+xjid:K1101 a ex:XJustizID ;
+    ex:hasXJustizID "K1101"^^xsd:string ;
+    ex:hasPostalCode "20355"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Hamburg ;
+    ex:validUntil "2024-06-30"^^xsd:date ;
+    ex:hasFutureCode "K1101R"^^xsd:string .
+
+court:Amtsgericht_Hamburg ex:hasXJustizID xjid:K1101R .
+xjid:K1101R a ex:XJustizID ;
+    ex:hasXJustizID "K1101R"^^xsd:string ;
+    ex:hasPostalCode "20355"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Hamburg .
+
+court:Amtsgericht_Darmstadt ex:hasXJustizID xjid:M1103 .
+xjid:M1103 a ex:XJustizID ;
+    ex:hasXJustizID "M1103"^^xsd:string ;
+    ex:hasPostalCode "64283"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Hessen .
+
+court:Amtsgericht_Offenbach_am_Main ex:hasXJustizID xjid:M1114 .
+xjid:M1114 a ex:XJustizID ;
+    ex:hasXJustizID "M1114"^^xsd:string ;
+    ex:hasPostalCode "63065"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Hessen .
+
+court:Amtsgericht_Frankfurt_am_Main ex:hasXJustizID xjid:M1201 .
+xjid:M1201 a ex:XJustizID ;
+    ex:hasXJustizID "M1201"^^xsd:string ;
+    ex:hasPostalCode "60313"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister, rtype:Partnerschaftsregister, rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister ;
+    ex:locatedIn state:Hessen .
+
+court:Amtsgericht_Bad_Homburg_v._d._Hoehe ex:hasXJustizID xjid:M1202 .
+xjid:M1202 a ex:XJustizID ;
+    ex:hasXJustizID "M1202"^^xsd:string ;
+    ex:hasPostalCode "61352"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Hessen .
+
+court:Amtsgericht_Koenigstein_im_Taunus ex:hasXJustizID xjid:M1203 .
+xjid:M1203 a ex:XJustizID ;
+    ex:hasXJustizID "M1203"^^xsd:string ;
+    ex:hasPostalCode "61462"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Hessen .
+
+court:Amtsgericht_Fulda ex:hasXJustizID xjid:M1301 .
+xjid:M1301 a ex:XJustizID ;
+    ex:hasXJustizID "M1301"^^xsd:string ;
+    ex:hasPostalCode "36037"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Hessen .
+
+court:Amtsgericht_Bad_Hersfeld ex:hasXJustizID xjid:M1305 .
+xjid:M1305 a ex:XJustizID ;
+    ex:hasXJustizID "M1305"^^xsd:string ;
+    ex:hasPostalCode "36251"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Hessen .
+
+court:Amtsgericht_Friedberg_Hessen ex:hasXJustizID xjid:M1405 .
+xjid:M1405 a ex:XJustizID ;
+    ex:hasXJustizID "M1405"^^xsd:string ;
+    ex:hasPostalCode "61169"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Hessen .
+
+court:Amtsgericht_Giessen ex:hasXJustizID xjid:M1406 .
+xjid:M1406 a ex:XJustizID ;
+    ex:hasXJustizID "M1406"^^xsd:string ;
+    ex:hasPostalCode "35390"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Hessen .
+
+court:Amtsgericht_Hanau ex:hasXJustizID xjid:M1502 .
+xjid:M1502 a ex:XJustizID ;
+    ex:hasXJustizID "M1502"^^xsd:string ;
+    ex:hasPostalCode "63450"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Hessen .
+
+court:Amtsgericht_Eschwege ex:hasXJustizID xjid:M1602 .
+xjid:M1602 a ex:XJustizID ;
+    ex:hasXJustizID "M1602"^^xsd:string ;
+    ex:hasPostalCode "37269"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Hessen .
+
+court:Amtsgericht_Fritzlar ex:hasXJustizID xjid:M1603 .
+xjid:M1603 a ex:XJustizID ;
+    ex:hasXJustizID "M1603"^^xsd:string ;
+    ex:hasPostalCode "34560"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Hessen .
+
+court:Amtsgericht_Kassel ex:hasXJustizID xjid:M1607 .
+xjid:M1607 a ex:XJustizID ;
+    ex:hasXJustizID "M1607"^^xsd:string ;
+    ex:hasPostalCode "34117"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Hessen .
+
+court:Amtsgericht_Korbach ex:hasXJustizID xjid:M1608 .
+xjid:M1608 a ex:XJustizID ;
+    ex:hasXJustizID "M1608"^^xsd:string ;
+    ex:hasPostalCode "34497"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Hessen .
+
+court:Amtsgericht_Limburg_a._d._Lahn ex:hasXJustizID xjid:M1706 .
+xjid:M1706 a ex:XJustizID ;
+    ex:hasXJustizID "M1706"^^xsd:string ;
+    ex:hasPostalCode "65549"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Hessen .
+
+court:Amtsgericht_Wetzlar ex:hasXJustizID xjid:M1710 .
+xjid:M1710 a ex:XJustizID ;
+    ex:hasXJustizID "M1710"^^xsd:string ;
+    ex:hasPostalCode "35578"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Hessen .
+
+court:Amtsgericht_Marburg ex:hasXJustizID xjid:M1809 .
+xjid:M1809 a ex:XJustizID ;
+    ex:hasXJustizID "M1809"^^xsd:string ;
+    ex:hasPostalCode "35037"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Hessen .
+
+court:Amtsgericht_Wiesbaden ex:hasXJustizID xjid:M1906 .
+xjid:M1906 a ex:XJustizID ;
+    ex:hasXJustizID "M1906"^^xsd:string ;
+    ex:hasPostalCode "65185"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Hessen .
+
+court:Neubrandenburg ex:hasXJustizID xjid:N1105 .
+xjid:N1105 a ex:XJustizID ;
+    ex:hasXJustizID "N1105"^^xsd:string ;
+    ex:hasPostalCode "17033"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister ;
+    ex:locatedIn state:Mecklenburg-Vorpommern ;
+    ex:validUntil "2019-10-31"^^xsd:date ;
+    ex:hasFutureCode "N1105V"^^xsd:string .
+
+court:Amtsgericht_Neubrandenburg ex:hasXJustizID xjid:N1105V .
+xjid:N1105V a ex:XJustizID ;
+    ex:hasXJustizID "N1105V"^^xsd:string ;
+    ex:hasPostalCode "17033"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Partnerschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Mecklenburg-Vorpommern .
+
+court:Pasewalk ex:hasXJustizID xjid:N1107 .
+xjid:N1107 a ex:XJustizID ;
+    ex:hasXJustizID "N1107"^^xsd:string ;
+    ex:hasPostalCode "17309"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Mecklenburg-Vorpommern ;
+    ex:validUntil "2019-10-31"^^xsd:date ;
+    ex:hasFutureCode "N1105V"^^xsd:string .
+
+court:Waren_Mueritz ex:hasXJustizID xjid:N1112 .
+xjid:N1112 a ex:XJustizID ;
+    ex:hasXJustizID "N1112"^^xsd:string ;
+    ex:hasPostalCode "17192"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Mecklenburg-Vorpommern ;
+    ex:validUntil "2019-10-31"^^xsd:date ;
+    ex:hasFutureCode "N1105V"^^xsd:string .
+
+court:Greifswald ex:hasXJustizID xjid:N1202 .
+xjid:N1202 a ex:XJustizID ;
+    ex:hasXJustizID "N1202"^^xsd:string ;
+    ex:hasPostalCode "17489"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Mecklenburg-Vorpommern ;
+    ex:validUntil "2019-10-31"^^xsd:date ;
+    ex:hasFutureCode "N1209V"^^xsd:string .
+
+court:Rostock ex:hasXJustizID xjid:N1206 .
+xjid:N1206 a ex:XJustizID ;
+    ex:hasXJustizID "N1206"^^xsd:string ;
+    ex:hasPostalCode "18057"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister ;
+    ex:locatedIn state:Mecklenburg-Vorpommern ;
+    ex:validUntil "2019-10-31"^^xsd:date ;
+    ex:hasFutureCode "N1206V"^^xsd:string .
+
+court:Amtsgericht_Rostock ex:hasXJustizID xjid:N1206V .
+xjid:N1206V a ex:XJustizID ;
+    ex:hasXJustizID "N1206V"^^xsd:string ;
+    ex:hasPostalCode "18057"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Mecklenburg-Vorpommern .
+
+court:Stralsund ex:hasXJustizID xjid:N1209 .
+xjid:N1209 a ex:XJustizID ;
+    ex:hasXJustizID "N1209"^^xsd:string ;
+    ex:hasPostalCode "18439"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister ;
+    ex:locatedIn state:Mecklenburg-Vorpommern ;
+    ex:validUntil "2019-10-31"^^xsd:date ;
+    ex:hasFutureCode "N1209V"^^xsd:string .
+
+court:Amtsgericht_Stralsund ex:hasXJustizID xjid:N1209V .
+xjid:N1209V a ex:XJustizID ;
+    ex:hasXJustizID "N1209V"^^xsd:string ;
+    ex:hasPostalCode "18439"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Mecklenburg-Vorpommern .
+
+court:Wismar ex:hasXJustizID xjid:N1210 .
+xjid:N1210 a ex:XJustizID ;
+    ex:hasXJustizID "N1210"^^xsd:string ;
+    ex:hasPostalCode "23966"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Mecklenburg-Vorpommern ;
+    ex:validUntil "2019-10-31"^^xsd:date ;
+    ex:hasFutureCode "N1308V"^^xsd:string .
+
+court:Guestrow ex:hasXJustizID xjid:N1303 .
+xjid:N1303 a ex:XJustizID ;
+    ex:hasXJustizID "N1303"^^xsd:string ;
+    ex:hasPostalCode "18273"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Mecklenburg-Vorpommern ;
+    ex:validUntil "2019-10-31"^^xsd:date ;
+    ex:hasFutureCode "N1206V"^^xsd:string .
+
+court:Ludwigslust ex:hasXJustizID xjid:N1305 .
+xjid:N1305 a ex:XJustizID ;
+    ex:hasXJustizID "N1305"^^xsd:string ;
+    ex:hasPostalCode "19288"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Mecklenburg-Vorpommern ;
+    ex:validUntil "2019-10-31"^^xsd:date ;
+    ex:hasFutureCode "N1308V"^^xsd:string .
+
+court:Schwerin ex:hasXJustizID xjid:N1308 .
+xjid:N1308 a ex:XJustizID ;
+    ex:hasXJustizID "N1308"^^xsd:string ;
+    ex:hasPostalCode "19053"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister ;
+    ex:locatedIn state:Mecklenburg-Vorpommern ;
+    ex:validUntil "2019-10-31"^^xsd:date ;
+    ex:hasFutureCode "N1308V"^^xsd:string .
+
+court:Amtsgericht_Schwerin ex:hasXJustizID xjid:N1308V .
+xjid:N1308V a ex:XJustizID ;
+    ex:hasXJustizID "N1308V"^^xsd:string ;
+    ex:hasPostalCode "19053"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Mecklenburg-Vorpommern .
+
+court:Amtsgericht_Braunschweig ex:hasXJustizID xjid:P1103 .
+xjid:P1103 a ex:XJustizID ;
+    ex:hasXJustizID "P1103"^^xsd:string ;
+    ex:hasPostalCode "38100"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Niedersachsen .
+
+court:Amtsgericht_Stadthagen ex:hasXJustizID xjid:P2106 .
+xjid:P2106 a ex:XJustizID ;
+    ex:hasXJustizID "P2106"^^xsd:string ;
+    ex:hasPostalCode "31655"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Niedersachsen .
+
+court:Amtsgericht_Goettingen ex:hasXJustizID xjid:P2204 .
+xjid:P2204 a ex:XJustizID ;
+    ex:hasXJustizID "P2204"^^xsd:string ;
+    ex:hasPostalCode "37073"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Niedersachsen .
+
+court:Amtsgericht_Hannover ex:hasXJustizID xjid:P2305 .
+xjid:P2305 a ex:XJustizID ;
+    ex:hasXJustizID "P2305"^^xsd:string ;
+    ex:hasPostalCode "30175"^^xsd:string ;
+    ex:hasRegisterType rtype:Partnerschaftsregister, rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Niedersachsen .
+
+court:Amtsgericht_Hildesheim ex:hasXJustizID xjid:P2408 .
+xjid:P2408 a ex:XJustizID ;
+    ex:hasXJustizID "P2408"^^xsd:string ;
+    ex:hasPostalCode "31134"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Niedersachsen .
+
+court:Amtsgericht_Lueneburg ex:hasXJustizID xjid:P2507 .
+xjid:P2507 a ex:XJustizID ;
+    ex:hasXJustizID "P2507"^^xsd:string ;
+    ex:hasPostalCode "21335"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Niedersachsen .
+
+court:Amtsgericht_Tostedt ex:hasXJustizID xjid:P2613 .
+xjid:P2613 a ex:XJustizID ;
+    ex:hasXJustizID "P2613"^^xsd:string ;
+    ex:hasPostalCode "21255"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Niedersachsen .
+
+court:Amtsgericht_Walsrode ex:hasXJustizID xjid:P2716 .
+xjid:P2716 a ex:XJustizID ;
+    ex:hasXJustizID "P2716"^^xsd:string ;
+    ex:hasPostalCode "29664"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Niedersachsen .
+
+court:Amtsgericht_Aurich ex:hasXJustizID xjid:P3101 .
+xjid:P3101 a ex:XJustizID ;
+    ex:hasXJustizID "P3101"^^xsd:string ;
+    ex:hasPostalCode "26603"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Niedersachsen .
+
+court:Amtsgericht_Oldenburg_Oldenburg ex:hasXJustizID xjid:P3210 .
+xjid:P3210 a ex:XJustizID ;
+    ex:hasXJustizID "P3210"^^xsd:string ;
+    ex:hasPostalCode "26135"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Niedersachsen .
+
+court:Amtsgericht_Osnabrueck ex:hasXJustizID xjid:P3313 .
+xjid:P3313 a ex:XJustizID ;
+    ex:hasXJustizID "P3313"^^xsd:string ;
+    ex:hasPostalCode "49074"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Niedersachsen .
+
+court:Amtsgericht_Duesseldorf ex:hasXJustizID xjid:R1101 .
+xjid:R1101 a ex:XJustizID ;
+    ex:hasXJustizID "R1101"^^xsd:string ;
+    ex:hasPostalCode "40227"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Neuss ex:hasXJustizID xjid:R1102 .
+xjid:R1102 a ex:XJustizID ;
+    ex:hasXJustizID "R1102"^^xsd:string ;
+    ex:hasPostalCode "41460"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Ratingen ex:hasXJustizID xjid:R1104 .
+xjid:R1104 a ex:XJustizID ;
+    ex:hasXJustizID "R1104"^^xsd:string ;
+    ex:hasPostalCode "40878"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen ;
+    ex:validUntil "2024-01-01"^^xsd:date ;
+    ex:hasFutureCode "R1101"^^xsd:string .
+
+court:Amtsgericht_Duisburg ex:hasXJustizID xjid:R1202 .
+xjid:R1202 a ex:XJustizID ;
+    ex:hasXJustizID "R1202"^^xsd:string ;
+    ex:hasPostalCode "47051"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Oberhausen ex:hasXJustizID xjid:R1206 .
+xjid:R1206 a ex:XJustizID ;
+    ex:hasXJustizID "R1206"^^xsd:string ;
+    ex:hasPostalCode "46045"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen ;
+    ex:validUntil "2024-01-01"^^xsd:date ;
+    ex:hasFutureCode "R1202"^^xsd:string .
+
+court:Amtsgericht_Geldern ex:hasXJustizID xjid:R1302 .
+xjid:R1302 a ex:XJustizID ;
+    ex:hasXJustizID "R1302"^^xsd:string ;
+    ex:hasPostalCode "47608"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen ;
+    ex:validUntil "2024-01-01"^^xsd:date ;
+    ex:hasFutureCode "R1304"^^xsd:string .
+
+court:Amtsgericht_Kleve ex:hasXJustizID xjid:R1304 .
+xjid:R1304 a ex:XJustizID ;
+    ex:hasXJustizID "R1304"^^xsd:string ;
+    ex:hasPostalCode "47533"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Krefeld ex:hasXJustizID xjid:R1402 .
+xjid:R1402 a ex:XJustizID ;
+    ex:hasXJustizID "R1402"^^xsd:string ;
+    ex:hasPostalCode "47798"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Erkelenz ex:hasXJustizID xjid:R1502 .
+xjid:R1502 a ex:XJustizID ;
+    ex:hasXJustizID "R1502"^^xsd:string ;
+    ex:hasPostalCode "41812"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen ;
+    ex:validUntil "2024-01-01"^^xsd:date ;
+    ex:hasFutureCode "R1504"^^xsd:string .
+
+court:Amtsgericht_Moenchengladbach ex:hasXJustizID xjid:R1504 .
+xjid:R1504 a ex:XJustizID ;
+    ex:hasXJustizID "R1504"^^xsd:string ;
+    ex:hasPostalCode "41061"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Remscheid ex:hasXJustizID xjid:R1603 .
+xjid:R1603 a ex:XJustizID ;
+    ex:hasXJustizID "R1603"^^xsd:string ;
+    ex:hasPostalCode "42853"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen ;
+    ex:validUntil "2024-01-01"^^xsd:date ;
+    ex:hasFutureCode "R1608"^^xsd:string .
+
+court:Amtsgericht_Solingen ex:hasXJustizID xjid:R1605 .
+xjid:R1605 a ex:XJustizID ;
+    ex:hasXJustizID "R1605"^^xsd:string ;
+    ex:hasPostalCode "42651"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen ;
+    ex:validUntil "2024-01-01"^^xsd:date ;
+    ex:hasFutureCode "R1608"^^xsd:string .
+
+court:Amtsgericht_Wuppertal ex:hasXJustizID xjid:R1608 .
+xjid:R1608 a ex:XJustizID ;
+    ex:hasXJustizID "R1608"^^xsd:string ;
+    ex:hasPostalCode "42103"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Arnsberg ex:hasXJustizID xjid:R1901 .
+xjid:R1901 a ex:XJustizID ;
+    ex:hasXJustizID "R1901"^^xsd:string ;
+    ex:hasPostalCode "59821"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Soest ex:hasXJustizID xjid:R1911 .
+xjid:R1911 a ex:XJustizID ;
+    ex:hasXJustizID "R1911"^^xsd:string ;
+    ex:hasPostalCode "59494"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen ;
+    ex:validUntil "2024-01-01"^^xsd:date ;
+    ex:hasFutureCode "R1901"^^xsd:string .
+
+court:Amtsgericht_Warstein ex:hasXJustizID xjid:R1912 .
+xjid:R1912 a ex:XJustizID ;
+    ex:hasXJustizID "R1912"^^xsd:string ;
+    ex:hasPostalCode "59581"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen ;
+    ex:validUntil "2024-01-01"^^xsd:date ;
+    ex:hasFutureCode "R1901"^^xsd:string .
+
+court:Amtsgericht_Bielefeld ex:hasXJustizID xjid:R2101 .
+xjid:R2101 a ex:XJustizID ;
+    ex:hasXJustizID "R2101"^^xsd:string ;
+    ex:hasPostalCode "33602"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Buende ex:hasXJustizID xjid:R2102 .
+xjid:R2102 a ex:XJustizID ;
+    ex:hasXJustizID "R2102"^^xsd:string ;
+    ex:hasPostalCode "32257"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen ;
+    ex:validUntil "2024-01-01"^^xsd:date ;
+    ex:hasFutureCode "R2108"^^xsd:string .
+
+court:Amtsgericht_Guetersloh ex:hasXJustizID xjid:R2103 .
+xjid:R2103 a ex:XJustizID ;
+    ex:hasXJustizID "R2103"^^xsd:string ;
+    ex:hasPostalCode "33330"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Herford ex:hasXJustizID xjid:R2105 .
+xjid:R2105 a ex:XJustizID ;
+    ex:hasXJustizID "R2105"^^xsd:string ;
+    ex:hasPostalCode "32052"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen ;
+    ex:validUntil "2024-01-01"^^xsd:date ;
+    ex:hasFutureCode "R2108"^^xsd:string .
+
+court:Amtsgericht_Bad_Oeynhausen ex:hasXJustizID xjid:R2108 .
+xjid:R2108 a ex:XJustizID ;
+    ex:hasXJustizID "R2108"^^xsd:string ;
+    ex:hasPostalCode "32545"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Bochum ex:hasXJustizID xjid:R2201 .
+xjid:R2201 a ex:XJustizID ;
+    ex:hasXJustizID "R2201"^^xsd:string ;
+    ex:hasPostalCode "44787"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Herne ex:hasXJustizID xjid:R2203 .
+xjid:R2203 a ex:XJustizID ;
+    ex:hasXJustizID "R2203"^^xsd:string ;
+    ex:hasPostalCode "44623"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen ;
+    ex:validUntil "2024-01-01"^^xsd:date ;
+    ex:hasFutureCode "R2201"^^xsd:string .
+
+court:Amtsgericht_Recklinghausen ex:hasXJustizID xjid:R2204 .
+xjid:R2204 a ex:XJustizID ;
+    ex:hasXJustizID "R2204"^^xsd:string ;
+    ex:hasPostalCode "45657"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Witten ex:hasXJustizID xjid:R2207 .
+xjid:R2207 a ex:XJustizID ;
+    ex:hasXJustizID "R2207"^^xsd:string ;
+    ex:hasPostalCode "58452"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen ;
+    ex:validUntil "2024-01-01"^^xsd:date ;
+    ex:hasFutureCode "R2201"^^xsd:string .
+
+court:Amtsgericht_Lemgo ex:hasXJustizID xjid:R2307 .
+xjid:R2307 a ex:XJustizID ;
+    ex:hasXJustizID "R2307"^^xsd:string ;
+    ex:hasPostalCode "32657"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Dortmund ex:hasXJustizID xjid:R2402 .
+xjid:R2402 a ex:XJustizID ;
+    ex:hasXJustizID "R2402"^^xsd:string ;
+    ex:hasPostalCode "44135"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Hamm ex:hasXJustizID xjid:R2404 .
+xjid:R2404 a ex:XJustizID ;
+    ex:hasXJustizID "R2404"^^xsd:string ;
+    ex:hasPostalCode "59065"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Luenen ex:hasXJustizID xjid:R2406 .
+xjid:R2406 a ex:XJustizID ;
+    ex:hasXJustizID "R2406"^^xsd:string ;
+    ex:hasPostalCode "44532"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen ;
+    ex:validUntil "2024-01-01"^^xsd:date ;
+    ex:hasFutureCode "R2402"^^xsd:string .
+
+court:Amtsgericht_Essen ex:hasXJustizID xjid:R2503 .
+xjid:R2503 a ex:XJustizID ;
+    ex:hasXJustizID "R2503"^^xsd:string ;
+    ex:hasPostalCode "45130"^^xsd:string ;
+    ex:hasRegisterType rtype:Partnerschaftsregister, rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Gelsenkirchen ex:hasXJustizID xjid:R2507 .
+xjid:R2507 a ex:XJustizID ;
+    ex:hasXJustizID "R2507"^^xsd:string ;
+    ex:hasPostalCode "45886"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Hagen ex:hasXJustizID xjid:R2602 .
+xjid:R2602 a ex:XJustizID ;
+    ex:hasXJustizID "R2602"^^xsd:string ;
+    ex:hasPostalCode "58097"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Iserlohn ex:hasXJustizID xjid:R2604 .
+xjid:R2604 a ex:XJustizID ;
+    ex:hasXJustizID "R2604"^^xsd:string ;
+    ex:hasPostalCode "58636"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Ahlen ex:hasXJustizID xjid:R2702 .
+xjid:R2702 a ex:XJustizID ;
+    ex:hasXJustizID "R2702"^^xsd:string ;
+    ex:hasPostalCode "59227"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen ;
+    ex:validUntil "2020-04-30"^^xsd:date ;
+    ex:hasFutureCode "R2713"^^xsd:string .
+
+court:Amtsgericht_Steinfurt ex:hasXJustizID xjid:R2706 .
+xjid:R2706 a ex:XJustizID ;
+    ex:hasXJustizID "R2706"^^xsd:string ;
+    ex:hasPostalCode "48565"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Coesfeld ex:hasXJustizID xjid:R2707 .
+xjid:R2707 a ex:XJustizID ;
+    ex:hasXJustizID "R2707"^^xsd:string ;
+    ex:hasPostalCode "48653"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Muenster ex:hasXJustizID xjid:R2713 .
+xjid:R2713 a ex:XJustizID ;
+    ex:hasXJustizID "R2713"^^xsd:string ;
+    ex:hasPostalCode "48149"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Paderborn ex:hasXJustizID xjid:R2809 .
+xjid:R2809 a ex:XJustizID ;
+    ex:hasXJustizID "R2809"^^xsd:string ;
+    ex:hasPostalCode "33098"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Warburg ex:hasXJustizID xjid:R2813 .
+xjid:R2813 a ex:XJustizID ;
+    ex:hasXJustizID "R2813"^^xsd:string ;
+    ex:hasPostalCode "34414"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen ;
+    ex:validUntil "2024-01-01"^^xsd:date ;
+    ex:hasFutureCode "R2809"^^xsd:string .
+
+court:Amtsgericht_Siegen ex:hasXJustizID xjid:R2909 .
+xjid:R2909 a ex:XJustizID ;
+    ex:hasXJustizID "R2909"^^xsd:string ;
+    ex:hasPostalCode "57072"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Aachen ex:hasXJustizID xjid:R3101 .
+xjid:R3101 a ex:XJustizID ;
+    ex:hasXJustizID "R3101"^^xsd:string ;
+    ex:hasPostalCode "52070"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Dueren ex:hasXJustizID xjid:R3103 .
+xjid:R3103 a ex:XJustizID ;
+    ex:hasXJustizID "R3103"^^xsd:string ;
+    ex:hasPostalCode "52349"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Schleiden ex:hasXJustizID xjid:R3106 .
+xjid:R3106 a ex:XJustizID ;
+    ex:hasXJustizID "R3106"^^xsd:string ;
+    ex:hasPostalCode "53937"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen ;
+    ex:validUntil "2024-01-01"^^xsd:date ;
+    ex:hasFutureCode "R3103"^^xsd:string .
+
+court:Amtsgericht_Bonn ex:hasXJustizID xjid:R3201 .
+xjid:R3201 a ex:XJustizID ;
+    ex:hasXJustizID "R3201"^^xsd:string ;
+    ex:hasPostalCode "53111"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Siegburg ex:hasXJustizID xjid:R3208 .
+xjid:R3208 a ex:XJustizID ;
+    ex:hasXJustizID "R3208"^^xsd:string ;
+    ex:hasPostalCode "53721"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Koeln ex:hasXJustizID xjid:R3306 .
+xjid:R3306 a ex:XJustizID ;
+    ex:hasXJustizID "R3306"^^xsd:string ;
+    ex:hasPostalCode "50670"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Nordrhein-Westfalen .
+
+court:Amtsgericht_Bad_Kreuznach ex:hasXJustizID xjid:T2101 .
+xjid:T2101 a ex:XJustizID ;
+    ex:hasXJustizID "T2101"^^xsd:string ;
+    ex:hasPostalCode "55543"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Rheinland-Pfalz ;
+    ex:validUntil "2024-06-30"^^xsd:date ;
+    ex:hasFutureCode "T2101V"^^xsd:string .
+
+court:Amtsgericht_Bad_Kreuznach ex:hasXJustizID xjid:T2101V .
+xjid:T2101V a ex:XJustizID ;
+    ex:hasXJustizID "T2101V"^^xsd:string ;
+    ex:hasPostalCode "55543"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Rheinland-Pfalz .
+
+court:Amtsgericht_Koblenz ex:hasXJustizID xjid:T2210 .
+xjid:T2210 a ex:XJustizID ;
+    ex:hasXJustizID "T2210"^^xsd:string ;
+    ex:hasPostalCode "56068"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Rheinland-Pfalz ;
+    ex:validUntil "2024-06-30"^^xsd:date ;
+    ex:hasFutureCode "T2210V"^^xsd:string .
+
+court:Amtsgericht_Koblenz ex:hasXJustizID xjid:T2210V .
+xjid:T2210V a ex:XJustizID ;
+    ex:hasXJustizID "T2210V"^^xsd:string ;
+    ex:hasPostalCode "56068"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Rheinland-Pfalz .
+
+court:Amtsgericht_Montabaur ex:hasXJustizID xjid:T2214 .
+xjid:T2214 a ex:XJustizID ;
+    ex:hasXJustizID "T2214"^^xsd:string ;
+    ex:hasPostalCode "56410"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Rheinland-Pfalz ;
+    ex:validUntil "2024-06-30"^^xsd:date ;
+    ex:hasFutureCode "T2214V"^^xsd:string .
+
+court:Amtsgericht_Montabaur ex:hasXJustizID xjid:T2214V .
+xjid:T2214V a ex:XJustizID ;
+    ex:hasXJustizID "T2214V"^^xsd:string ;
+    ex:hasPostalCode "56410"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Rheinland-Pfalz .
+
+court:Amtsgericht_Mainz ex:hasXJustizID xjid:T2304 .
+xjid:T2304 a ex:XJustizID ;
+    ex:hasXJustizID "T2304"^^xsd:string ;
+    ex:hasPostalCode "55116"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Rheinland-Pfalz ;
+    ex:validUntil "2024-06-30"^^xsd:date ;
+    ex:hasFutureCode "T2304V"^^xsd:string .
+
+court:Amtsgericht_Mainz ex:hasXJustizID xjid:T2304V .
+xjid:T2304V a ex:XJustizID ;
+    ex:hasXJustizID "T2304V"^^xsd:string ;
+    ex:hasPostalCode "55116"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Rheinland-Pfalz .
+
+court:Amtsgericht_Wittlich ex:hasXJustizID xjid:T2408 .
+xjid:T2408 a ex:XJustizID ;
+    ex:hasXJustizID "T2408"^^xsd:string ;
+    ex:hasPostalCode "54516"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Rheinland-Pfalz ;
+    ex:validUntil "2024-06-30"^^xsd:date ;
+    ex:hasFutureCode "T2408V"^^xsd:string .
+
+court:Amtsgericht_Wittlich ex:hasXJustizID xjid:T2408V .
+xjid:T2408V a ex:XJustizID ;
+    ex:hasXJustizID "T2408V"^^xsd:string ;
+    ex:hasPostalCode "54516"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Rheinland-Pfalz .
+
+court:Amtsgericht_Ludwigshafen_am_Rhein ex:hasXJustizID xjid:T3104 .
+xjid:T3104 a ex:XJustizID ;
+    ex:hasXJustizID "T3104"^^xsd:string ;
+    ex:hasPostalCode "67061"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Rheinland-Pfalz ;
+    ex:validUntil "2024-06-30"^^xsd:date ;
+    ex:hasFutureCode "T3104V"^^xsd:string .
+
+court:Amtsgericht_Ludwigshafen_am_Rhein ex:hasXJustizID xjid:T3104V .
+xjid:T3104V a ex:XJustizID ;
+    ex:hasXJustizID "T3104V"^^xsd:string ;
+    ex:hasPostalCode "67061"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Rheinland-Pfalz .
+
+court:Amtsgericht_Kaiserslautern ex:hasXJustizID xjid:T3201 .
+xjid:T3201 a ex:XJustizID ;
+    ex:hasXJustizID "T3201"^^xsd:string ;
+    ex:hasPostalCode "67655"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Rheinland-Pfalz ;
+    ex:validUntil "2024-06-30"^^xsd:date ;
+    ex:hasFutureCode "T3201V"^^xsd:string .
+
+court:Amtsgericht_Kaiserslautern ex:hasXJustizID xjid:T3201V .
+xjid:T3201V a ex:XJustizID ;
+    ex:hasXJustizID "T3201V"^^xsd:string ;
+    ex:hasPostalCode "67655"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Rheinland-Pfalz .
+
+court:Amtsgericht_Landau_in_der_Pfalz ex:hasXJustizID xjid:T3304 .
+xjid:T3304 a ex:XJustizID ;
+    ex:hasXJustizID "T3304"^^xsd:string ;
+    ex:hasPostalCode "76829"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Rheinland-Pfalz ;
+    ex:validUntil "2024-06-30"^^xsd:date ;
+    ex:hasFutureCode "T3304V"^^xsd:string .
+
+court:Amtsgericht_Landau_in_der_Pfalz ex:hasXJustizID xjid:T3304V .
+xjid:T3304V a ex:XJustizID ;
+    ex:hasXJustizID "T3304V"^^xsd:string ;
+    ex:hasPostalCode "76829"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Rheinland-Pfalz .
+
+court:Amtsgericht_Zweibruecken ex:hasXJustizID xjid:T3403 .
+xjid:T3403 a ex:XJustizID ;
+    ex:hasXJustizID "T3403"^^xsd:string ;
+    ex:hasPostalCode "66482"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Rheinland-Pfalz ;
+    ex:validUntil "2024-06-30"^^xsd:date ;
+    ex:hasFutureCode "T3403V"^^xsd:string .
+
+court:Amtsgericht_Zweibruecken ex:hasXJustizID xjid:T3403V .
+xjid:T3403V a ex:XJustizID ;
+    ex:hasXJustizID "T3403V"^^xsd:string ;
+    ex:hasPostalCode "66482"^^xsd:string ;
+    ex:hasRegisterType rtype:Partnerschaftsregister, rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Rheinland-Pfalz .
+
+court:Amtsgericht_Dresden ex:hasXJustizID xjid:U1104 .
+xjid:U1104 a ex:XJustizID ;
+    ex:hasXJustizID "U1104"^^xsd:string ;
+    ex:hasPostalCode "01099"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Sachsen .
+
+court:Amtsgericht_Chemnitz ex:hasXJustizID xjid:U1206 .
+xjid:U1206 a ex:XJustizID ;
+    ex:hasXJustizID "U1206"^^xsd:string ;
+    ex:hasPostalCode "09112"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Sachsen .
+
+court:Amtsgericht_Leipzig ex:hasXJustizID xjid:U1308 .
+xjid:U1308 a ex:XJustizID ;
+    ex:hasXJustizID "U1308"^^xsd:string ;
+    ex:hasPostalCode "04275"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Sachsen .
+
+court:Amtsgericht_Homburg ex:hasXJustizID xjid:V1102 .
+xjid:V1102 a ex:XJustizID ;
+    ex:hasXJustizID "V1102"^^xsd:string ;
+    ex:hasPostalCode "66424"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland ;
+    ex:validUntil "2021-07-01"^^xsd:date ;
+    ex:hasFutureCode "V1122"^^xsd:string .
+
+court:Amtsgericht_Lebach ex:hasXJustizID xjid:V1103 .
+xjid:V1103 a ex:XJustizID ;
+    ex:hasXJustizID "V1103"^^xsd:string ;
+    ex:hasPostalCode "66822"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland ;
+    ex:validUntil "2021-07-01"^^xsd:date ;
+    ex:hasFutureCode "V1125"^^xsd:string .
+
+court:Amtsgericht_Merzig ex:hasXJustizID xjid:V1104 .
+xjid:V1104 a ex:XJustizID ;
+    ex:hasXJustizID "V1104"^^xsd:string ;
+    ex:hasPostalCode "66663"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland ;
+    ex:validUntil "2021-07-01"^^xsd:date ;
+    ex:hasFutureCode "V1127"^^xsd:string .
+
+court:Amtsgericht_Neunkirchen ex:hasXJustizID xjid:V1105 .
+xjid:V1105 a ex:XJustizID ;
+    ex:hasXJustizID "V1105"^^xsd:string ;
+    ex:hasPostalCode "66538"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland ;
+    ex:validUntil "2021-07-01"^^xsd:date ;
+    ex:hasFutureCode "V1120"^^xsd:string .
+
+court:Amtsgericht_Ottweiler ex:hasXJustizID xjid:V1107 .
+xjid:V1107 a ex:XJustizID ;
+    ex:hasXJustizID "V1107"^^xsd:string ;
+    ex:hasPostalCode "66564"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland ;
+    ex:validUntil "2021-07-01"^^xsd:date ;
+    ex:hasFutureCode "V1124"^^xsd:string .
+
+court:Amtsgericht_Saarbruecken ex:hasXJustizID xjid:V1109 .
+xjid:V1109 a ex:XJustizID ;
+    ex:hasXJustizID "V1109"^^xsd:string ;
+    ex:hasPostalCode "66119"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Partnerschaftsregister, rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland ;
+    ex:validUntil "2022-03-14"^^xsd:date ;
+    ex:hasFutureCode "V1109V"^^xsd:string .
+
+court:Amtsgericht_Saarbruecken ex:hasXJustizID xjid:V1109V .
+xjid:V1109V a ex:XJustizID ;
+    ex:hasXJustizID "V1109V"^^xsd:string ;
+    ex:hasPostalCode "66121"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Partnerschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Saarland .
+
+court:Amtsgericht_Saarlouis ex:hasXJustizID xjid:V1110 .
+xjid:V1110 a ex:XJustizID ;
+    ex:hasXJustizID "V1110"^^xsd:string ;
+    ex:hasPostalCode "66740"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland ;
+    ex:validUntil "2021-07-01"^^xsd:date ;
+    ex:hasFutureCode "V1121"^^xsd:string .
+
+court:Amtsgericht_St._Ingbert ex:hasXJustizID xjid:V1111 .
+xjid:V1111 a ex:XJustizID ;
+    ex:hasXJustizID "V1111"^^xsd:string ;
+    ex:hasPostalCode "66386"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland ;
+    ex:validUntil "2021-07-01"^^xsd:date ;
+    ex:hasFutureCode "V1123"^^xsd:string .
+
+court:Amtsgericht_St._Wendel ex:hasXJustizID xjid:V1112 .
+xjid:V1112 a ex:XJustizID ;
+    ex:hasXJustizID "V1112"^^xsd:string ;
+    ex:hasPostalCode "66606"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland ;
+    ex:validUntil "2021-07-01"^^xsd:date ;
+    ex:hasFutureCode "V1126"^^xsd:string .
+
+court:Amtsgericht_Voelklingen ex:hasXJustizID xjid:V1115 .
+xjid:V1115 a ex:XJustizID ;
+    ex:hasXJustizID "V1115"^^xsd:string ;
+    ex:hasPostalCode "66333"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland ;
+    ex:validUntil "2021-07-01"^^xsd:date ;
+    ex:hasFutureCode "V1128"^^xsd:string .
+
+court:Amtsgericht_Merzig_-_Zweigstelle_Wadern ex:hasXJustizID xjid:V1116 .
+xjid:V1116 a ex:XJustizID ;
+    ex:hasXJustizID "V1116"^^xsd:string ;
+    ex:hasPostalCode "66687"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland ;
+    ex:validUntil "2021-07-01"^^xsd:date ;
+    ex:hasFutureCode "V1127"^^xsd:string .
+
+court:Amtsgericht_Neunkirchen ex:hasXJustizID xjid:V1120 .
+xjid:V1120 a ex:XJustizID ;
+    ex:hasXJustizID "V1120"^^xsd:string ;
+    ex:hasPostalCode "66538"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland .
+
+court:Amtsgericht_Saarlouis ex:hasXJustizID xjid:V1121 .
+xjid:V1121 a ex:XJustizID ;
+    ex:hasXJustizID "V1121"^^xsd:string ;
+    ex:hasPostalCode "66740"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland .
+
+court:Amtsgericht_Homburg ex:hasXJustizID xjid:V1122 .
+xjid:V1122 a ex:XJustizID ;
+    ex:hasXJustizID "V1122"^^xsd:string ;
+    ex:hasPostalCode "66424"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland .
+
+court:Amtsgericht_St._Ingbert ex:hasXJustizID xjid:V1123 .
+xjid:V1123 a ex:XJustizID ;
+    ex:hasXJustizID "V1123"^^xsd:string ;
+    ex:hasPostalCode "66386"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland .
+
+court:Amtsgericht_Ottweiler ex:hasXJustizID xjid:V1124 .
+xjid:V1124 a ex:XJustizID ;
+    ex:hasXJustizID "V1124"^^xsd:string ;
+    ex:hasPostalCode "66564"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland .
+
+court:Amtsgericht_Lebach ex:hasXJustizID xjid:V1125 .
+xjid:V1125 a ex:XJustizID ;
+    ex:hasXJustizID "V1125"^^xsd:string ;
+    ex:hasPostalCode "66822"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland .
+
+court:Amtsgericht_St._Wendel ex:hasXJustizID xjid:V1126 .
+xjid:V1126 a ex:XJustizID ;
+    ex:hasXJustizID "V1126"^^xsd:string ;
+    ex:hasPostalCode "66606"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland .
+
+court:Amtsgericht_Merzig ex:hasXJustizID xjid:V1127 .
+xjid:V1127 a ex:XJustizID ;
+    ex:hasXJustizID "V1127"^^xsd:string ;
+    ex:hasPostalCode "66663"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland .
+
+court:Amtsgericht_Voelklingen ex:hasXJustizID xjid:V1128 .
+xjid:V1128 a ex:XJustizID ;
+    ex:hasXJustizID "V1128"^^xsd:string ;
+    ex:hasPostalCode "66333"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Saarland .
+
+court:Amtsgericht_Stendal ex:hasXJustizID xjid:W1215 .
+xjid:W1215 a ex:XJustizID ;
+    ex:hasXJustizID "W1215"^^xsd:string ;
+    ex:hasPostalCode "39576"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister, rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Partnerschaftsregister ;
+    ex:locatedIn state:Sachsen-Anhalt .
+
+court:Amtsgericht_Flensburg ex:hasXJustizID xjid:X1112 .
+xjid:X1112 a ex:XJustizID ;
+    ex:hasXJustizID "X1112"^^xsd:string ;
+    ex:hasPostalCode "24937"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Schleswig-Holstein ;
+    ex:validUntil "2024-06-30"^^xsd:date ;
+    ex:hasFutureCode "X1112R"^^xsd:string .
+
+court:Amtsgericht_Flensburg ex:hasXJustizID xjid:X1112R .
+xjid:X1112R a ex:XJustizID ;
+    ex:hasXJustizID "X1112R"^^xsd:string ;
+    ex:hasPostalCode "24937"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Schleswig-Holstein .
+
+court:Amtsgericht_Pinneberg ex:hasXJustizID xjid:X1321 .
+xjid:X1321 a ex:XJustizID ;
+    ex:hasXJustizID "X1321"^^xsd:string ;
+    ex:hasPostalCode "22869"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Schleswig-Holstein ;
+    ex:validUntil "2024-06-30"^^xsd:date ;
+    ex:hasFutureCode "X1321R"^^xsd:string .
+
+court:Amtsgericht_Pinneberg ex:hasXJustizID xjid:X1321R .
+xjid:X1321R a ex:XJustizID ;
+    ex:hasXJustizID "X1321R"^^xsd:string ;
+    ex:hasPostalCode "25451"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Schleswig-Holstein .
+
+court:Amtsgericht_Kiel ex:hasXJustizID xjid:X1517 .
+xjid:X1517 a ex:XJustizID ;
+    ex:hasXJustizID "X1517"^^xsd:string ;
+    ex:hasPostalCode "24114"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Schleswig-Holstein ;
+    ex:validUntil "2024-06-30"^^xsd:date ;
+    ex:hasFutureCode "X1517R"^^xsd:string .
+
+court:Amtsgericht_Kiel ex:hasXJustizID xjid:X1517R .
+xjid:X1517R a ex:XJustizID ;
+    ex:hasXJustizID "X1517R"^^xsd:string ;
+    ex:hasPostalCode "24114"^^xsd:string ;
+    ex:hasRegisterType rtype:Partnerschaftsregister, rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Schleswig-Holstein .
+
+court:Amtsgericht_Luebeck ex:hasXJustizID xjid:X1721 .
+xjid:X1721 a ex:XJustizID ;
+    ex:hasXJustizID "X1721"^^xsd:string ;
+    ex:hasPostalCode "23568"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Schleswig-Holstein ;
+    ex:validUntil "2024-06-30"^^xsd:date ;
+    ex:hasFutureCode "X1721R"^^xsd:string .
+
+court:Amtsgericht_Luebeck ex:hasXJustizID xjid:X1721R .
+xjid:X1721R a ex:XJustizID ;
+    ex:hasXJustizID "X1721R"^^xsd:string ;
+    ex:hasPostalCode "23568"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Vereinsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Schleswig-Holstein .
+
+court:Amtsgericht_Apolda ex:hasXJustizID xjid:Y1101 .
+xjid:Y1101 a ex:XJustizID ;
+    ex:hasXJustizID "Y1101"^^xsd:string ;
+    ex:hasPostalCode "99510"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Arnstadt ex:hasXJustizID xjid:Y1102 .
+xjid:Y1102 a ex:XJustizID ;
+    ex:hasXJustizID "Y1102"^^xsd:string ;
+    ex:hasPostalCode "99310"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Eisenach ex:hasXJustizID xjid:Y1105 .
+xjid:Y1105 a ex:XJustizID ;
+    ex:hasXJustizID "Y1105"^^xsd:string ;
+    ex:hasPostalCode "99817"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Erfurt ex:hasXJustizID xjid:Y1106 .
+xjid:Y1106 a ex:XJustizID ;
+    ex:hasXJustizID "Y1106"^^xsd:string ;
+    ex:hasPostalCode "99092"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Gotha ex:hasXJustizID xjid:Y1108 .
+xjid:Y1108 a ex:XJustizID ;
+    ex:hasXJustizID "Y1108"^^xsd:string ;
+    ex:hasPostalCode "99867"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Heilbad_Heiligenstadt ex:hasXJustizID xjid:Y1109 .
+xjid:Y1109 a ex:XJustizID ;
+    ex:hasXJustizID "Y1109"^^xsd:string ;
+    ex:hasPostalCode "37308"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Muehlhausen ex:hasXJustizID xjid:Y1110 .
+xjid:Y1110 a ex:XJustizID ;
+    ex:hasXJustizID "Y1110"^^xsd:string ;
+    ex:hasPostalCode "99974"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Nordhausen ex:hasXJustizID xjid:Y1111 .
+xjid:Y1111 a ex:XJustizID ;
+    ex:hasXJustizID "Y1111"^^xsd:string ;
+    ex:hasPostalCode "99734"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Soemmerda ex:hasXJustizID xjid:Y1112 .
+xjid:Y1112 a ex:XJustizID ;
+    ex:hasXJustizID "Y1112"^^xsd:string ;
+    ex:hasPostalCode "99610"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Sondershausen ex:hasXJustizID xjid:Y1113 .
+xjid:Y1113 a ex:XJustizID ;
+    ex:hasXJustizID "Y1113"^^xsd:string ;
+    ex:hasPostalCode "99706"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Weimar ex:hasXJustizID xjid:Y1114 .
+xjid:Y1114 a ex:XJustizID ;
+    ex:hasXJustizID "Y1114"^^xsd:string ;
+    ex:hasPostalCode "99423"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Altenburg ex:hasXJustizID xjid:Y1201 .
+xjid:Y1201 a ex:XJustizID ;
+    ex:hasXJustizID "Y1201"^^xsd:string ;
+    ex:hasPostalCode "04600"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Gera ex:hasXJustizID xjid:Y1203 .
+xjid:Y1203 a ex:XJustizID ;
+    ex:hasXJustizID "Y1203"^^xsd:string ;
+    ex:hasPostalCode "07545"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Greiz ex:hasXJustizID xjid:Y1205 .
+xjid:Y1205 a ex:XJustizID ;
+    ex:hasXJustizID "Y1205"^^xsd:string ;
+    ex:hasPostalCode "07973"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Jena ex:hasXJustizID xjid:Y1206 .
+xjid:Y1206 a ex:XJustizID ;
+    ex:hasXJustizID "Y1206"^^xsd:string ;
+    ex:hasPostalCode "07745"^^xsd:string ;
+    ex:hasRegisterType rtype:Gesellschaftsregister, rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Jena ex:hasXJustizID xjid:Y1206V .
+xjid:Y1206V a ex:XJustizID ;
+    ex:hasXJustizID "Y1206V"^^xsd:string ;
+    ex:hasPostalCode "07745"^^xsd:string ;
+    ex:hasRegisterType rtype:Handels__und_Genossenschaftsregister, rtype:Partnerschaftsregister, rtype:Gesellschaftsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Poessneck_Zweigstelle_Bad_Lobenstein ex:hasXJustizID xjid:Y1208 .
+xjid:Y1208 a ex:XJustizID ;
+    ex:hasXJustizID "Y1208"^^xsd:string ;
+    ex:hasPostalCode "07356"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen ;
+    ex:validUntil "2025-05-31"^^xsd:date ;
+    ex:hasFutureCode "Y1209"^^xsd:string .
+
+court:Amtsgericht_Poessneck ex:hasXJustizID xjid:Y1209 .
+xjid:Y1209 a ex:XJustizID ;
+    ex:hasXJustizID "Y1209"^^xsd:string ;
+    ex:hasPostalCode "07381"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Rudolstadt ex:hasXJustizID xjid:Y1210 .
+xjid:Y1210 a ex:XJustizID ;
+    ex:hasXJustizID "Y1210"^^xsd:string ;
+    ex:hasPostalCode "07407"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Rudolstadt_-_Zweigstelle_Saalfeld ex:hasXJustizID xjid:Y1211 .
+xjid:Y1211 a ex:XJustizID ;
+    ex:hasXJustizID "Y1211"^^xsd:string ;
+    ex:hasPostalCode "07318"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen ;
+    ex:validUntil "2021-06-30"^^xsd:date ;
+    ex:hasFutureCode "Y1210"^^xsd:string .
+
+court:Amtsgericht_Stadtroda ex:hasXJustizID xjid:Y1214 .
+xjid:Y1214 a ex:XJustizID ;
+    ex:hasXJustizID "Y1214"^^xsd:string ;
+    ex:hasPostalCode "07646"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Bad_Salzungen ex:hasXJustizID xjid:Y1301 .
+xjid:Y1301 a ex:XJustizID ;
+    ex:hasXJustizID "Y1301"^^xsd:string ;
+    ex:hasPostalCode "36433"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Hildburghausen ex:hasXJustizID xjid:Y1302 .
+xjid:Y1302 a ex:XJustizID ;
+    ex:hasXJustizID "Y1302"^^xsd:string ;
+    ex:hasPostalCode "98646"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Arnstadt_Zweigstelle_Ilmenau ex:hasXJustizID xjid:Y1303 .
+xjid:Y1303 a ex:XJustizID ;
+    ex:hasXJustizID "Y1303"^^xsd:string ;
+    ex:hasPostalCode "98693"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Meiningen ex:hasXJustizID xjid:Y1304 .
+xjid:Y1304 a ex:XJustizID ;
+    ex:hasXJustizID "Y1304"^^xsd:string ;
+    ex:hasPostalCode "98617"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Sonneberg ex:hasXJustizID xjid:Y1307 .
+xjid:Y1307 a ex:XJustizID ;
+    ex:hasXJustizID "Y1307"^^xsd:string ;
+    ex:hasPostalCode "96515"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .
+
+court:Amtsgericht_Suhl ex:hasXJustizID xjid:Y1308 .
+xjid:Y1308 a ex:XJustizID ;
+    ex:hasXJustizID "Y1308"^^xsd:string ;
+    ex:hasPostalCode "98527"^^xsd:string ;
+    ex:hasRegisterType rtype:Vereinsregister ;
+    ex:locatedIn state:Thueringen .

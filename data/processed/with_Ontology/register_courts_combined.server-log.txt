@@ -1,0 +1,400 @@
+2025-06-06 08:21:42.196 - INFO: [1mQLever Server, compiled on Wed Apr  2 11:08:27 UTC 2025 using git hash 7143ff[22m
+2025-06-06 08:21:42.215 - INFO: Initializing server ...
+2025-06-06 08:21:42.222 - INFO: The git hash used to build this index was "7143ff"
+2025-06-06 08:21:42.223 - INFO: Reading vocabulary from file register_courts_combined.vocabulary ...
+2025-06-06 08:21:42.232 - INFO: Done, number of words: 11
+2025-06-06 08:21:42.232 - INFO: Number of words in external vocabulary: 1,049
+2025-06-06 08:21:42.248 - INFO: Registered PSO permutation: #relations = 4, #blocks = 1, #triples = 794
+2025-06-06 08:21:42.256 - INFO: Registered PSO permutation: #relations = 10, #blocks = 1, #triples = 2,219
+2025-06-06 08:21:42.259 - INFO: Registered POS permutation: #relations = 4, #blocks = 1, #triples = 794
+2025-06-06 08:21:42.262 - INFO: Registered POS permutation: #relations = 10, #blocks = 1, #triples = 2,219
+2025-06-06 08:21:42.265 - INFO: Registered OPS permutation: #relations = 860, #blocks = 1, #triples = 2,219
+2025-06-06 08:21:42.270 - INFO: Registered OSP permutation: #relations = 860, #blocks = 1, #triples = 2,219
+2025-06-06 08:21:42.275 - INFO: Registered SPO permutation: #relations = 418, #blocks = 1, #triples = 2,219
+2025-06-06 08:21:42.278 - INFO: Registered SOP permutation: #relations = 418, #blocks = 1, #triples = 2,219
+2025-06-06 08:21:42.278 - INFO: Reading patterns from file register_courts_combined.index.patterns ...
+2025-06-06 08:21:42.280 - INFO: Sorting random result tables to estimate the sorting performance of this machine ...
+2025-06-06 08:21:42.291 - INFO: Access token for restricted API calls is ""
+2025-06-06 08:21:42.293 - INFO: The server is ready, listening for requests on port 7019 ...
+2025-06-06 08:21:43.147 - INFO: 
+2025-06-06 08:21:43.148 - INFO: Request received via POST, content type "application/x-www-form-urlencoded"
+2025-06-06 08:21:43.151 - INFO: Alive check with message "from the `qlever` CLI"
+2025-06-06 08:21:43.168 - INFO: 
+2025-06-06 08:21:43.170 - INFO: Request received via GET, no content type specified
+2025-06-06 08:21:43.171 - ERROR: Access token was provided but server was started without --access-token
+2025-06-06 08:21:43.186 - INFO: 
+2025-06-06 08:21:43.187 - INFO: Request received via GET, no content type specified
+2025-06-06 08:21:43.188 - ERROR: Access token was provided but server was started without --access-token
+2025-06-06 08:21:43.202 - INFO: 
+2025-06-06 08:21:43.203 - INFO: Request received via POST, content type "application/x-www-form-urlencoded"
+2025-06-06 08:21:43.204 - INFO: Processing command "cache-stats": get cache statistics
+2025-06-06 08:21:43.217 - INFO: 
+2025-06-06 08:21:43.217 - INFO: Request received via POST, content type "application/x-www-form-urlencoded"
+2025-06-06 08:21:43.217 - INFO: Processing command "get-settings": get server settings
+2025-06-06 08:22:00.285 - INFO: 
+2025-06-06 08:22:00.286 - INFO: Request received via GET, no content type specified
+2025-06-06 08:23:42.230 - INFO: 
+2025-06-06 08:23:42.231 - INFO: Request received via GET, no content type specified
+2025-06-06 08:23:42.234 - INFO: Processing command "stats": get index statistics
+2025-06-06 08:23:59.434 - INFO: 
+2025-06-06 08:23:59.435 - INFO: Request received via OPTIONS, allowing everything
+2025-06-06 08:23:59.437 - INFO: 
+2025-06-06 08:23:59.438 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-06-06 08:23:59.460 - INFO: Processing the following SPARQL Query:
+PREFIX ex: <http://example.org/schema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?court ?label ?validUntil
+WHERE {
+  ?court a ex:RegisterCourt ;
+         rdfs:label ?label ;
+         ex:validUntil ?validUntil .
+
+  FILTER (STRSTARTS(STR(?validUntil), "2022"))
+}
+ORDER BY ?label
+
+2025-06-06 08:23:59.461 - INFO: Requested media type of result is "application/qlever-results+json"
+2025-06-06 08:23:59.487 - INFO: Query planning done in 48 ms
+2025-06-06 08:23:59.501 - INFO: Result has size 0 x 3
+2025-06-06 08:23:59.504 - INFO: Done processing query and sending result, total time was 65 ms
+2025-06-06 08:24:09.749 - INFO: 
+2025-06-06 08:24:09.753 - INFO: Request received via OPTIONS, allowing everything
+2025-06-06 08:24:09.757 - INFO: 
+2025-06-06 08:24:09.757 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-06-06 08:24:09.758 - INFO: Processing the following SPARQL Query:
+PREFIX ex: <http://example.org/schema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?court ?label ?validUntil
+WHERE {
+  ?court a ex:RegisterCourt ;
+         rdfs:label ?label ;
+         ex:validUntil ?validUntil .
+
+  FILTER (STRSTARTS(STR(?validUntil), "2025"))
+}
+ORDER BY ?label
+
+2025-06-06 08:24:09.759 - INFO: Requested media type of result is "application/qlever-results+json"
+2025-06-06 08:24:09.781 - INFO: Query planning done in 23 ms
+2025-06-06 08:24:09.784 - INFO: Result has size 0 x 3
+2025-06-06 08:24:09.784 - INFO: Done processing query and sending result, total time was 26 ms
+2025-06-06 08:25:21.774 - INFO: 
+2025-06-06 08:25:21.775 - INFO: Request received via OPTIONS, allowing everything
+2025-06-06 08:25:21.821 - INFO: 
+2025-06-06 08:25:21.821 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-06-06 08:25:21.823 - INFO: Processing the following SPARQL Query:
+PREFIX ex: <http://example.org/schema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?CourtName ?XJustizIDCode ?PostalCode ?RegisterTypeName ?StateName ?ValidUntil
+WHERE {
+    ?court a ex:RegisterCourt ;
+           rdfs:label ?CourtName ;
+           ex:hasXJustizID ?xjid .
+    
+    ?xjid rdfs:label ?XJustizIDCode .
+    
+    OPTIONAL { ?xjid ex:hasPostalCode ?PostalCode }
+    OPTIONAL { ?xjid ex:validUntil ?ValidUntil }
+    
+    OPTIONAL { ?xjid ex:hasRegisterType ?rtype .
+        ?rtype rdfs:label ?RegisterTypeName 
+ }
+    
+    OPTIONAL { ?xjid ex:locatedIn ?state .
+        ?state rdfs:label ?StateName 
+ }
+}
+ORDER BY ?CourtName ?XJustizIDCode
+2025-06-06 08:25:21.823 - INFO: Requested media type of result is "application/qlever-results+json"
+2025-06-06 08:25:21.903 - INFO: Query planning done in 81 ms
+2025-06-06 08:25:21.925 - INFO: Result has size 0 x 10
+2025-06-06 08:25:21.926 - INFO: Done processing query and sending result, total time was 104 ms
+2025-06-06 08:26:16.641 - INFO: 
+2025-06-06 08:26:16.642 - INFO: Request received via OPTIONS, allowing everything
+2025-06-06 08:26:16.644 - INFO: 
+2025-06-06 08:26:16.644 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-06-06 08:26:16.645 - INFO: Processing the following SPARQL Query:
+PREFIX ex: <http://example.org/schema#>
+
+SELECT * WHERE {
+    ?subject ?predicate ?object .
+    FILTER(?predicate = ex:hasXJustizID || 
+           ?predicate = ex:hasPostalCode || 
+           ?predicate = ex:hasRegisterType || 
+           ?predicate = ex:locatedIn)
+}
+2025-06-06 08:26:16.646 - INFO: Requested media type of result is "application/qlever-results+json"
+2025-06-06 08:26:16.659 - INFO: Query planning done in 15 ms
+2025-06-06 08:26:16.660 - INFO: Result has unknown size (not computed yet)
+2025-06-06 08:26:16.715 - INFO: Number of bindings exported: 100 of 1,441
+2025-06-06 08:26:16.717 - INFO: Done processing query and sending result, total time was 73 ms
+2025-06-06 08:26:49.587 - INFO: 
+2025-06-06 08:26:49.587 - INFO: Request received via OPTIONS, allowing everything
+2025-06-06 08:26:49.630 - INFO: 
+2025-06-06 08:26:49.631 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-06-06 08:26:49.652 - ERROR: Invalid SPARQL query: Token ".": extraneous input '.' expecting {'(', '+', '!', '-', 'true', 'false', GROUP_CONCAT, NOT, STR, LANG, LANGMATCHES, DATATYPE, BOUND, IRI, URI, BNODE, RAND, ABS, CEIL, FLOOR, ROUND, CONCAT, STRLEN, UCASE, LCASE, ENCODE_FOR_URI, CONTAINS, STRSTARTS, STRENDS, STRBEFORE, STRAFTER, YEAR, MONTH, DAY, HOURS, MINUTES, SECONDS, TIMEZONE, TZ, NOW, UUID, STRUUID, SHA1, SHA256, SHA384, SHA512, MD5, COALESCE, IF, STRLANG, STRDT, SAMETERM, ISIRI, ISURI, ISBLANK, ISLITERAL, ISNUMERIC, REGEX, SUBSTR, REPLACE, EXISTS, COUNT, SUM, MIN, MAX, AVG, STDEV, SAMPLE, IRI_REF, PNAME_NS, PNAME_LN, VAR1, VAR2, PREFIX_LANGTAG, INTEGER, DECIMAL, DOUBLE, INTEGER_POSITIVE, DECIMAL_POSITIVE, DOUBLE_POSITIVE, INTEGER_NEGATIVE, DECIMAL_NEGATIVE, DOUBLE_NEGATIVE, STRING_LITERAL1, STRING_LITERAL2, STRING_LITERAL_LONG1, STRING_LITERAL_LONG2}
+2025-06-06 08:26:49.652 - ERROR: PREFIX ex: <http://example.org/schema#>
+
+
+
+
+
+
+SELECT ?qleverui_entity
+              (MIN(?name) as ?qleverui_name)
+              (MIN(?alias) as ?qleverui_alias)
+              (SAMPLE(?count_2) as ?qleverui_count) WHERE {
+  { SELECT ?qleverui_entity (COUNT(DISTINCT ?XJUTIZID) AS ?count_2)
+    WHERE { FILTER(?predicate = ex:hasXJustizID || ?predicate = ex:hasPostalCode || [1m[4m[31m.[0m ?predicate = ex:hasRegisterType || . ?predicate = ex:locatedIn) . ?XJUTIZID ?qleverui_entity ?object }
+    GROUP BY ?qleverui_entity }
+  { SELECT ?qleverui_entity ?name ?alias ?count_1 WHERE {
+  { { SELECT ?qleverui_entity (COUNT(DISTINCT ?subject) AS ?count_1) WHERE { ?subject ?qleverui_entity ?object } GROUP BY ?qleverui_entity }
+    BIND(?qleverui_entity AS ?name) BIND(?qleverui_entity AS ?alias)
+  } UNION {
+  { { SELECT ?qleverui_entity (COUNT(DISTINCT ?subject) AS ?count_1) WHERE { ?subject ?qleverui_entity ?object } GROUP BY ?qleverui_entity }
+    BIND(?qleverui_entity AS ?name) BIND(?qleverui_entity AS ?alias)
+  } } } }
+  
+} GROUP BY ?qleverui_entity ORDER BY DESC(?qleverui_count)
+
+
+LIMIT 40
+OFFSET 0
+2025-06-06 08:27:09.521 - INFO: 
+2025-06-06 08:27:09.521 - INFO: Request received via OPTIONS, allowing everything
+2025-06-06 08:27:09.525 - INFO: 
+2025-06-06 08:27:09.525 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-06-06 08:27:09.526 - INFO: Processing the following SPARQL Query:
+PREFIX ex: <http://example.org/schema#>
+
+SELECT * WHERE {
+    ?XJUTIZID ?hasPostalCode ?PLZ .
+    FILTER(?predicate = ex:hasXJustizID || 
+           ?predicate = ex:hasPostalCode || 
+           ?predicate = ex:hasRegisterType || 
+           ?predicate = ex:locatedIn)
+}
+2025-06-06 08:27:09.526 - INFO: Requested media type of result is "application/qlever-results+json"
+2025-06-06 08:27:09.527 - INFO: Query planning done in 1 ms
+2025-06-06 08:27:09.528 - INFO: Result has size 2,219 x 3
+2025-06-06 08:27:09.573 - INFO: Number of bindings exported: 100 of 2,219
+2025-06-06 08:27:09.574 - INFO: Done processing query and sending result, total time was 48 ms
+2025-06-06 08:27:22.139 - INFO: 
+2025-06-06 08:27:22.140 - INFO: Request received via OPTIONS, allowing everything
+2025-06-06 08:27:22.143 - INFO: 
+2025-06-06 08:27:22.143 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-06-06 08:27:22.144 - ERROR: Invalid SPARQL query: Token "hasPostalCode": extraneous input 'hasPostalCode' expecting {'(', 'a', '^', '!', IRI_REF, PNAME_NS, PNAME_LN, VAR1, VAR2, PREFIX_LANGTAG}
+2025-06-06 08:27:22.144 - ERROR: PREFIX ex: <http://example.org/schema#>
+
+SELECT * WHERE {
+    ?XJUTIZID [1m[4m[31mhasPostalCode[0m ?PLZ .
+    FILTER(?predicate = ex:hasXJustizID || 
+           ?predicate = ex:hasPostalCode || 
+           ?predicate = ex:hasRegisterType || 
+           ?predicate = ex:locatedIn)
+}
+2025-06-06 08:27:27.017 - INFO: 
+2025-06-06 08:27:27.018 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-06-06 08:27:27.019 - INFO: Processing the following SPARQL Query:
+PREFIX ex: <http://example.org/schema#>
+
+SELECT * WHERE {
+    ?XJUTIZID ?hasPostalCode ?PLZ .
+    FILTER(?predicate = ex:hasXJustizID || 
+           ?predicate = ex:hasPostalCode || 
+           ?predicate = ex:hasRegisterType || 
+           ?predicate = ex:locatedIn)
+}
+2025-06-06 08:27:27.019 - INFO: Requested media type of result is "application/qlever-results+json"
+2025-06-06 08:27:27.020 - INFO: Query planning done in 2 ms
+2025-06-06 08:27:27.021 - INFO: Result has size 2,219 x 3
+2025-06-06 08:27:27.074 - INFO: Number of bindings exported: 100 of 2,219
+2025-06-06 08:27:27.074 - INFO: Done processing query and sending result, total time was 56 ms
+2025-06-06 08:27:49.775 - INFO: 
+2025-06-06 08:27:49.775 - INFO: Request received via OPTIONS, allowing everything
+2025-06-06 08:27:49.821 - INFO: 
+2025-06-06 08:27:49.822 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-06-06 08:27:49.836 - INFO: Processing the following SPARQL Query:
+PREFIX ex: <http://example.org/schema#>
+
+
+
+
+SELECT ?qleverui_entity
+              (MIN(?name) as ?qleverui_name)
+              (MIN(?alias) as ?qleverui_alias)
+              (SAMPLE(?count_1) as ?qleverui_count) WHERE {
+  { SELECT ?qleverui_entity ?name ?alias ?count_1 WHERE {
+  { { SELECT ?qleverui_entity (COUNT(DISTINCT ?subject) AS ?count_1) WHERE { ?subject ?qleverui_entity ?object } GROUP BY ?qleverui_entity }
+    BIND(?qleverui_entity AS ?name) BIND(?qleverui_entity AS ?alias)
+  } UNION {
+  { { SELECT ?qleverui_entity (COUNT(DISTINCT ?subject) AS ?count_1) WHERE { ?subject ?qleverui_entity ?object } GROUP BY ?qleverui_entity }
+    BIND(?qleverui_entity AS ?name) BIND(?qleverui_entity AS ?alias)
+  } } } }
+  
+} GROUP BY ?qleverui_entity ORDER BY DESC(?qleverui_count)
+
+
+
+
+LIMIT 40
+OFFSET 0
+2025-06-06 08:27:49.837 - INFO: Requested media type of result is "application/qlever-results+json"
+2025-06-06 08:27:49.854 - INFO: Query planning done in 31 ms
+2025-06-06 08:27:49.862 - INFO: Result has size 10 x 4
+2025-06-06 08:27:49.866 - INFO: Done processing query and sending result, total time was 43 ms
+2025-06-06 08:28:01.323 - INFO: 
+2025-06-06 08:28:01.323 - INFO: Request received via OPTIONS, allowing everything
+2025-06-06 08:28:01.327 - INFO: 
+2025-06-06 08:28:01.327 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-06-06 08:28:01.328 - ERROR: Invalid SPARQL query: Token "?PLZ": mismatched input '?PLZ' expecting '}'
+2025-06-06 08:28:01.328 - ERROR: PREFIX ex: <http://example.org/schema#>
+
+SELECT * WHERE {
+    ?RegisterCourt ?XJUTIZID ?hasPostalCode [1m[4m[31m?PLZ[0m .
+    FILTER(?predicate = ex:hasXJustizID || 
+           ?predicate = ex:hasPostalCode || 
+           ?predicate = ex:hasRegisterType || 
+           ?predicate = ex:locatedIn)
+}
+2025-06-06 08:28:14.793 - INFO: 
+2025-06-06 08:28:14.794 - INFO: Request received via OPTIONS, allowing everything
+2025-06-06 08:28:14.796 - INFO: 
+2025-06-06 08:28:14.797 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-06-06 08:28:14.797 - ERROR: Access token was provided but server was started without --access-token
+2025-06-06 08:28:16.555 - INFO: 
+2025-06-06 08:28:16.556 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-06-06 08:28:16.556 - ERROR: Invalid SPARQL query: Token "?PLZ": mismatched input '?PLZ' expecting '}'
+2025-06-06 08:28:16.556 - ERROR: PREFIX ex: <http://example.org/schema#>
+
+SELECT * WHERE {
+    ?RegisterCourt ?XJUTIZID ?hasPostalCode [1m[4m[31m?PLZ[0m .
+    FILTER(?predicate = ex:hasXJustizID || 
+           ?predicate = ex:hasPostalCode || 
+           ?predicate = ex:hasRegisterType || 
+           ?predicate = ex:locatedIn)
+}
+2025-06-06 08:28:24.253 - INFO: 
+2025-06-06 08:28:24.254 - INFO: Request received via OPTIONS, allowing everything
+2025-06-06 08:28:24.258 - INFO: 
+2025-06-06 08:28:24.259 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-06-06 08:28:24.259 - INFO: Processing the following SPARQL Query:
+PREFIX ex: <http://example.org/schema#>
+
+SELECT * WHERE {
+    ?XJUTIZID ?hasPostalCode ?PLZ .
+    FILTER(?predicate = ex:hasXJustizID || 
+           ?predicate = ex:hasPostalCode || 
+           ?predicate = ex:hasRegisterType || 
+           ?predicate = ex:locatedIn)
+}
+2025-06-06 08:28:24.260 - INFO: Requested media type of result is "application/qlever-results+json"
+2025-06-06 08:28:24.261 - INFO: Query planning done in 1 ms
+2025-06-06 08:28:24.261 - INFO: Result has size 2,219 x 3
+2025-06-06 08:28:24.315 - INFO: Number of bindings exported: 100 of 2,219
+2025-06-06 08:28:24.316 - INFO: Done processing query and sending result, total time was 56 ms
+2025-06-06 08:28:27.054 - INFO: 
+2025-06-06 08:28:27.054 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-06-06 08:28:27.055 - INFO: Processing the following SPARQL Query:
+PREFIX ex: <http://example.org/schema#>
+
+SELECT * WHERE {
+    ?XJUTIZID ?hasPostalCode ?PLZ .
+    FILTER(?predicate = ex:hasXJustizID || 
+           ?predicate = ex:hasPostalCode || 
+           ?predicate = ex:hasRegisterType || 
+           ?predicate = ex:locatedIn)
+}
+2025-06-06 08:28:27.056 - INFO: Requested media type of result is "application/qlever-results+json"
+2025-06-06 08:28:27.056 - INFO: Query planning done in 1 ms
+2025-06-06 08:28:27.057 - INFO: Result has size 2,219 x 3
+2025-06-06 08:28:27.693 - INFO: Done processing query and sending result, total time was 638 ms
+2025-06-06 08:29:58.518 - INFO: 
+2025-06-06 08:29:58.519 - INFO: Request received via OPTIONS, allowing everything
+2025-06-06 08:29:58.521 - INFO: 
+2025-06-06 08:29:58.522 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-06-06 08:29:58.522 - INFO: Processing the following SPARQL Query:
+PREFIX ex: <http://example.org/schema#>
+
+SELECT ?RegisterCourt ?XJustizID WHERE {
+    ?RegisterCourt ex:hasXJustizID ?XJustizID .
+}
+2025-06-06 08:29:58.523 - INFO: Requested media type of result is "application/qlever-results+json"
+2025-06-06 08:29:58.526 - INFO: Query planning done in 4 ms
+2025-06-06 08:29:58.528 - INFO: Result has size 460 x 2
+2025-06-06 08:29:58.560 - INFO: Number of bindings exported: 100 of 460
+2025-06-06 08:29:58.560 - INFO: Done processing query and sending result, total time was 38 ms
+2025-06-06 08:31:10.698 - INFO: 
+2025-06-06 08:31:10.699 - INFO: Request received via OPTIONS, allowing everything
+2025-06-06 08:31:10.702 - INFO: 
+2025-06-06 08:31:10.703 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-06-06 08:31:10.704 - INFO: Processing the following SPARQL Query:
+PREFIX ex: <http://example.org/schema#>
+
+SELECT ?RegisterCourt (COUNT(?XJustizID) AS ?XJustizID_Count) WHERE {
+    ?RegisterCourt ex:hasXJustizID ?XJustizID .
+}
+GROUP BY ?RegisterCourt
+ORDER BY DESC(?XJustizID_Count)
+2025-06-06 08:31:10.704 - INFO: Requested media type of result is "application/qlever-results+json"
+2025-06-06 08:31:10.717 - INFO: Query planning done in 14 ms
+2025-06-06 08:31:10.720 - INFO: Result has size 408 x 2
+2025-06-06 08:31:10.735 - INFO: Number of bindings exported: 100 of 408
+2025-06-06 08:31:10.736 - INFO: Done processing query and sending result, total time was 33 ms
+2025-06-06 08:32:17.565 - INFO: 
+2025-06-06 08:32:17.568 - INFO: Request received via OPTIONS, allowing everything
+2025-06-06 08:32:17.571 - INFO: 
+2025-06-06 08:32:17.571 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-06-06 08:32:17.573 - INFO: Processing the following SPARQL Query:
+PREFIX ex: <http://example.org/schema#>
+
+SELECT ?RegisterCourt (COUNT(?XJustizID) AS ?XJustizID_Count) (GROUP_CONCAT(?XJustizID; separator=", ") AS ?XJustizID_List) WHERE {
+    ?RegisterCourt ex:hasXJustizID ?XJustizID .
+}
+GROUP BY ?RegisterCourt
+ORDER BY DESC(?XJustizID_Count)
+2025-06-06 08:32:17.573 - INFO: Requested media type of result is "application/qlever-results+json"
+2025-06-06 08:32:17.586 - INFO: Query planning done in 14 ms
+2025-06-06 08:32:17.656 - INFO: Result has size 408 x 3
+2025-06-06 08:32:17.668 - INFO: Number of bindings exported: 100 of 408
+2025-06-06 08:32:17.668 - INFO: Done processing query and sending result, total time was 96 ms
+2025-06-06 08:33:12.916 - INFO: 
+2025-06-06 08:33:12.917 - INFO: Request received via OPTIONS, allowing everything
+2025-06-06 08:33:12.920 - INFO: 
+2025-06-06 08:33:12.920 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-06-06 08:33:12.921 - INFO: Processing the following SPARQL Query:
+PREFIX ex: <http://example.org/schema#>
+
+SELECT ?RegisterCourt (COUNT(?XJustizID) AS ?XJustizID_Count) (GROUP_CONCAT(STRAFTER(STR(?XJustizID), "/"); separator=", ") AS ?XJustizID_List) WHERE {
+    ?RegisterCourt ex:hasXJustizID ?XJustizID .
+}
+GROUP BY ?RegisterCourt
+ORDER BY DESC(?XJustizID_Count)
+2025-06-06 08:33:12.921 - INFO: Requested media type of result is "application/qlever-results+json"
+2025-06-06 08:33:12.939 - INFO: Query planning done in 18 ms
+2025-06-06 08:33:13.005 - INFO: Result has size 408 x 3
+2025-06-06 08:33:13.019 - INFO: Number of bindings exported: 100 of 408
+2025-06-06 08:33:13.019 - INFO: Done processing query and sending result, total time was 99 ms
+2025-06-06 08:34:17.896 - INFO: 
+2025-06-06 08:34:17.897 - INFO: Request received via OPTIONS, allowing everything
+2025-06-06 08:34:17.899 - INFO: 
+2025-06-06 08:34:17.900 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-06-06 08:34:17.902 - INFO: Processing the following SPARQL Query:
+PREFIX ex: <http://example.org/schema#>
+
+SELECT ?RegisterCourt (COUNT(?XJustizID) AS ?XJustizID_Count) (GROUP_CONCAT(REPLACE(STR(?XJustizID), ".*/(.*)", "$1"); separator=", ") AS ?XJustizID_List) WHERE {
+    ?RegisterCourt ex:hasXJustizID ?XJustizID .
+}
+GROUP BY ?RegisterCourt
+ORDER BY DESC(?XJustizID_Count)
+2025-06-06 08:34:17.902 - INFO: Requested media type of result is "application/qlever-results+json"
+2025-06-06 08:34:17.916 - INFO: Query planning done in 16 ms
+2025-06-06 08:34:17.996 - INFO: Result has size 408 x 3
+2025-06-06 08:34:18.008 - INFO: Number of bindings exported: 100 of 408
+2025-06-06 08:34:18.009 - INFO: Done processing query and sending result, total time was 108 ms
+2025-06-06 08:42:31.292 - INFO: 
+2025-06-06 08:42:31.293 - INFO: Request received via GET, no content type specified
+2025-06-06 08:42:31.293 - INFO: Processing command "stats": get index statistics

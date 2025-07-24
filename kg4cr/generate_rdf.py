@@ -1,132 +1,142 @@
 import pandas as pd
 import os
-from rdflib import Graph, Namespace, URIRef, Literal
-from rdflib.namespace import RDF, RDFS, XSD
-import re
-from datetime import datetime
+from combine_excels2df import combine_excel_into_df, preprocess_combined_df
 
-# Define RDF namespaces
-EX = Namespace("http://example.org/schema#")
-GEO = Namespace("http://www.opengis.net/ont/geosparql#")
+def df_to_ttl(df, filename="output.ttl"):
+    ttl_lines = [
+        '@prefix ex: <http://example.org/schema#> .',
+        '@prefix court: <http://example.org/RegisterCourt/> .',
+        '@prefix xjid: <http://example.org/XJustizID/> .',
+        '@prefix state: <http://example.org/State/> .',
+        '@prefix rtype: <http://example.org/RegisterType/> .',
+        '@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .',
+        '@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .',
+        '@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .',
+        '',
+        '### Classes',
+        'ex:RegisterCourt a rdfs:Class ;',
+        '    rdfs:label "Register Court"@en .',
+        '',
+        'ex:XJustizID a rdfs:Class ;',
+        '    rdfs:label "XJustiz Identifier"@en .',
+        '',
+        'ex:RegisterType a rdfs:Class ;',
+        '    rdfs:label "Register Type"@en .',
+        '',
+        'ex:State a rdfs:Class ;',
+        '    rdfs:label "State"@en .',
+        '',
+        '### Properties',
+        'ex:hasXJustizID a rdf:Property ;',
+        '    rdfs:domain ex:RegisterCourt ;',
+        '    rdfs:range ex:XJustizID ;',
+        '    rdfs:label "has XJustiz ID"@en .',
+        '',
+        'ex:hasPostalCode a rdf:Property ;',
+        '    rdfs:domain ex:XJustizID ;',
+        '    rdfs:range xsd:string ;',
+        '    rdfs:label "Postal Code"@en .',
+        '',
+        'ex:hasRegisterType a rdf:Property ;',
+        '    rdfs:domain ex:XJustizID ;',
+        '    rdfs:range ex:RegisterType ;',
+        '    rdfs:label "Has Register Type"@en .',
+        '',
+        'ex:locatedIn a rdf:Property ;',
+        '    rdfs:domain ex:XJustizID ;',
+        '    rdfs:range ex:State ;',
+        '    rdfs:label "Located In"@en .',
+        '',
+        'ex:validUntil a rdf:Property ;',
+        '    rdfs:domain ex:XJustizID ;',
+        '    rdfs:range xsd:date ;',
+        '    rdfs:label "Valid Until"@en .',
+        '',
+        'ex:hasFutureCode a rdf:Property ;',
+        '    rdfs:domain ex:XJustizID ;',
+        '    rdfs:range xsd:string ;',
+        '    rdfs:label "Future Code"@en .',
+        '',
+        '### Instances (Triples)',
+        ''
+    ]
 
-# Create RDF graph
-g = Graph()
-g.bind("ex", EX)
-g.bind("geo", GEO)
+    # Create unique court nodes
+    unique_courts = df[['RegisterCourt']].drop_duplicates()
+    for _, row in unique_courts.iterrows():
+        court_uri = row['RegisterCourt'].replace(' ', '_').replace('(', '').replace(')', '') \
+            .replace('ä', 'ae').replace('ü','ue').replace('ö','oe').replace('ß','ss')
+        ttl_lines.append(f'court:{court_uri} a ex:RegisterCourt ;')
+        ttl_lines.append(f'    rdfs:label "{row["RegisterCourt"]}"@de .\n')
 
-# Function to clean and create URIs
-def create_uri(entity_type, value):
-    """Create a clean URI by replacing spaces and handling special characters."""
-    value = value.strip()
-    value = re.sub(r"[^\w\s]", "", value)  # Remove special characters
-    value = value.replace(" ", "_")  # Replace spaces with underscores
-    return URIRef(f"http://example.org/{entity_type}/{value}")
+    # Link courts to their XJustizIDs and create XJustizID nodes with properties
+    for _, row in df.iterrows():
+        court_uri = row['RegisterCourt'].replace(' ', '_').replace('(', '').replace(')', '') \
+            .replace('ä', 'ae').replace('ü','ue').replace('ö','oe').replace('ß','ss')
+        xjid = row['XJustizID']
+        xjid_uri = f'xjid:{xjid}'
 
-# Function to handle multiple register types
-def process_register_types(register_type_str):
-    """Convert a comma-separated string into multiple URIs."""
-    register_types = [t.strip() for t in register_type_str.split(",")]  # Split by commas
-    return [create_uri("RegisterType", rt) for rt in register_types]
+        # Link court to XJustizID
+        ttl_lines.append(f'court:{court_uri} ex:hasXJustizID {xjid_uri} .')
 
-# Function to convert date format to YYYY-MM-DD
-def convert_date(date_str):
-    """Convert date from DD.MM.YYYY to YYYY-MM-DD format."""
-    try:
-        return Literal(datetime.strptime(date_str, "%d.%m.%Y").date(), datatype=XSD.date)
-    except ValueError:
-        return None  # Return None if the date is invalid
+        # Define XJustizID instance and its properties
+        ttl_lines.append(f'{xjid_uri} a ex:XJustizID ;')
+        ttl_lines.append(f'    ex:hasXJustizID "{xjid}"^^xsd:string ;')
 
-# Extract version number from the metadata sheet
-def extract_version(file_path: str, sheet_name: str) -> str:
-    try:
-        df_meta = pd.read_excel(file_path, sheet_name=sheet_name)
-        version_row = df_meta[df_meta.iloc[:, 0] == 'Version']
-        if not version_row.empty:
-            return str(version_row.iloc[0, 1])
-        else:
-            return "Version not found"
-    except Exception as e:
-        return f"Error: {str(e)}"
+        # Postal code
+        plz = str(row['PLZ']) if pd.notna(row['PLZ']) else ''
+        ttl_lines.append(f'    ex:hasPostalCode "{plz}"^^xsd:string ;')
 
-# Process multiple Excel files
-def process_excel_files(file_paths):
-    for file_path in file_paths:
-        # Load Excel data
-        df = pd.read_excel(file_path, skiprows=7, dtype=str)  # Skip metadata rows & read as string to avoid type issues
+        # RegisterType (can be multiple, split by comma)
+        rtypes = str(row['RegisterType']).split(',')
+        rtypes_clean = []
+        for rt in rtypes:
+            rt = rt.strip()
+            rt_uri = rt.replace(' ', '_').replace('ü','ue').replace('ä','ae').replace('ö','oe').replace('ß','ss') \
+                .replace('-', '_').replace('.', '').replace(',', '')
+            rtypes_clean.append(f'rtype:{rt_uri}')
+        ttl_lines.append(f'    ex:hasRegisterType {", ".join(rtypes_clean)} ;')
 
-        # Remove the first column with all NaN values
-        df = df.iloc[:, 1:]
-        df.columns = ["XJustizID", "RegisterCourt", "RegisterType", "State", "PLZ", "ValidUntil", "FutureCode"]
+        # State
+        state = row['State'].replace(' ', '').replace('ü','ue').replace('ä','ae').replace('ö','oe').replace('ß','ss')
+        ttl_lines.append(f'    ex:locatedIn state:{state} ;')
 
-        # Remove empty rows
-        df = df.dropna(subset=["XJustizID", "RegisterCourt", "RegisterType", "State"])
+        # ValidUntil date formatting
+        valid_until = row['ValidUntil']
+        if pd.notna(valid_until) and valid_until != 'NaN':
+            try:
+                day, month, year = valid_until.split('.')
+                valid_until_formatted = f"{year}-{month.zfill(2)}-{day.zfill(2)}"
+                ttl_lines.append(f'    ex:validUntil "{valid_until_formatted}"^^xsd:date ;')
+            except Exception:
+                pass
 
-        # Extract version number from the metadata sheet
-        version = extract_version(file_path, "metadaten")
-        version_literal = Literal(version, datatype=XSD.integer)
+        # FutureCode
+        future_code = str(row['FutureCode'])
+        if future_code.lower() not in ['nan', 'none', ''] :
+            ttl_lines.append(f'    ex:hasFutureCode "{future_code}"^^xsd:string ;')
 
-        # Populate the RDF graph
-        for _, row in df.iterrows():
-            court_uri = create_uri("RegisterCourt", row["RegisterCourt"])
-            state_uri = create_uri("State", row["State"])
+        # End triple with dot (replace last semicolon)
+        ttl_lines[-1] = ttl_lines[-1].rstrip(' ;') + ' .\n'
 
-            g.add((court_uri, RDF.type, EX.RegisterCourt))
-            g.add((court_uri, RDFS.label, Literal(row["RegisterCourt"], lang="de")))
-            g.add((court_uri, EX.locatedIn, state_uri))
-            g.add((court_uri, EX.version, version_literal))  # Add version property to each entity
+    # Write to file
+    with open(filename, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(ttl_lines))
 
-            # Add XJustizID (even if empty)
-            g.add((court_uri, EX.hasXJustizID, Literal(str(row["XJustizID"]), datatype=XSD.string)))
+    print(f"RDF Turtle file written to: {filename}")
 
-            # Handle multiple register types
-            register_type_uris = process_register_types(row["RegisterType"])
-            for reg_type_uri in register_type_uris:
-                g.add((court_uri, EX.hasRegisterType, reg_type_uri))
 
-            # Convert postal code if present
-            if pd.notna(row["PLZ"]):
-                g.add((court_uri, EX.hasPostalCode, Literal(str(row["PLZ"]).strip(), datatype=XSD.string)))    # stored as string as conversion to INT might lead to omission of intial zeros (e.g. 01234 -> 1234))
-
-            # Convert and add validUntil date
-            if pd.notna(row["ValidUntil"]):
-                valid_until = convert_date(row["ValidUntil"])
-                if valid_until:
-                    g.add((court_uri, EX.validUntil, valid_until))
-
-            # Add Future Code (even if empty)
-            future_code = str(row["FutureCode"]) if pd.notna(row["FutureCode"]) else ""
-            g.add((court_uri, EX.hasFutureCode, Literal(future_code, datatype=XSD.string)))
-
-# Get all Excel file paths from the given directory
-def get_excel_files_from_folder(folder_path):
-    # List to store file paths
-    file_paths = []
-    
-    # Loop through files in the folder
-    for file_name in os.listdir(folder_path):
-        file_path = os.path.join(folder_path, file_name)
-        if file_name.endswith(".xlsx") and os.path.isfile(file_path):
-            file_paths.append(file_path)
-    
-    return file_paths
-
-# Main logic to execute when the script is run
 if __name__ == "__main__":
-    # Ask the user to input the folder path containing the Excel files
-    base_path = os.getcwd()    # get current working directory
-    folder_path = os.path.join(base_path, "data", "raw_data")   # specify the folder path
+    # Specify the folder path
+    base_path = os.path.join(os.getcwd(), "..")  # go up one directory
+    folder_path = os.path.join(base_path, "data", "raw_data")  # specify the folder path
+    # Specify the output Turtle file path
+    output_ttl_file = os.path.join(base_path, "data", "processed", 'with_Ontology', f"register_courts_combined.ttl")
+    # Combine Excel files into a DataFrame
+    combined_df = combine_excel_into_df(folder_path)
 
-    # Get all the Excel file paths in the specified folder
-    excel_files = get_excel_files_from_folder(folder_path)
+    # Preprocess the combined DataFrame
+    final_df = preprocess_combined_df(combined_df)
 
-    # Ensure there are Excel files in the folder
-    if not excel_files:
-        print("No Excel files found in the specified folder.")
-    else:
-        # Process all the Excel files and append their data to the RDF graph
-        process_excel_files(excel_files)
-
-        # Save RDF data to a file
-        output_ttl_file = os.path.join(base_path, "data", "processed", "register_courts_combined.ttl" )   # specify the output file path
-        g.serialize(output_ttl_file, format="turtle")
-        print(f"RDF Data Saved: {output_ttl_file}")
+    # Convert the DataFrame to Turtle format
+    df_to_ttl(final_df, output_ttl_file)

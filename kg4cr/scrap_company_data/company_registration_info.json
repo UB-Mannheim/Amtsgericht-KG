@@ -1,0 +1,34 @@
+{
+  "Siemens AG": {
+    "status": "Not Found",
+    "message": "Imprint info could not be extracted."
+  },
+  "Volkswagen AG": {
+    "Company_Name": "Volkswagen AG",
+    "Company_Address": "Berliner Ring 2, 38440 Wolfsburg, Deutschland",
+    "Registration_Court": "Amtsgericht Braunschweig",
+    "Registration_Code": "HRB 100484",
+    "Registration_year": null
+  },
+  "XL2 GmbH": {
+    "Company_Name": "XL2 GmbH",
+    "Company_Address": "Edisonstr.25, 74076 Heilbronn",
+    "Registration_Court": "Amtsgericht Stuttgart",
+    "Registration_Code": "HRB773865",
+    "Registration_year": null
+  },
+  "Rheinmetall AG": {
+    "Company_Name": "Rheinmetall AG",
+    "Company_Address": "Rheinmetall Platz 1, 40476 D\u00fcsseldorf",
+    "Registration_Court": "Amtsgericht D\u00fcsseldorf",
+    "Registration_Code": "HRB 39401",
+    "Registration_year": null
+  },
+  "Aleph Alpha GmbH": {
+    "Company_Name": "Aleph Alpha GmbH",
+    "Company_Address": "",
+    "Registration_Court": "",
+    "Registration_Code": "",
+    "Registration_year": ""
+  }
+}
