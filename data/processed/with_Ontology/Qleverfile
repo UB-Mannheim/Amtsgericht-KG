@@ -5,7 +5,7 @@
 # qlever start     # starts the server (instant)
 
 [data]
-NAME              = register_courts
+NAME              = register_courts_combined
 # BASE_URL          = https://github.com/wallscope/olympics-rdf
 # GET_DATA_CMD      = curl -sLo olympics.zip -C - ${BASE_URL}/raw/master/data/olympics-nt-nodup.zip && unzip -q -o olympics.zip && rm olympics.zip
 DESCRIPTION       = Company registration data from German courts
@@ -28,4 +28,4 @@ SYSTEM = docker
 IMAGE  = docker.io/adfreiburg/qlever:latest
 
 [ui]
-UI_CONFIG = register_courts
+UI_CONFIG = register_courts_combined
