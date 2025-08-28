@@ -19,7 +19,7 @@ current_file = Path(__file__).resolve()
 
 # Traverse up to find the base directory that contains the 'data/' folder
 for parent in current_file.parents:
-    if (parent / "data" / "processed" / "DE_newspapers").is_dir():
+    if (parent / "data" / "processed" / "DE_newspapers_subset").is_dir():
         BASE_DIR = parent
         break
 else:
@@ -44,7 +44,7 @@ Extract all instances of the following structured information carefully, if pres
 - Court_name
 - Date_of_article
 - Company_name (if any)
-- Registration_Code (if any) - usually this is followed by Handels register with types A, B, etc. (e.g. 'Handels register A 238' is HRA 238) 
+- Registration_Code (if any) - usually this is followed by Handelsregister with abteilung A, B, etc. (e.g. 'Handels register A 238' is HRA 238) 
 - Registration_year (if any)
 
 Respond only in JSON format with keys:
