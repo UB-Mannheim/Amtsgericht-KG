@@ -1,0 +1,38 @@
+# Ignore all .deb files (like google-chrome-stable)
+*.deb
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+ENV/
+
+# VSCode
+.vscode/
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Other large or temp files
+*.tar
+*.gz
+*.zip
+*.bak
+*.swp
+*.tmp
