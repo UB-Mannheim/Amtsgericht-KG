@@ -7,6 +7,7 @@ from pathlib import Path
 import asyncio
 import aiohttp
 from groq import Groq
+from prompts import EXTRACTION_PROMPT_DE, EXTRACTION_PROMPT_EN
 
 # Logging setup
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -20,29 +21,15 @@ OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma3:12b")
 
 # OpenRouter setup
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "meta-llama/llama-3.2-3b-instruct")
+OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "tencent/hunyuan-a13b-instruct:free")
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 # Groq setup
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_MODEL = os.getenv("GROQ_MODEL", "compound-beta")
 
-# Prompt instruction
-EXTRACTION_PROMPT = """
-You are given a very crucial preprocessed block of text extracted from a historical German newspaper (1930s).
-Go through all the text and understand it with the context.
-Extract all instances of the following structured information carefully, if present:
-- Court_name
-- Date_of_article
-- Company_name (if any)
-- Registration_Code (if any) - usually this is followed by Handelsregister with abteilung A, B, etc. (e.g. 'Handels register A 238' is HRA 238) 
-- Registration_year (if any)
-
-Respond only in JSON format with keys:
-Court_name, Date_of_article, Company_name, Registration_Code, Registration_year.
-If a value is not available, set it to null. 
-Return only JSON objects, nothing else.
-"""
+# Choose prompt language
+EXTRACTION_PROMPT = EXTRACTION_PROMPT_DE
 
 async def extract_info_from_text(text, session=None):
     """Async request depending on provider"""
@@ -193,14 +180,14 @@ async def process_single_file(input_path, output_path, max_words=5000, overlap_w
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Extract legal entities from a historical German newspaper file.")
-    parser.add_argument("input_file", help="Path to the input .txt file")
-    parser.add_argument("output_file", help="Path to save the output JSON file")
-    parser.add_argument("--provider", choices=["ollama", "openrouter", "groq"], default="openrouter",
-                        help="Choose LLM provider: 'ollama' (default), 'openrouter', or 'groq'")
-    parser.add_argument("--max_words", type=int, default=4000, help="Max words per chunk")
-    parser.add_argument("--overlap_words", type=int, default=50, help="Number of overlapping words between chunks")
-    args = parser.parse_args()
 
-    PROVIDER = args.provider
-    asyncio.run(process_single_file(args.input_file, args.output_file, args.max_words, args.overlap_words))
+    input_file = "./data/processed/DE_newspapers_subset/Reichsanzeiger_06_09_1927.txt"  # Path to the input .txt file
+    output_file = "./data/processed/DE_newspapers_subset/Reichsanzeiger_06_09_1927.json"   # Path to save the output JSON file
+    provider = "openrouter"  # Choose the LLM provider ('ollama', 'openrouter', or 'groq')
+    max_words = 4000  # Max words per chunk
+    overlap_words = 50  # Number of overlapping words between chunks
+    
+    # directly pass these values without using argparse
+    PROVIDER = provider
+    asyncio.run(process_single_file(input_file, output_file, max_words, overlap_words))
+
