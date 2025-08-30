@@ -1,0 +1,888 @@
+@prefix comp: <http://example.org/Company/> .
+@prefix court: <http://example.org/RegisterCourt/> .
+@prefix ex: <http://example.org/schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Company a rdfs:Class ;
+    rdfs:label "Company"@en .
+
+ex:RegisterCourt a rdfs:Class ;
+    rdfs:label "Register Court"@en .
+
+court:Amtsgericht_Bremen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Bremen"@de ;
+    ex:hasCompany comp:company50,
+        comp:company51 .
+
+court:Amtsgericht_Eisleben a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Eisleben"@de ;
+    ex:hasCompany comp:company63 .
+
+court:Amtsgericht_Essen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Essen"@de ;
+    ex:hasCompany comp:company64,
+        comp:company65,
+        comp:company66,
+        comp:company67,
+        comp:company68,
+        comp:company69,
+        comp:company70,
+        comp:company71,
+        comp:company72,
+        comp:company73,
+        comp:company74,
+        comp:company75,
+        comp:company76,
+        comp:company77,
+        comp:company78,
+        comp:company79,
+        comp:company80,
+        comp:company81 .
+
+court:Amtsgericht_Flensburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Flensburg"@de ;
+    ex:hasCompany comp:company82,
+        comp:company83 .
+
+court:Amtsgericht_Friedland_Bez_Breslau a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Friedland, Bez. Breslau"@de ;
+    ex:hasCompany comp:company84 .
+
+court:Amtsgericht_Fuerstenberg_a_O a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Fürstenberg a. O."@de ;
+    ex:hasCompany comp:company85 .
+
+court:Amtsgericht_Gerbstedt a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Gerbstedt"@de ;
+    ex:hasCompany comp:company87 .
+
+court:Amtsgericht_Glogau a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Glogau"@de ;
+    ex:hasCompany comp:company1,
+        comp:company88 .
+
+court:Amtsgericht_Greifswald a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Greifswald"@de ;
+    ex:hasCompany comp:company2,
+        comp:company89 .
+
+court:Amtsgericht_Gruenberg_Schl a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Grünberg, Schl."@de ;
+    ex:hasCompany comp:company3 .
+
+court:Amtsgericht_Gummersbach a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Gummersbach"@de ;
+    ex:hasCompany comp:company4 .
+
+court:Amtsgericht_Hamburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Hamburg"@de ;
+    ex:hasCompany comp:company5 .
+
+court:Amtsgericht_Hanau a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Hanau"@de ;
+    ex:hasCompany comp:company6 .
+
+court:Amtsgericht_Hannover a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Hannover"@de ;
+    ex:hasCompany comp:company7 .
+
+court:Amtsgericht_HarburgWilhelmsburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Harburg-Wilhelmsburg"@de ;
+    ex:hasCompany comp:company90 .
+
+court:Amtsgericht_Heide_Holstein a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Heide, Holstein"@de ;
+    ex:hasCompany comp:company91 .
+
+court:Amtsgericht_Ilfeld a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Ilfeld"@de ;
+    ex:hasCompany comp:company92 .
+
+court:Amtsgericht_Johanngeorgenstadt a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Johanngeorgenstadt"@de ;
+    ex:hasCompany comp:company93 .
+
+court:Amtsgericht_Kaiserslautern a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Kaiserslautern"@de ;
+    ex:hasCompany comp:company94 .
+
+court:Amtsgericht_Kamen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Kamen"@de ;
+    ex:hasCompany comp:company8 .
+
+court:Amtsgericht_Kamenz a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Kamenz"@de ;
+    ex:hasCompany comp:company9 .
+
+court:Amtsgericht_Karlsruhe a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Karlsruhe"@de ;
+    ex:hasCompany comp:company10 .
+
+court:Amtsgericht_Kassel a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Kassel"@de ;
+    ex:hasCompany comp:company100,
+        comp:company101,
+        comp:company102,
+        comp:company103,
+        comp:company104,
+        comp:company105,
+        comp:company106,
+        comp:company107,
+        comp:company108,
+        comp:company109,
+        comp:company110,
+        comp:company95,
+        comp:company96,
+        comp:company97,
+        comp:company98,
+        comp:company99 .
+
+court:Amtsgericht_Kirchen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Kirchen"@de ;
+    ex:hasCompany comp:company11 .
+
+court:Amtsgericht_Koenigsberg_Pr a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Königsberg, Pr."@de ;
+    ex:hasCompany comp:company12,
+        comp:company13 .
+
+court:Amtsgericht_Lauban a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Lauban"@de ;
+    ex:hasCompany comp:company14,
+        comp:company15 .
+
+court:Amtsgericht_Leipzig a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Leipzig"@de ;
+    ex:hasCompany comp:company16,
+        comp:company17,
+        comp:company18,
+        comp:company19 .
+
+court:Amtsgericht_Leipzig_Abt_HIL_Al a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Leipzig, Abt. HIL( Al"@de ;
+    ex:hasCompany comp:company57 .
+
+court:Amtsgericht_Leipzig_Abt_III_AI a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Leipzig, Abt. III AI"@de ;
+    ex:hasCompany comp:company52 .
+
+court:Amtsgericht_Liegnitz a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Liegnitz"@de ;
+    ex:hasCompany comp:company58 .
+
+court:Amtsgericht_Loburg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Loburg"@de ;
+    ex:hasCompany comp:company20 .
+
+court:Amtsgericht_Ludwigshafen_a_Rh a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Ludwigshafen a. Rh."@de ;
+    ex:hasCompany comp:company21 .
+
+court:Amtsgericht_Luebz a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Lübz"@de ;
+    ex:hasCompany comp:company22 .
+
+court:Amtsgericht_Meerane a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Meerane"@de ;
+    ex:hasCompany comp:company24,
+        comp:company25,
+        comp:company26 .
+
+court:Amtsgericht_Minden a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Minden"@de ;
+    ex:hasCompany comp:company27 .
+
+court:Amtsgericht_Muenchen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht München"@de ;
+    ex:hasCompany comp:company28,
+        comp:company29,
+        comp:company54 .
+
+court:Amtsgericht_Ratibor a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Ratibor"@de ;
+    ex:hasCompany comp:company33 .
+
+court:Amtsgericht_Recklinghausen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Recklinghausen"@de ;
+    ex:hasCompany comp:company34 .
+
+court:Amtsgericht_Rossla a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Roßla"@de ;
+    ex:hasCompany comp:company35 .
+
+court:Amtsgericht_Schleswig a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Schleswig"@de ;
+    ex:hasCompany comp:company55 .
+
+court:Amtsgericht_Schmalkalden a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Schmalkalden"@de ;
+    ex:hasCompany comp:company36 .
+
+court:Amtsgericht_Stargard_i_Pomm a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Stargard i. Pomm."@de ;
+    ex:hasCompany comp:company37 .
+
+court:Amtsgericht_Sternberg a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Sternberg"@de ;
+    ex:hasCompany comp:company38 .
+
+court:Amtsgericht_Thuer a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Thür."@de ;
+    ex:hasCompany comp:company86 .
+
+court:Amtsgericht_Traunstein a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Traunstein"@de ;
+    ex:hasCompany comp:company39 .
+
+court:Amtsgericht_Tuebingen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Tübingen"@de ;
+    ex:hasCompany comp:company56,
+        comp:company61 .
+
+court:Amtsgericht_Varel_i_O_Abt_I a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Varel i. O., Abt. I"@de ;
+    ex:hasCompany comp:company62 .
+
+court:Amtsgericht_Viersen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Viersen"@de ;
+    ex:hasCompany comp:company40,
+        comp:company41,
+        comp:company42 .
+
+court:Amtsgericht_Volkmarsen a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Volkmarsen"@de ;
+    ex:hasCompany comp:company43 .
+
+court:Amtsgericht_Waldbroel a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Waldbröl"@de ;
+    ex:hasCompany comp:company44 .
+
+court:Amtsgericht_Waldenburg_i_Schles a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Waldenburg i. Schles."@de ;
+    ex:hasCompany comp:company45,
+        comp:company46 .
+
+court:Amtsgericht_Waldfischbach a ex:RegisterCourt ;
+    rdfs:label "Amtsgericht Waldfischbach"@de ;
+    ex:hasCompany comp:company47 .
+
+court:Bad_Amtsgericht a ex:RegisterCourt ;
+    rdfs:label "Bad. Amtsgericht"@de ;
+    ex:hasCompany comp:company23,
+        comp:company30,
+        comp:company31,
+        comp:company32 .
+
+court:Bad_Amtsgericht_Mannheim a ex:RegisterCourt ;
+    rdfs:label "Bad. Amtsgericht Mannheim"@de ;
+    ex:hasCompany comp:company53,
+        comp:company59 .
+
+court:Konkursgericht_Weiden a ex:RegisterCourt ;
+    rdfs:label "Konkursgericht Weiden"@de ;
+    ex:hasCompany comp:company48,
+        comp:company49 .
+
+court:Preussisches_Amtsgericht_Odenkirchen a ex:RegisterCourt ;
+    rdfs:label "Preußisches Amtsgericht Odenkirchen"@de ;
+    ex:hasCompany comp:company60 .
+
+ex:dateOfArticle a rdf:Property ;
+    rdfs:domain ex:Company ;
+    rdfs:range xsd:string .
+
+ex:hasCompany a rdf:Property ;
+    rdfs:label "has Company"@en ;
+    rdfs:domain ex:RegisterCourt ;
+    rdfs:range ex:Company .
+
+ex:registrationCode a rdf:Property ;
+    rdfs:domain ex:Company ;
+    rdfs:range xsd:string .
+
+ex:registrationYear a rdf:Property ;
+    rdfs:domain ex:Company ;
+    rdfs:range xsd:gYear .
+
+comp:company1 a ex:Company ;
+    rdfs:label "Blumenthal in Glogau"@de ;
+    ex:dateOfArticle "2. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company10 a ex:Company ;
+    rdfs:label "Tabakfabrik Gexopp & Co."@de ;
+    ex:dateOfArticle "1. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company100 a ex:Company ;
+    rdfs:label "Cabröl Holz & Industrie Baugesellschaft m. b. H., Kassel"@de ;
+    ex:dateOfArticle "9. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB 340"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company101 a ex:Company ;
+    rdfs:label "Kaiser C Sander, Kassel"@de ;
+    ex:dateOfArticle "10. August 1927"^^xsd:string ;
+    ex:registrationCode "HRA 2572"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company102 a ex:Company ;
+    rdfs:label "Deutscher Auto-Handel Max Bösel, Kassel"@de ;
+    ex:dateOfArticle "12. August 1927"^^xsd:string ;
+    ex:registrationCode "HRA 2594"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company103 a ex:Company ;
+    rdfs:label "Orientalische Tabak & Cigarettenfabrik YJenidze Inhaber Hugo Zietz G. m. b. H., Dresden, Fabriklager Kassel"@de ;
+    ex:dateOfArticle "7. Juli 1927"^^xsd:string ;
+    ex:registrationCode "HRB 675"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company104 a ex:Company ;
+    rdfs:label "Kraftfutterwerk Kruchten C Sachs Kassel"@de ;
+    ex:dateOfArticle "16. August 1927"^^xsd:string ;
+    ex:registrationCode "HRA 1726"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company105 a ex:Company ;
+    rdfs:label "Deutsche Constat Gesellschaft m. b. H., Kassel"@de ;
+    ex:registrationCode "HRB 114"^^xsd:string .
+
+comp:company106 a ex:Company ;
+    rdfs:label "Willy 3 G. m. b. H., Kassel"@de ;
+    ex:dateOfArticle "4. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB 611"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company107 a ex:Company ;
+    rdfs:label "Willy Krause K Co., Kassel"@de ;
+    ex:dateOfArticle "19. August 1927"^^xsd:string ;
+    ex:registrationCode "HRA 2686"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company108 a ex:Company ;
+    rdfs:label "Gebrüder Hagemeier G. m. b. H, Kassel"@de ;
+    ex:dateOfArticle "2. August 1957"^^xsd:string ;
+    ex:registrationCode "HRB 672"^^xsd:string ;
+    ex:registrationYear "1957"^^xsd:gYear .
+
+comp:company109 a ex:Company ;
+    rdfs:label "Landwirtschaftliche An- und Verkaufs-Gesellschaft „Hessenland“ G. m. b. H., Kassel"@de ;
+    ex:dateOfArticle "17. Dezember 1935"^^xsd:string ;
+    ex:registrationCode "HRB 141"^^xsd:string ;
+    ex:registrationYear "1935"^^xsd:gYear .
+
+comp:company11 a ex:Company ;
+    rdfs:label "Rudolf Bender"@de ;
+    ex:dateOfArticle "29. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company110 a ex:Company ;
+    rdfs:label "Heinrich Ibold, Kassel"@de ;
+    ex:registrationCode "HRA 1247"^^xsd:string .
+
+comp:company12 a ex:Company ;
+    rdfs:label "Paul Dischereit"@de ;
+    ex:dateOfArticle "31. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company13 a ex:Company ;
+    rdfs:label "Eugen Rosenthal"@de ;
+    ex:dateOfArticle "29. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company14 a ex:Company ;
+    rdfs:label "Gebr."@de ;
+    ex:dateOfArticle "August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company15 a ex:Company ;
+    rdfs:label "Rudolf Strangseld"@de ;
+    ex:dateOfArticle "30. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company16 a ex:Company ;
+    rdfs:label "Aron Buchsbaum"@de ;
+    ex:dateOfArticle "29. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company17 a ex:Company ;
+    rdfs:label "Otto Bochum"@de ;
+    ex:dateOfArticle "29. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company18 a ex:Company ;
+    rdfs:label "J. Weinberger"@de ;
+    ex:dateOfArticle "29. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company19 a ex:Company ;
+    rdfs:label "Werner Busch, Gesellschaft mit beschränkter Haftung"@de ;
+    ex:dateOfArticle "2. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company2 a ex:Company ;
+    rdfs:label "Winter u. Looke, Alleininhaber Buchhändler August Alt"@de ;
+    ex:dateOfArticle "30. August 1927"^^xsd:string ;
+    ex:registrationCode "HRA 219"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company20 a ex:Company ;
+    rdfs:label "Ländliche Credit- und Warengenossenschaft Großlübars und Umgegend e. G. m. b. H."@de ;
+    ex:dateOfArticle "2. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company21 a ex:Company ;
+    rdfs:label "Wilhelm Defiebre"@de ;
+    ex:dateOfArticle "2. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company22 a ex:Company ;
+    rdfs:label "H. Niehaus junior"@de ;
+    ex:dateOfArticle "23. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company23 a ex:Company ;
+    rdfs:label "„Desag“ Deutsche Sackvertriebs- und Faserindustrie Akt. Ges."@de ;
+    ex:dateOfArticle "18. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company24 a ex:Company ;
+    rdfs:label "Kurt Kahnt"@de ;
+    ex:dateOfArticle "31. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company25 a ex:Company ;
+    rdfs:label "Walter Georg Simon"@de ;
+    ex:dateOfArticle "1. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company26 a ex:Company ;
+    rdfs:label "Klara verehel. Malsch, Firma Adolf Malsch"@de ;
+    ex:dateOfArticle "1. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company27 a ex:Company ;
+    rdfs:label "Auguste Busse und Franz Busse"@de ;
+    ex:dateOfArticle "1. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company28 a ex:Company ;
+    rdfs:label "Paula Thein, Michael Thein, Otto Thein"@de ;
+    ex:dateOfArticle "1. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company29 a ex:Company ;
+    rdfs:label "Karoline Thein"@de ;
+    ex:dateOfArticle "1. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company3 a ex:Company ;
+    rdfs:label "Emil Wenzel, Maschinenbauanstalt"@de ;
+    ex:dateOfArticle "29. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company30 a ex:Company ;
+    rdfs:label "Radolfzeller Zigarrenhaus, Inhaber Friedr. Dietrich"@de ;
+    ex:dateOfArticle "17. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company31 a ex:Company ;
+    rdfs:label "A. Hörh Nachfolger Karl Tschudy"@de ;
+    ex:dateOfArticle "17. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company32 a ex:Company ;
+    rdfs:label "Oskar Stürmer"@de ;
+    ex:dateOfArticle "17. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company33 a ex:Company ;
+    rdfs:label "Franz Miketta"@de ;
+    ex:dateOfArticle "1. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company34 a ex:Company ;
+    rdfs:label "Josef Döttelbeck und Franz Döttelbeck"@de ;
+    ex:dateOfArticle "31. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company35 a ex:Company ;
+    rdfs:label "Willy Lange"@de ;
+    ex:dateOfArticle "22. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company36 a ex:Company ;
+    rdfs:label "H. Osec. Lesser"@de ;
+    ex:dateOfArticle "26. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company37 a ex:Company ;
+    rdfs:label "J. Boas Witwe, Inh. Albert Braatz"@de ;
+    ex:dateOfArticle "28. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company38 a ex:Company ;
+    rdfs:label "Ludwig Crenow"@de ;
+    ex:dateOfArticle "1. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company39 a ex:Company ;
+    rdfs:label "Oberbayr. Faltbootwerft"@de ;
+    ex:dateOfArticle "25. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company4 a ex:Company ;
+    rdfs:label "Josef Lofgnie"@de ;
+    ex:dateOfArticle "2. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company40 a ex:Company ;
+    rdfs:label "Josef Holtschoppen"@de ;
+    ex:dateOfArticle "24. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company41 a ex:Company ;
+    rdfs:label "Rheinische Schuhwaren-Handelsgesellschaft mit beschränkter Haftung"@de ;
+    ex:dateOfArticle "29. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company42 a ex:Company ;
+    rdfs:label "Emil Mühlmann"@de ;
+    ex:dateOfArticle "30. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company43 a ex:Company ;
+    rdfs:label "Volksruhm, Korn- und Malzkaffeefabrik G. m. b. H."@de ;
+    ex:dateOfArticle "22. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company44 a ex:Company ;
+    rdfs:label "Warenbezugsgenossenschaft Eckenhagen"@de ;
+    ex:dateOfArticle "30. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company45 a ex:Company ;
+    rdfs:label "Edith-Elektro Werke G. m. b. H. in Liquidation"@de ;
+    ex:dateOfArticle "29. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company46 a ex:Company ;
+    rdfs:label "Alfred Kluttig"@de ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company47 a ex:Company ;
+    rdfs:label "Ludwig Daum"@de ;
+    ex:dateOfArticle "2. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company48 a ex:Company ;
+    rdfs:label "Karl Trautner"@de ;
+    ex:dateOfArticle "29. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company49 a ex:Company ;
+    rdfs:label "Martha Hilmer"@de ;
+    ex:dateOfArticle "29. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company5 a ex:Company ;
+    rdfs:label "S. Hechter G. m. b. H."@de .
+
+comp:company50 a ex:Company ;
+    rdfs:label "Heinrich Gerhard Alexander Volkmann"@de ;
+    ex:dateOfArticle "26. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company51 a ex:Company ;
+    rdfs:label "Gerhard Gustav Johannes Volkmann"@de ;
+    ex:dateOfArticle "26. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company52 a ex:Company ;
+    rdfs:label "Hermann Praeler"@de ;
+    ex:dateOfArticle "2. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company53 a ex:Company ;
+    rdfs:label "Max Hubert, photographisches Atelier"@de ;
+    ex:dateOfArticle "1. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company54 a ex:Company ;
+    rdfs:label "Marie Schnebel"@de ;
+    ex:dateOfArticle "2. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company55 a ex:Company ;
+    rdfs:label "August Thomsen"@de ;
+    ex:dateOfArticle "3. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company56 a ex:Company ;
+    rdfs:label "Ernst Keßler"@de ;
+    ex:dateOfArticle "1. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company57 a ex:Company ;
+    rdfs:label "Arthur Voigt"@de ;
+    ex:dateOfArticle "31. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company58 a ex:Company ;
+    rdfs:label "Hugo Benke"@de ;
+    ex:dateOfArticle "30. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company59 a ex:Company ;
+    rdfs:label "Heinrich Fesenbecker Nachfolger"@de ;
+    ex:dateOfArticle "30. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company6 a ex:Company ;
+    rdfs:label "Steinheuer & Co., Juwelen-Bijouteriefabrik, Aktiengesellschaft"@de ;
+    ex:dateOfArticle "31. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company60 a ex:Company ;
+    rdfs:label "Christian Teich"@de ;
+    ex:dateOfArticle "30. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company61 a ex:Company ;
+    rdfs:label "Karoline Kleefeld"@de ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company62 a ex:Company ;
+    rdfs:label "Werner Beute"@de ;
+    ex:dateOfArticle "4. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company63 a ex:Company ;
+    rdfs:label "Zuckerfabrik Schwittersdorf"@de ;
+    ex:dateOfArticle "29. August 1927"^^xsd:string ;
+    ex:registrationCode "HRA 3"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company64 a ex:Company ;
+    rdfs:label "Essener Bergwerks-Verein König-Wilhelm, Essen"@de ;
+    ex:dateOfArticle "12. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB H"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company65 a ex:Company ;
+    rdfs:label "Fried. Krupp, Essen, Zweigniederlassung mit Sonderfirma in Bliersheim"@de ;
+    ex:registrationCode "HRB 76"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company66 a ex:Company ;
+    rdfs:label "Th. Goldschmidt Aktiengesellschaft Essen, Zweigniederlassungen: Mannheim, Rheinau, Berlin"@de ;
+    ex:registrationCode "HRB 313"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company67 a ex:Company ;
+    rdfs:label "König-Wilhelm Handelsgesellschaft mit beschränkter Haftung, Essen"@de ;
+    ex:dateOfArticle "13. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB 473"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company68 a ex:Company ;
+    rdfs:label "Spezialhaus für Herde, Öfen und Kücheneinrichtungen, Gesellschaft mit beschränkter Haftung, Essen"@de ;
+    ex:dateOfArticle "13. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB 402"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company69 a ex:Company ;
+    rdfs:label "Rheinisch-Westfälische Gesellschaft mit beschränkter Haftung, Essen"@de ;
+    ex:dateOfArticle "13. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB 1266"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company7 a ex:Company ;
+    rdfs:label "Meier & Abel"@de ;
+    ex:dateOfArticle "1. September 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company70 a ex:Company ;
+    rdfs:label "Fritz Schlipkötter, Gesellschaft mit beschränkter Haftung, Essen"@de ;
+    ex:dateOfArticle "13. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB 1323"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company71 a ex:Company ;
+    rdfs:label "Nordstern Allgemeine Versicherungs-Aktien Gesellschaft, Berlin-Schöneberg, Zweigniederlassung Essen"@de ;
+    ex:dateOfArticle "13. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB 1416"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company72 a ex:Company ;
+    rdfs:label "Fritz Hinselmann & Co. Gesellschaft mit beschränkter Haftung, Essen"@de ;
+    ex:dateOfArticle "13. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB 1473"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company73 a ex:Company ;
+    rdfs:label "Deutsche Bank, Hauptniederlassung Berlin, Zweigniederlassung Essen unter der Sonderfirma Essener Creditanstalt"@de ;
+    ex:dateOfArticle "13. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB 1600"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company74 a ex:Company ;
+    rdfs:label "Westdeutsche Chemische Werke Aktiengesellschaft, Essen"@de ;
+    ex:dateOfArticle "13. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB 1712"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company75 a ex:Company ;
+    rdfs:label "Alfred Fuhlrodt & Co. Gesellschaft mit beschränkter Haftung, Essen"@de ;
+    ex:dateOfArticle "13. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB 1797"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company76 a ex:Company ;
+    rdfs:label "Köln-Neuessener Bergwerksverein, Altenessen"@de ;
+    ex:dateOfArticle "21. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB 48"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company77 a ex:Company ;
+    rdfs:label "Bergmannssiedelung Mülheim-Borbeck, Gesellschaft mit beschränkter Haftung, Essen"@de ;
+    ex:dateOfArticle "21. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB 689"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company78 a ex:Company ;
+    rdfs:label "Rosendahl & Bachrach, Aktiengesellschaft, Essen"@de ;
+    ex:dateOfArticle "21. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB 9460"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company79 a ex:Company ;
+    rdfs:label "Elektro-Apparate Gesellschaft mit beschränkter Haftung, Essen"@de ;
+    ex:dateOfArticle "21. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB 959g"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company8 a ex:Company ;
+    rdfs:label "Carl Wischeloh"@de ;
+    ex:dateOfArticle "29. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company80 a ex:Company ;
+    rdfs:label "Deutsche Bergbau- und Handels-Aktiengesellschaft, Essen"@de ;
+    ex:dateOfArticle "21. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB 1108"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company81 a ex:Company ;
+    rdfs:label "Essener Großgaragen, Gesellschaft mit beschränkter Haftung „Egro“, Essen"@de ;
+    ex:dateOfArticle "21. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company82 a ex:Company ;
+    rdfs:label "Karl Selck, F. W. Selck Nachfl."@de ;
+    ex:dateOfArticle "30. August 1927"^^xsd:string ;
+    ex:registrationCode "HRA 631"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company83 a ex:Company ;
+    rdfs:label "Aug. Lüneburg Nachflg. Inh. Johs. Brandt"@de ;
+    ex:dateOfArticle "30. August 1927"^^xsd:string ;
+    ex:registrationCode "HRA 55"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company84 a ex:Company ;
+    rdfs:label "Alfred Just"@de ;
+    ex:dateOfArticle "20. 8. 1927"^^xsd:string ;
+    ex:registrationCode "HRA 98"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company85 a ex:Company ;
+    rdfs:label "Preußische Kohlenhandelsgesellschast mit beschränkter Haftung"@de ;
+    ex:dateOfArticle "29. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB 8"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company86 a ex:Company ;
+    rdfs:label "Fiedler & Maurer"@de ;
+    ex:dateOfArticle "31. August 1927"^^xsd:string ;
+    ex:registrationCode "HRA 140"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company87 a ex:Company ;
+    rdfs:label "Kaufhaus Gebrüder Bluhm"@de ;
+    ex:dateOfArticle "30. August 1927"^^xsd:string ;
+    ex:registrationCode "HRA 52"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company88 a ex:Company ;
+    rdfs:label "Landw. Handels-Aktien-Gesellschaft"@de ;
+    ex:dateOfArticle "26. 8. 1927"^^xsd:string ;
+    ex:registrationCode "HRB 32"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company89 a ex:Company ;
+    rdfs:label "Weltroller, Gesellschaft mit beschränkter Haftung"@de ;
+    ex:dateOfArticle "26. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB 53"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company9 a ex:Company ;
+    rdfs:label "Gerhard Adolf Leber"@de ;
+    ex:dateOfArticle "16. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company90 a ex:Company ;
+    rdfs:label "Commerz und Privat-Bank, Aktiengesellschaft, Filiale Harburg"@de ;
+    ex:dateOfArticle "31. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB 1562"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company91 a ex:Company ;
+    rdfs:label "Getreide-Aktiengesellschaft vorm. P. Kruse, Filiale Heide (Holst.)"@de ;
+    ex:dateOfArticle "8. August 1927"^^xsd:string ;
+    ex:registrationCode "HRB X"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company92 a ex:Company ;
+    rdfs:label "A. & F. Probst, Gips- und Gipsdielenfabriken, Gesellschaft mit beschränkter Haftung"@de ;
+    ex:dateOfArticle "25. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company93 a ex:Company ;
+    rdfs:label "Allgemeine Deutsche Credit-Anstalt Zweigstelle Johanngeorgenstadt"@de ;
+    ex:dateOfArticle "30. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company94 a ex:Company ;
+    rdfs:label "Offenbacher Lederwarenvertrieb „Brewa“ Feliceig Breitermann"@de ;
+    ex:dateOfArticle "30. August 1927"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company95 a ex:Company ;
+    rdfs:label "H. Otto Wilhelm, Kassel"@de ;
+    ex:dateOfArticle "3. August 1927"^^xsd:string ;
+    ex:registrationCode "HRA 1796"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company96 a ex:Company ;
+    rdfs:label "Elektrische Beleuchtungs- und Kraftindustrie Willy Gianini, Kassel"@de ;
+    ex:dateOfArticle "6. August 1927"^^xsd:string ;
+    ex:registrationCode "HRA 1680"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+
+comp:company97 a ex:Company ;
+    rdfs:label "Rudolf Sempf, Kassel"@de ;
+    ex:registrationCode "HRA 2685"^^xsd:string .
+
+comp:company98 a ex:Company ;
+    rdfs:label "Deutsche Baugesellschaft moderner Brikettierungsanlagen für die Braunkohlen und Torfindustrie m. b. H., Kassel"@de ;
+    ex:registrationCode "HRB 514"^^xsd:string .
+
+comp:company99 a ex:Company ;
+    rdfs:label "Berlin-Kasseler Grundstücks Aktiengesellschaft, Kassel"@de ;
+    ex:registrationCode "HRB 444"^^xsd:string ;
+    ex:registrationYear "1927"^^xsd:gYear .
+

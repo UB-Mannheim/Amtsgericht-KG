@@ -93,17 +93,17 @@ def json_to_ttl(data, ttl_path="kg_companies.ttl"):
 
     # Save TTL
     g.serialize(ttl_path, format="turtle")
-    print(f"✅ TTL file created: {ttl_path}")
-    print(f"📊 Total courts: {len(set(clean_uri(e['Court_name']) for e in data))}, Total companies: {len(data)}")
+    print(f"TTL file created: {ttl_path}")
+    print(f"Total courts: {len(set(clean_uri(e['Court_name']) for e in data))}, Total companies: {len(data)}")
 
 if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="Convert JSON folder to TTL Knowledge Graph")
-    parser.add_argument("folder_path", type=str, help="Path to folder containing JSON files")
-    parser.add_argument("--ttl_path", type=str, default="kg_companies.ttl", help="Output TTL file path")
-
+    # parser.add_argument("--ttl_path", type=str, default="kg_companies.ttl", help="Output TTL file path")
+    folder_path = "/mnt/c/Users/abhijain/Documents/KG4CR/data/processed/json2rdf"
+    ttl_path = "/mnt/c/Users/abhijain/Documents/KG4CR/data/processed/json2rdf/DE_N_ontology"
     args = parser.parse_args()
 
-    combined_data = load_and_preprocess_json(args.folder_path)
-    json_to_ttl(combined_data, args.ttl_path)
+    combined_data = load_and_preprocess_json(folder_path)
+    json_to_ttl(combined_data, ttl_path)
