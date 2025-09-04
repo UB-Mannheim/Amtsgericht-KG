@@ -35,3 +35,20 @@
 2025-08-29 13:48:29.291 - INFO: Request received via GET, no content type specified
 2025-08-29 13:48:29.358 - INFO: 
 2025-08-29 13:48:29.359 - INFO: Request received via GET, no content type specified
+2025-09-04 16:01:05.275 - INFO: 
+2025-09-04 16:01:05.277 - INFO: Request received via GET, no content type specified
+2025-09-04 16:01:05.279 - INFO: Processing command "stats": get index statistics
+2025-09-04 16:03:48.988 - INFO: 
+2025-09-04 16:03:48.989 - INFO: Request received via OPTIONS, allowing everything
+2025-09-04 16:03:48.993 - INFO: 
+2025-09-04 16:03:48.994 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-09-04 16:03:49.018 - INFO: Processing the following SPARQL Query:
+SELECT ?subject ?predicate ?object
+WHERE {
+  ?subject ?predicate ?object .
+}
+2025-09-04 16:03:49.023 - INFO: Requested media type of result is "application/qlever-results+json"
+2025-09-04 16:03:49.033 - INFO: Query planning done in 38 ms
+2025-09-04 16:03:49.037 - INFO: Result has unknown size (not computed yet)
+2025-09-04 16:03:49.109 - INFO: Number of bindings exported: 100 of 2,219
+2025-09-04 16:03:49.114 - INFO: Done processing query and sending result, total time was 119 ms
