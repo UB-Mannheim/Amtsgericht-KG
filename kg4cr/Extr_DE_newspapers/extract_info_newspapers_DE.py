@@ -28,8 +28,13 @@ OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_MODEL = os.getenv("GROQ_MODEL", "compound-beta")
 
+# MAIA setup
+MAIA_API_KEY = os.getenv("MAIA_API_KEY", "sk-5287 9clh<bd8732bds2b6cb52c")
+MAIA_MODEL = os.getenv("MAIA_MODEL", "mistral-small3.1:latest")
+MAIA_URL = "https://maia.bib.uni-mannheim.de/api/chat/completions"
+
 # Choose prompt language
-EXTRACTION_PROMPT = EXTRACTION_PROMPT_DE
+EXTRACTION_PROMPT = EXTRACTION_PROMPT_EN
 
 async def extract_info_from_text(text, session=None):
     """Async request depending on provider"""
@@ -100,6 +105,25 @@ async def extract_info_from_text(text, session=None):
             return completion.choices[0].message.content
 
         return await asyncio.to_thread(_call_groq)
+
+    elif PROVIDER.lower() == "maia":
+        headers = {
+            "Authorization": f"Bearer {MAIA_API_KEY}",
+            "Content-Type": "application/json",
+        }
+        data = {
+            "model": MAIA_MODEL,
+            "messages": [
+                {"role": "system", "content": system_message},
+                {"role": "user", "content": user_message}
+            ],
+            "temperature": 0.2
+        }
+        async with session.post(MAIA_URL, headers=headers, json=data) as response:
+            if response.status != 200:
+                raise Exception(f"MAIA API error: {await response.text()}")
+            res = await response.json()
+            return res["choices"][0]["message"]["content"]
 
     else:
         raise ValueError(f"Unsupported provider: {PROVIDER}")
@@ -183,11 +207,10 @@ if __name__ == "__main__":
 
     input_file = "./data/processed/DE_newspapers_subset/Reichsanzeiger_06_09_1927.txt"  # Path to the input .txt file
     output_file = "./data/processed/DE_newspapers_subset/Reichsanzeiger_06_09_1927.json"   # Path to save the output JSON file
-    provider = "openrouter"  # Choose the LLM provider ('ollama', 'openrouter', or 'groq')
+    provider = "maia"  # Choose the LLM provider ('ollama', 'openrouter', 'groq', or 'maia')
     max_words = 4000  # Max words per chunk
     overlap_words = 50  # Number of overlapping words between chunks
     
     # directly pass these values without using argparse
     PROVIDER = provider
     asyncio.run(process_single_file(input_file, output_file, max_words, overlap_words))
-

@@ -1,63 +1,41 @@
-2025-09-04 16:10:22.171 - INFO: [1mQLever Server, compiled on Wed Apr  2 11:08:27 UTC 2025 using git hash 7143ff[22m
-2025-09-04 16:10:22.179 - INFO: Initializing server ...
-2025-09-04 16:10:22.190 - INFO: The git hash used to build this index was "7143ff"
-2025-09-04 16:10:22.193 - INFO: Reading vocabulary from file DE_N_ontology.vocabulary ...
-2025-09-04 16:10:22.284 - INFO: Done, number of words: 10
-2025-09-04 16:10:22.285 - INFO: Number of words in external vocabulary: 435
-2025-09-04 16:10:22.333 - INFO: Registered PSO permutation: #relations = 4, #blocks = 1, #triples = 510
-2025-09-04 16:10:22.355 - INFO: Registered PSO permutation: #relations = 8, #blocks = 1, #triples = 709
-2025-09-04 16:10:22.378 - INFO: Registered POS permutation: #relations = 4, #blocks = 1, #triples = 510
-2025-09-04 16:10:22.400 - INFO: Registered POS permutation: #relations = 8, #blocks = 1, #triples = 709
-2025-09-04 16:10:22.418 - INFO: Registered OPS permutation: #relations = 365, #blocks = 1, #triples = 709
-2025-09-04 16:10:22.444 - INFO: Registered OSP permutation: #relations = 365, #blocks = 1, #triples = 709
-2025-09-04 16:10:22.462 - INFO: Registered SPO permutation: #relations = 172, #blocks = 1, #triples = 709
-2025-09-04 16:10:22.480 - INFO: Registered SOP permutation: #relations = 172, #blocks = 1, #triples = 709
-2025-09-04 16:10:22.480 - INFO: Reading patterns from file DE_N_ontology.index.patterns ...
-2025-09-04 16:10:22.489 - INFO: Sorting random result tables to estimate the sorting performance of this machine ...
-2025-09-04 16:10:22.492 - INFO: Access token for restricted API calls is ""
-2025-09-04 16:10:22.497 - INFO: The server is ready, listening for requests on port 7020 ...
-2025-09-04 16:10:23.143 - INFO: 
-2025-09-04 16:10:23.143 - INFO: Request received via POST, content type "application/x-www-form-urlencoded"
-2025-09-04 16:10:23.144 - INFO: Alive check with message "from the `qlever` CLI"
-2025-09-04 16:10:23.157 - INFO: 
-2025-09-04 16:10:23.158 - INFO: Request received via GET, no content type specified
-2025-09-04 16:10:23.158 - ERROR: Access token was provided but server was started without --access-token
-2025-09-04 16:10:23.174 - INFO: 
-2025-09-04 16:10:23.174 - INFO: Request received via GET, no content type specified
-2025-09-04 16:10:23.174 - ERROR: Access token was provided but server was started without --access-token
-2025-09-04 16:10:23.190 - INFO: 
-2025-09-04 16:10:23.190 - INFO: Request received via POST, content type "application/x-www-form-urlencoded"
-2025-09-04 16:10:23.190 - INFO: Processing command "cache-stats": get cache statistics
-2025-09-04 16:10:23.203 - INFO: 
-2025-09-04 16:10:23.204 - INFO: Request received via POST, content type "application/x-www-form-urlencoded"
-2025-09-04 16:10:23.204 - INFO: Processing command "get-settings": get server settings
-2025-09-04 16:19:36.328 - INFO: 
-2025-09-04 16:19:36.329 - INFO: Request received via GET, no content type specified
-2025-09-04 16:19:36.329 - INFO: Processing command "stats": get index statistics
-2025-09-04 16:19:38.600 - INFO: 
-2025-09-04 16:19:38.601 - INFO: Request received via OPTIONS, allowing everything
-2025-09-04 16:19:38.604 - INFO: 
-2025-09-04 16:19:38.604 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
-2025-09-04 16:19:38.623 - INFO: Processing the following SPARQL Query:
-SELECT ?subject ?predicate ?object
+2025-09-05 10:12:31.328 - INFO: [1mQLever Server, compiled on Wed Apr  2 11:08:27 UTC 2025 using git hash 7143ff[22m
+2025-09-05 10:12:31.382 - INFO: Initializing server ...
+2025-09-05 10:12:31.422 - INFO: The git hash used to build this index was "7143ff"
+2025-09-05 10:12:31.433 - INFO: Reading vocabulary from file DE_N_ontology.vocabulary ...
+2025-09-05 10:12:31.465 - INFO: Done, number of words: 6
+2025-09-05 10:12:31.466 - INFO: Number of words in external vocabulary: 429
+2025-09-05 10:12:31.518 - INFO: Registered PSO permutation: #relations = 1, #blocks = 1, #triples = 174
+2025-09-05 10:12:31.526 - INFO: Registered PSO permutation: #relations = 9, #blocks = 1, #triples = 712
+2025-09-05 10:12:31.545 - INFO: Registered POS permutation: #relations = 1, #blocks = 1, #triples = 174
+2025-09-05 10:12:31.563 - INFO: Registered POS permutation: #relations = 9, #blocks = 1, #triples = 712
+2025-09-05 10:12:31.571 - INFO: Registered OPS permutation: #relations = 308, #blocks = 1, #triples = 712
+2025-09-05 10:12:31.582 - INFO: Registered OSP permutation: #relations = 308, #blocks = 1, #triples = 712
+2025-09-05 10:12:31.590 - INFO: Registered SPO permutation: #relations = 174, #blocks = 1, #triples = 712
+2025-09-05 10:12:31.601 - INFO: Registered SOP permutation: #relations = 174, #blocks = 1, #triples = 712
+2025-09-05 10:12:31.602 - INFO: Reading patterns from file DE_N_ontology.index.patterns ...
+2025-09-05 10:12:31.620 - INFO: Sorting random result tables to estimate the sorting performance of this machine ...
+2025-09-05 10:12:31.652 - INFO: Access token for restricted API calls is ""
+2025-09-05 10:12:31.655 - INFO: The server is ready, listening for requests on port 7020 ...
+2025-09-05 10:12:40.198 - INFO: 
+2025-09-05 10:12:40.204 - INFO: Request received via OPTIONS, allowing everything
+2025-09-05 10:12:40.233 - INFO: 
+2025-09-05 10:12:40.239 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
+2025-09-05 10:12:40.273 - INFO: Processing the following SPARQL Query:
+PREFIX ex: <http://example.org/schema/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT distinct ?courtName 
 WHERE {
-  ?subject ?predicate ?object .
+  ?company a ex:Company ;
+           ex:companyName ?companyName ;
+           ex:registeredAt ?court .
+  ?court ex:courtName ?courtName .
+
+  OPTIONAL { ?company ex:registrationCode ?code . }
+  OPTIONAL { ?company ex:registrationYear ?year . }
+  OPTIONAL { ?company ex:articleDate ?date . }
 }
-2025-09-04 16:19:38.625 - INFO: Requested media type of result is "application/qlever-results+json"
-2025-09-04 16:19:38.631 - INFO: Query planning done in 27 ms
-2025-09-04 16:19:38.635 - INFO: Result has unknown size (not computed yet)
-2025-09-04 16:19:38.686 - INFO: Number of bindings exported: 100 of 709
-2025-09-04 16:19:38.689 - INFO: Done processing query and sending result, total time was 84 ms
-2025-09-04 16:20:04.564 - INFO: 
-2025-09-04 16:20:04.565 - INFO: Request received via OPTIONS, allowing everything
-2025-09-04 16:20:04.567 - INFO: 
-2025-09-04 16:20:04.568 - INFO: Request received via POST, content type "application/x-www-form-urlencoded;charset=UTF-8"
-2025-09-04 16:20:04.569 - INFO: Processing the following SPARQL Query:
-SELECT ?subject ?predicate ?object
-WHERE {
-  ?subject ?predicate ?object .
-}
-2025-09-04 16:20:04.569 - INFO: Requested media type of result is "application/qlever-results+json"
-2025-09-04 16:20:04.570 - INFO: Query planning done in 1 ms
-2025-09-04 16:20:04.571 - INFO: Result has size 709 x 3
-2025-09-04 16:20:04.801 - INFO: Done processing query and sending result, total time was 232 ms
+2025-09-05 10:12:40.275 - INFO: Requested media type of result is "application/qlever-results+json"
+2025-09-05 10:12:40.534 - INFO: Query planning done in 294 ms
+2025-09-05 10:12:40.642 - INFO: Result has size 56 x 7
+2025-09-05 10:12:40.693 - INFO: Done processing query and sending result, total time was 452 ms
