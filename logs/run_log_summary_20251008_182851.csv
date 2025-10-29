@@ -1,0 +1,4 @@
+File,Mode,Chunks,Time (s),Outcome
+Reichsanzeiger_06_09_1927.txt,parallel,13,23.56,"❌ failed chunks [5, 2, 9, 4, 3, 7, 1, 6, 13, 11, 10, 8, 12]"
+
+Total runtime (s):,23.57

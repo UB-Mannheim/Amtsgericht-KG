@@ -1,0 +1,85 @@
+File,Mode,Chunks,Time (s),Outcome
+856399094_1922_051_08.txt,parallel,8,323.03,❌ parse failed
+856399094_1922_052_17.txt,parallel,8,564.53,"❌ failed chunks [6, 7]"
+856399094_1922_057_09.txt,parallel,6,550.8,❌ failed chunks [4]
+856399094_1922_061_11.txt,parallel,8,385.87,"❌ failed chunks [5, 4]"
+856399094_1922_062_11.txt,parallel,8,21.14,"❌ failed chunks [1, 3, 2, 4, 7, 8, 6, 5]"
+856399094_1922_064_25.txt,parallel,9,10.15,"❌ failed chunks [4, 2, 3, 5, 7, 9, 1, 8, 6]"
+856399094_1922_071_08.txt,parallel,7,156.0,"❌ failed chunks [6, 1, 7, 5]"
+856399094_1922_282_16.txt,parallel,5,211.47,"❌ failed chunks [3, 5, 1, 4, 2]"
+856399094_1922_282_17.txt,parallel,6,31.19,"❌ failed chunks [5, 2, 4, 3, 1, 6]"
+856399094_1922_282_18.txt,parallel,7,20.13,"❌ failed chunks [1, 4, 2, 3, 7, 6, 5]"
+856399094_1922_282_19.txt,parallel,7,15.58,"❌ failed chunks [3, 5, 2, 6, 4, 1, 7]"
+856399094_1924_010_03.txt,parallel,7,9.04,"❌ failed chunks [1, 5, 2, 4, 6, 7, 3]"
+856399094_1924_012_20.txt,parallel,7,9.23,"❌ failed chunks [3, 1, 5, 4, 2, 7, 6]"
+856399094_1924_013_15.txt,parallel,7,20.13,"❌ failed chunks [1, 2, 3, 5, 4, 7, 6]"
+856399094_1924_017_22.txt,parallel,7,20.1,"❌ failed chunks [5, 3, 7, 2, 4, 1, 6]"
+856399094_1924_039_05.txt,parallel,7,229.35,"❌ failed chunks [5, 1, 3, 6, 7]"
+856399094_1924_039_06.txt,parallel,6,30.39,"❌ failed chunks [5, 2, 1, 4, 3, 6]"
+856399094_1924_039_09.txt,parallel,6,20.52,"❌ failed chunks [3, 2, 4, 5, 1, 6]"
+856399094_1924_045_05.txt,parallel,6,20.54,"❌ failed chunks [5, 2, 3, 4, 1, 6]"
+856399094_1924_049_20.txt,parallel,7,551.05,"❌ failed chunks [3, 1]"
+856399094_1924_051_12.txt,parallel,8,434.03,"❌ failed chunks [1, 3]"
+856399094_1924_051_17.txt,parallel,6,381.07,❌ failed chunks [2]
+856399094_1936_001_13.txt,parallel,7,63.92,"❌ failed chunks [2, 7, 5, 3, 4, 1, 6]"
+856399094_1936_001_14.txt,parallel,6,180.22,"❌ failed chunks [1, 3, 4, 5, 6, 2]"
+856399094_1936_009_12.txt,parallel,7,111.86,"❌ failed chunks [5, 2, 4, 1, 6, 3]"
+856399094_1936_009_13.txt,parallel,7,21.89,"❌ failed chunks [5, 3, 1, 6, 7, 4, 2]"
+856399094_1936_021_05.txt,parallel,7,107.28,"❌ failed chunks [2, 3, 1, 4, 5, 6, 7]"
+856399094_1936_023_12.txt,parallel,7,111.78,"❌ failed chunks [5, 3, 2, 1, 4, 7, 6]"
+856399094_1936_027_18.txt,parallel,6,107.6,"❌ failed chunks [2, 5, 4, 6, 1, 3]"
+856399094_1936_031_17.txt,parallel,7,132.98,"❌ failed chunks [4, 2, 3, 1, 5, 7, 6]"
+856399094_1936_035_17.txt,parallel,7,125.62,"❌ failed chunks [5, 1, 4, 7, 6, 3, 2]"
+856399094_1936_036_08.txt,parallel,7,54.17,"❌ failed chunks [3, 4, 2, 5, 1, 6, 7]"
+856399094_1936_047_05.txt,parallel,6,33.09,"❌ failed chunks [2, 5, 1, 4, 3, 6]"
+856399094_1936_048_06.txt,parallel,6,42.18,"❌ failed chunks [1, 2, 4, 5, 3, 6]"
+856399094_1936_051_18.txt,parallel,6,52.73,"❌ failed chunks [3, 5, 2, 1, 6, 4]"
+856399094_1936_076_20.txt,parallel,7,54.2,"❌ failed chunks [3, 5, 2, 7, 4, 6, 1]"
+856399094_1936_091_06.txt,parallel,8,153.99,"❌ failed chunks [4, 3, 2, 1, 8, 6, 7, 5]"
+856399094_1936_158_06.txt,parallel,8,158.99,"❌ failed chunks [2, 5, 3, 7, 1, 4, 6, 8]"
+856399094_1936_169_05.txt,parallel,6,88.5,"❌ failed chunks [3, 2, 5, 4, 1, 6]"
+856399094_1936_179_17.txt,parallel,6,52.7,"❌ failed chunks [4, 2, 3, 1, 6, 5]"
+856399094_1936_179_18.txt,parallel,6,9.05,"❌ failed chunks [1, 4, 5, 2, 3, 6]"
+856399094_1936_180_03.txt,parallel,6,9.07,"❌ failed chunks [5, 3, 1, 4, 2, 6]"
+856399094_1936_180_04.txt,parallel,6,9.04,"❌ failed chunks [3, 2, 4, 1, 6, 5]"
+856399094_1936_180_14.txt,parallel,4,9.07,"❌ failed chunks [1, 4, 3, 2]"
+856399094_1936_180_15.txt,parallel,6,9.07,"❌ failed chunks [1, 4, 2, 5, 3, 6]"
+856399094_1936_180_16.txt,parallel,6,9.18,"❌ failed chunks [1, 4, 2, 3, 5, 6]"
+856399094_1936_180_17.txt,parallel,6,51.16,"❌ failed chunks [1, 3, 5, 4, 2, 6]"
+856399094_1936_180_18.txt,parallel,7,145.86,"❌ failed chunks [5, 2, 3, 1, 4, 7, 6]"
+856399094_1936_181_05.txt,parallel,5,72.18,"❌ failed chunks [4, 1, 3, 5, 2]"
+856399094_1936_181_13.txt,parallel,6,124.83,"❌ failed chunks [3, 2, 5, 1, 6, 4]"
+856399094_1936_181_14.txt,parallel,7,134.34,"❌ failed chunks [4, 3, 5, 1, 2, 7, 6]"
+856399094_1936_181_15.txt,parallel,7,142.6,"❌ failed chunks [3, 6, 2, 7, 1, 4, 5]"
+856399094_1936_181_16.txt,parallel,6,117.58,"❌ failed chunks [4, 5, 2, 6, 1, 3]"
+856399094_1936_181_17.txt,parallel,6,93.47,"❌ failed chunks [4, 2, 5, 6, 1, 3]"
+856399094_1936_181_18.txt,parallel,6,72.5,"❌ failed chunks [4, 5, 3, 6, 1, 2]"
+856399094_1936_181_19.txt,parallel,6,21.08,"❌ failed chunks [2, 3, 4, 1, 6, 5]"
+856399094_1936_184_14.txt,parallel,6,9.06,"❌ failed chunks [2, 1, 5, 3, 4, 6]"
+856399094_1936_203_04.txt,parallel,6,21.11,"❌ failed chunks [2, 3, 6, 4, 5, 1]"
+856399094_1936_206_09.txt,parallel,6,73.53,"❌ failed chunks [3, 4, 5, 2, 1, 6]"
+856399094_1936_207_16.txt,parallel,7,580.3,"❌ failed chunks [1, 5]"
+856399094_1936_217_06.txt,parallel,7,77.45,❌ parse failed
+856399094_1936_219_09.txt,parallel,5,46.56,❌ parse failed
+856399094_1936_219_12.txt,parallel,7,410.73,"❌ failed chunks [3, 5, 2, 4]"
+856399094_1936_225_06.txt,parallel,6,11.15,"❌ failed chunks [2, 3, 4, 5, 1, 6]"
+856399094_1936_227_11.txt,parallel,7,67.64,"❌ failed chunks [4, 3, 1, 2, 6, 7]"
+856399094_1936_229_07.txt,parallel,6,276.97,❌ parse failed
+856399094_1936_232_15.txt,parallel,6,550.86,"❌ failed chunks [3, 2]"
+856399094_1936_236_09.txt,parallel,4,56.1,❌ parse failed
+856399094_1936_241_10.txt,parallel,7,616.79,"❌ failed chunks [5, 6]"
+856399094_1936_244_15.txt,parallel,6,550.92,❌ failed chunks [4]
+856399094_1936_248_06.txt,parallel,7,101.52,❌ parse failed
+856399094_1936_249_14.txt,parallel,7,574.39,"❌ failed chunks [3, 2, 4, 6]"
+856399094_1936_250_10.txt,parallel,7,81.36,❌ parse failed
+856399094_1936_260_15.txt,parallel,6,551.51,❌ failed chunks [3]
+856399094_1936_262_22.txt,parallel,7,567.94,❌ failed chunks [5]
+856399094_1936_265_15.txt,parallel,7,243.68,❌ parse failed
+856399094_1936_266_07.txt,parallel,6,551.22,❌ failed chunks [2]
+856399094_1936_266_15.txt,parallel,7,136.65,❌ parse failed
+856399094_1936_270_13.txt,parallel,6,221.69,✅ success
+856399094_1936_270_14.txt,parallel,7,193.66,✅ success
+856399094_1936_271_16.txt,parallel,5,117.36,❌ parse failed
+856399094_1936_303_26.txt,parallel,6,551.23,❌ failed chunks [3]
+
+Total runtime (s):,14115.72

@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 1200px;
+                 background-color: #222222;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"font": {"color": "white"}, "group": "Company", "id": "http://example.org/company/1880_zu_Her\u017fel", "label": "1880 zu Her\u017fel", "shape": "dot", "size": 25, "title": "registrationYear: 1936\u003cbr\u003ecompanyName: 1880 zu Her\u017fel\u003cbr\u003efileName: 856399094_1936_128_03.json\u003cbr\u003eregisteredAt: http://example.org/court/Finanzamt_KoelnNord"}, {"font": {"color": "white"}, "group": "Court", "id": "http://example.org/court/Das_Amtsgericht_Bockenem", "label": "Das Amtsgericht Bockenem", "shape": "dot", "size": 35, "title": "courtName: Das Amtsgericht Bockenem"}, {"font": {"color": "white"}, "group": "Court", "id": "http://example.org/court/Amtsgericht_Gadebu\u0161ch", "label": "Amtsgericht Gadebu\u0161ch", "shape": "dot", "size": 35, "title": "courtName: Amtsgericht Gadebu\u0161ch"}, {"font": {"color": "white"}, "group": "Court", "id": "http://example.org/court/Finanzamt_KoelnNord", "label": "Finanzamt K\u00f6ln-Nord", "shape": "dot", "size": 35, "title": "courtName: Finanzamt K\u00f6ln-Nord"}, {"font": {"color": "white"}, "group": "Company", "id": "http://example.org/company/A_Gercke_Inh_Walter_Lueders", "label": "A. Gercke Inh. Walter L\u00fcders", "shape": "dot", "size": 25, "title": "registeredAt: http://example.org/court/Amtsgericht_Gadebu\u0161ch\u003cbr\u003efileName: 856399094_1936_015_12.json\u003cbr\u003eregistrationCode: Handelsregi\u017ftereintrag zu Nr. 646\u003cbr\u003ecompanyName: A. Gercke Inh. Walter L\u00fcders\u003cbr\u003eregistrationYear: 1936"}, {"font": {"color": "white"}, "group": "Court", "id": "http://example.org/court/Thueringisches_Amtsgericht_Meiningen_Abteilung_1", "label": "Th\u00fcringisches Amtsgericht Meiningen, Abteilung 1", "shape": "dot", "size": 35, "title": "courtName: Th\u00fcringisches Amtsgericht Meiningen, Abteilung 1"}, {"font": {"color": "white"}, "group": "Court", "id": "http://example.org/court/Amtsgericht_Schaast", "label": "Amtsgericht Schaast", "shape": "dot", "size": 35, "title": "courtName: Amtsgericht Schaast"}, {"font": {"color": "white"}, "group": "Company", "id": "http://example.org/company/2_Glas_Johannahuette_Ernst_Jaehde_in_Schoenborn_NS", "label": "2 Glas- Johannah\u00fctte, Ernst J\u00e4hde in Sch\u00f6nborn, N.S.", "shape": "dot", "size": 25, "title": "registrationYear: 1886\u003cbr\u003eregisteredAt: http://example.org/court/Amtsgericht_Schoenborn_NS\u003cbr\u003efileName: 856399094_1936_289_12.json\u003cbr\u003ecompanyName: 2 Glas- Johannah\u00fctte, Ernst J\u00e4hde in Sch\u00f6nborn, N.S.\u003cbr\u003eregistrationCode: HRA 12"}, {"font": {"color": "white"}, "group": "Company", "id": "http://example.org/company/A_Goldmann__Co_Gips_und_Kalkwerke_mit_dem_Siss_in_Saarfels", "label": "A. Goldmann \u0026 Co., Gips und Kalkwerke mit dem Si\u00df in Saarfels", "shape": "dot", "size": 25, "title": "registrationYear: 1936\u003cbr\u003eregisteredAt: http://example.org/court/Amtsgericht_Merais\u003cbr\u003efileName: 856399094_1936_304_17.json\u003cbr\u003eregistrationCode: Handelsregister Abteilung A unter Nr. 322\u003cbr\u003ecompanyName: A. Goldmann \u0026 Co., Gips und Kalkwerke mit dem Si\u00df in Saarfels"}, {"font": {"color": "white"}, "group": "Court", "id": "http://example.org/court/Amtsgericht_Merais", "label": "Amtsgericht Merais", "shape": "dot", "size": 35, "title": "courtName: Amtsgericht Merais"}, {"font": {"color": "white"}, "group": "Company", "id": "http://example.org/company/A_Graffunder_Gemi\u017fchiwarenge\u017fchaeft_in__bach_Inh_Heinrich_Schmidt", "label": "A. Graffunder, Gemi\u017fchiwarenge\u017fch\u00e4ft in * bach, Inh. Heinrich Schmidt", "shape": "dot", "size": 25, "title": "fileName: 856399094_1936_284_18.json\u003cbr\u003ecompanyName: A. Graffunder, Gemi\u017fchiwarenge\u017fch\u00e4ft in * bach, Inh. Heinrich Schmidt\u003cbr\u003eregistrationYear: 1936\u003cbr\u003eregisteredAt: http://example.org/court/Amtsgericht_Muennerstadt"}, {"font": {"color": "white"}, "group": "Court", "id": "http://example.org/court/Amtsgericht_WVohwinkel", "label": "Amtsgericht W.-Vohwinkel", "shape": "dot", "size": 35, "title": "courtName: Amtsgericht W.-Vohwinkel"}, {"font": {"color": "white"}, "group": "Court", "id": "http://example.org/court/Amtsgericht_Muennerstadt", "label": "Amtsgericht M\u00fcnnerstadt", "shape": "dot", "size": 35, "title": "courtName: Amtsgericht M\u00fcnnerstadt"}, {"font": {"color": "white"}, "group": "Court", "id": "http://example.org/court/Amtsgericht_Schoenborn_NS", "label": "Amtsgericht Sch\u00f6nborn, N.S.", "shape": "dot", "size": 35, "title": "courtName: Amtsgericht Sch\u00f6nborn, N.S."}, {"font": {"color": "white"}, "group": "Company", "id": "http://example.org/company/53_19236_G_m_b_H_in_WVohwinkel", "label": "53 19236 G. m. b. H. in W.-Vohwinkel", "shape": "dot", "size": 25, "title": "registeredAt: http://example.org/court/Amtsgericht_WVohwinkel\u003cbr\u003eregistrationYear: 1936\u003cbr\u003ecompanyName: 53 19236 G. m. b. H. in W.-Vohwinkel\u003cbr\u003eregistrationCode: Nr. 6993\u003cbr\u003efileName: 856399094_1936_182_15.json"}, {"font": {"color": "white"}, "group": "Company", "id": "http://example.org/company/A_Hochheim__Co", "label": "A. Hochheim \u0026 Co.", "shape": "dot", "size": 25, "title": "fileName: 856399094_1922_065_27.json\u003cbr\u003ecompanyName: A. Hochheim \u0026 Co.\u003cbr\u003eregistrationCode: HRA 51\u003cbr\u003eregisteredAt: http://example.org/court/Amtsgericht_Schaast"}, {"font": {"color": "white"}, "group": "Company", "id": "http://example.org/company/A_Kolle_in_Bockenem", "label": "A. Kolle in Bockenem", "shape": "dot", "size": 25, "title": "fileName: 856399094_1922_288_16.json\u003cbr\u003ecompanyName: A. Kolle in Bockenem\u003cbr\u003eregistrationYear: 1922\u003cbr\u003eregisteredAt: http://example.org/court/Das_Amtsgericht_Bockenem"}, {"font": {"color": "white"}, "group": "Company", "id": "http://example.org/company/A_Baumann__Sohn", "label": "A. Baumann \u0026 Sohn", "shape": "dot", "size": 25, "title": "registrationCode: Handelsregister A Nr. 363\u003cbr\u003eregisteredAt: http://example.org/court/Thueringisches_Amtsgericht_Meiningen_Abteilung_1\u003cbr\u003ecompanyName: A. Baumann \u0026 Sohn\u003cbr\u003efileName: 856399094_1922_288_22.json\u003cbr\u003eregistrationYear: 1922"}, {"font": {"color": "white"}, "group": "Company", "id": "http://example.org/company/A_Himmelreich_Aktiengesellschaft", "label": "A. Himmelreich Aktiengesellschaft", "shape": "dot", "size": 25, "title": "fileName: 856399094_1936_250_16.json\u003cbr\u003eregistrationCode: HRB 6756\u003cbr\u003ecompanyName: A. Himmelreich Aktiengesellschaft\u003cbr\u003eregistrationYear: 1936\u003cbr\u003eregisteredAt: http://example.org/court/Amtsgericht_Porz"}, {"font": {"color": "white"}, "group": "Court", "id": "http://example.org/court/Amtsgericht_Porz", "label": "Amtsgericht Porz", "shape": "dot", "size": 35, "title": "courtName: Amtsgericht Porz"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "color": "#888888", "from": "http://example.org/company/A_Hochheim__Co", "label": "registeredAt", "to": "http://example.org/court/Amtsgericht_Schaast"}, {"arrows": "to", "color": "#888888", "from": "http://example.org/company/A_Kolle_in_Bockenem", "label": "registeredAt", "to": "http://example.org/court/Das_Amtsgericht_Bockenem"}, {"arrows": "to", "color": "#888888", "from": "http://example.org/company/2_Glas_Johannahuette_Ernst_Jaehde_in_Schoenborn_NS", "label": "registeredAt", "to": "http://example.org/court/Amtsgericht_Schoenborn_NS"}, {"arrows": "to", "color": "#888888", "from": "http://example.org/company/A_Gercke_Inh_Walter_Lueders", "label": "registeredAt", "to": "http://example.org/court/Amtsgericht_Gadebu\u0161ch"}, {"arrows": "to", "color": "#888888", "from": "http://example.org/company/A_Goldmann__Co_Gips_und_Kalkwerke_mit_dem_Siss_in_Saarfels", "label": "registeredAt", "to": "http://example.org/court/Amtsgericht_Merais"}, {"arrows": "to", "color": "#888888", "from": "http://example.org/company/1880_zu_Her\u017fel", "label": "registeredAt", "to": "http://example.org/court/Finanzamt_KoelnNord"}, {"arrows": "to", "color": "#888888", "from": "http://example.org/company/A_Graffunder_Gemi\u017fchiwarenge\u017fchaeft_in__bach_Inh_Heinrich_Schmidt", "label": "registeredAt", "to": "http://example.org/court/Amtsgericht_Muennerstadt"}, {"arrows": "to", "color": "#888888", "from": "http://example.org/company/A_Baumann__Sohn", "label": "registeredAt", "to": "http://example.org/court/Thueringisches_Amtsgericht_Meiningen_Abteilung_1"}, {"arrows": "to", "color": "#888888", "from": "http://example.org/company/A_Himmelreich_Aktiengesellschaft", "label": "registeredAt", "to": "http://example.org/court/Amtsgericht_Porz"}, {"arrows": "to", "color": "#888888", "from": "http://example.org/company/53_19236_G_m_b_H_in_WVohwinkel", "label": "registeredAt", "to": "http://example.org/court/Amtsgericht_WVohwinkel"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"physics": {"forceAtlas2Based": {"gravitationalConstant": -50, "centralGravity": 0.005, "springLength": 150, "springConstant": 0.08, "damping": 0.4}, "minVelocity": 0.75, "solver": "forceAtlas2Based", "stabilization": {"iterations": 150}}, "nodes": {"font": {"color": "white", "size": 12}, "borderWidth": 2, "shadow": true}, "edges": {"font": {"color": "white", "size": 10}, "arrows": {"to": {"enabled": true, "scaleFactor": 1.2}}, "smooth": {"type": "continuous"}}, "interaction": {"hover": true, "tooltipDelay": 200}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

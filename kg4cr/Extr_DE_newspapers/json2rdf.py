@@ -4,113 +4,156 @@ import glob
 import re
 from rdflib import Graph, Literal, RDF, RDFS, XSD, Namespace, URIRef
 
+
+def safe_literal(value, datatype=None):
+    """Safely create RDF Literals, handling invalid gYear values and other formats."""
+    if value in (None, "", "unbekannt", "unknown", "?", "-", "N/A"):
+        return None
+
+    if datatype == XSD.gYear:
+        try:
+            year_str = str(value).strip().replace(".", "")
+            if year_str.isdigit() and 0 < int(year_str) < 9999:
+                return Literal(year_str, datatype=XSD.gYear)
+            else:
+                return Literal(str(value))
+        except Exception:
+            return Literal(str(value))
+
+    return Literal(value, datatype=datatype) if datatype else Literal(value)
+
+
 def clean_uri(s):
-    """Clean a string to make it URI-friendly (handles German umlauts)."""
+    """Clean a string to make it URI-safe (handles German umlauts)."""
     if not s:
         return "unknown"
     s = s.strip()
-    s = (s.replace("ä", "ae").replace("ö", "oe").replace("ü", "ue")
-           .replace("Ä", "Ae").replace("Ö", "Oe").replace("Ü", "Ue")
-           .replace("ß", "ss"))
+    s = (
+        s.replace("ä", "ae").replace("ö", "oe").replace("ü", "ue")
+        .replace("Ä", "Ae").replace("Ö", "Oe").replace("Ü", "Ue")
+        .replace("ß", "ss")
+    )
     s = s.replace(" ", "_")
-    s = re.sub(r"[^\w_]", "", s)  # keep alphanumeric + underscore
+    s = re.sub(r"[^\w_]", "", s)
     return s
 
-def load_and_preprocess_json(folder_path):
-    """Load all JSONs from folder, combine, and filter."""
+
+def load_and_preprocess_json(path):
+    """Load JSONs from a folder or file, combine, and filter."""
     all_data = []
-    json_files = glob.glob(os.path.join(folder_path, "*.json"))
+
+    if os.path.isdir(path):
+        json_files = glob.glob(os.path.join(path, "*.json"))
+    else:
+        json_files = [path] if path.lower().endswith(".json") else []
 
     for file in json_files:
         with open(file, "r", encoding="utf-8") as f:
-            data = json.load(f)
-            all_data.extend(data)
+            try:
+                data = json.load(f)
+                # Add file_name field to each entry
+                for d in data:
+                    d["fileName"] = os.path.basename(file)
+                all_data.extend(data)
+            except Exception as e:
+                print(f"⚠️ Skipping {file}: {e}")
 
-    # Filter out entries with null Court_name or Company_name
     filtered_data = [
         entry for entry in all_data
         if entry.get("Court_name") and entry.get("Company_name")
     ]
     return filtered_data
 
-def json_to_ttl(json_data, ttl_path="kg_companies.ttl"):
-    """Convert JSON list of dicts to TTL knowledge graph."""
-    # Define namespaces
+
+def json_to_ttl(json_data, ttl_path):
+    """Convert JSON list of dicts to RDF/Turtle format."""
     EX = Namespace("http://example.org/schema/")
     COMP = Namespace("http://example.org/company/")
     COURT = Namespace("http://example.org/court/")
 
-    # Initialize RDF Graph
     g = Graph()
     g.bind("ex", EX)
     g.bind("rdf", RDF)
     g.bind("rdfs", RDFS)
     g.bind("xsd", XSD)
 
-    # --- Ontology definition ---
+    # Force RDFLib to keep prefix declarations
+    g.add((RDF.type, RDFS.label, Literal("keep_prefix")))
+
+    # Define ontology schema
     g.add((EX.Company, RDF.type, RDFS.Class))
     g.add((EX.Court, RDF.type, RDFS.Class))
-
     g.add((EX.companyName, RDF.type, RDF.Property))
-    g.add((EX.companyName, RDFS.domain, EX.Company))
-    g.add((EX.companyName, RDFS.range, XSD.string))
-
     g.add((EX.courtName, RDF.type, RDF.Property))
-    g.add((EX.courtName, RDFS.domain, EX.Court))
-    g.add((EX.courtName, RDFS.range, XSD.string))
-
     g.add((EX.registeredAt, RDF.type, RDF.Property))
-    g.add((EX.registeredAt, RDFS.domain, EX.Company))
-    g.add((EX.registeredAt, RDFS.range, EX.Court))
-
     g.add((EX.registrationCode, RDF.type, RDF.Property))
-    g.add((EX.registrationCode, RDFS.domain, EX.Company))
-    g.add((EX.registrationCode, RDFS.range, XSD.string))
-
     g.add((EX.registrationYear, RDF.type, RDF.Property))
-    g.add((EX.registrationYear, RDFS.domain, EX.Company))
-    g.add((EX.registrationYear, RDFS.range, XSD.gYear))
-
     g.add((EX.articleDate, RDF.type, RDF.Property))
-    g.add((EX.articleDate, RDFS.domain, EX.Company))
-    g.add((EX.articleDate, RDFS.range, XSD.string))
-    # (could refine with xsd:date if parsed properly)
+    g.add((EX.fileName, RDF.type, RDF.Property))
 
-    # --- Instance data ---
     for idx, entry in enumerate(json_data):
-        company_uri = URIRef(COMP[clean_uri(entry.get("Company_name", str(idx)))])
-        court_uri = URIRef(COURT[clean_uri(entry.get("Court_name", str(idx)))])
+        company_uri = URIRef(f"http://example.org/company/{clean_uri(entry.get('Company_name', str(idx)))}")
+        court_uri = URIRef(f"http://example.org/court/{clean_uri(entry.get('Court_name', str(idx)))}")
 
-        # Company triple
         g.add((company_uri, RDF.type, EX.Company))
-        g.add((company_uri, EX.companyName, Literal(entry.get("Company_name"))))
-
-        # Court triple
         g.add((court_uri, RDF.type, EX.Court))
+        g.add((company_uri, EX.companyName, Literal(entry.get("Company_name"))))
         g.add((court_uri, EX.courtName, Literal(entry.get("Court_name"))))
-
-        # Link company → court
         g.add((company_uri, EX.registeredAt, court_uri))
 
-        # Registration Code
         if entry.get("Registration_Code"):
             g.add((company_uri, EX.registrationCode, Literal(entry["Registration_Code"])))
 
-        # Registration Year
         if entry.get("Registration_year"):
-            g.add((company_uri, EX.registrationYear, Literal(entry["Registration_year"], datatype=XSD.gYear)))
+            year_literal = safe_literal(entry["Registration_year"], datatype=XSD.gYear)
+            if year_literal:
+                g.add((company_uri, EX.registrationYear, year_literal))
 
-        # Article Date
         if entry.get("Date_of_article"):
             g.add((company_uri, EX.articleDate, Literal(entry["Date_of_article"])))
 
-    # Save once, after loop
-    with open(ttl_path, "wb") as f:
-        f.write(g.serialize(format="turtle").encode('utf-8'))
+        if entry.get("fileName"):
+            g.add((company_uri, EX.fileName, Literal(entry["fileName"])))
+
+    # Serialize with full URIs (not compacted prefixes)
+    ttl_data = g.serialize(format="turtle")
+    # Remove dummy prefix-keeping triple
+    ttl_data = ttl_data.replace('rdf:type rdfs:label "keep_prefix" .', "").strip()
+
+    with open(ttl_path, "w", encoding="utf-8") as f:
+        f.write(ttl_data)
+
+    print(f"✅ RDF graph successfully generated at: {ttl_path}")
 
 if __name__ == "__main__":
-    folder_path = "/mnt/c/Users/abhijain/Documents/KG4CR/data/processed/json2rdf"
-    ttl_path = "/mnt/c/Users/abhijain/Documents/KG4CR/data/processed/json2rdf/DE_N_ontology.ttl"
+    # Go 3 levels up (from kg4cr/Extr_DE_newspapers/json2rdf.py → KG4CR/)
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-    combined_data = load_and_preprocess_json(folder_path)
+    # Define input/output folders
+    folder_path = os.path.join(BASE_DIR, "data", "processed", "DE_newspapers_1920_45_processed")
+    # Define TTL output path inside a 'Qlever' subfolder
+    qlever_folder = os.path.join(folder_path, "Qlever")
+    ttl_path = os.path.join(qlever_folder, "DE_1920_45_comb_ontology.ttl")
+
+    # Ensure directory exists
+    os.makedirs(qlever_folder, exist_ok=True)
+
+    # Collect all JSON file paths from all subfolders
+    all_json_files = []
+    for root, _, files in os.walk(folder_path):
+        for f in files:
+            if f.lower().endswith(".json"):
+                all_json_files.append(os.path.join(root, f))
+
+    print(f"🔍 Found {len(all_json_files)} JSON files to process across subfolders.")
+
+    # Load and preprocess data from all JSONs
+    combined_data = []
+    for json_file in all_json_files:
+        data = load_and_preprocess_json(json_file)  # assuming this takes a file path now
+        combined_data.extend(data)
+    print(f"ℹ️  Combined and filtered to {len(combined_data)} valid entries.")
+    # Convert to RDF/Turtle
     json_to_ttl(combined_data, ttl_path)
+
+    print(f"✅ RDF graph successfully generated at: {ttl_path}")

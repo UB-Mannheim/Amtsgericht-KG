@@ -1,0 +1,7 @@
+File,Mode,Chunks,Time (s),Outcome
+856399094_1871_068_11.txt,parallel,3,551.96,✅ success
+856399094_1871_069_12.txt,parallel,3,258.33,✅ success
+856399094_1871_069_13.txt,parallel,4,411.27,✅ success
+856399094_1871_069_14.txt,parallel,3,551.33,✅ success
+
+Total runtime (s):,1813.03

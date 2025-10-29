@@ -25,15 +25,44 @@ Für jede einzelne rechtliche Bekanntmachung oder Geschäftsmeldung im Text extr
 - Bei Einzelunternehmen: Inhabername und Geschäftstyp einschließen
 - Entfernen Sie Ortsadressen aus Firmennamen
 
-### 4. Registration_Code (Handelsregistereintrag)
-- Extrahieren Sie Handelsregister-Codes
-- **KRITISCHE FORMATIERUNGSREGELN:**
-  - "Handelsregister A [Nummer]" → "HRA [Nummer]"
-  - "Handelsregister B [Nummer]" → "HRB [Nummer]"
-  - "H.-R. A [Nummer]" → "HRA [Nummer]"
-  - "H.-R. B [Nummer]" → "HRB [Nummer]"
-  - **NIEMALS Abteilungen mischen**: Niemals "HRA B" oder "HRB A" erstellen
-  - Nur extrahieren, wenn explizit mit Abteilungsbuchstaben und Nummer erwähnt
+### 4. Registration_Code (Handelsregistereintrag / Registernummer)
+
+- Extrahiere alle Registerkennungen mit Nummern, auch wenn kein Buchstabe (A/B) vorhanden ist.
+  WICHTIG: Suche nach verschiedenen Phrasierungen und Wortstellungen
+Formatierungsregeln für Handelsregister:
+- **Formatierungsregeln:**
+  - "Zu Nr. [Nummer]" oder "unter Nr. [Nummer]" am Absatzanfang:
+   - "Handelsregister A [Nummer]" → HRA [Nummer]
+   - "Handelsregister B [Nummer]" → HRB [Nummer]
+   - "H.-R. A [Nummer]" → HRA [Nummer]
+   - "H.-R. B [Nummer]" → HRB [Nummer]
+   - Handelsregister ohne Abteilungsbuchstaben: HRX [Nummer]
+
+  - Andere Registerarten (mit explizitem Namen):
+    - "Gesellschaftsregister Nr. [Nummer]" → Gesellschaftsregister Nr. [Nummer]
+    - "Firmenregister Nr. [Nummer]" oder "sub Nr. [Nummer]" → Firmenregister Nr. [Nummer]
+    - "Genossenschaftsregister Nr. [Nummer]" → Genossenschaftsregister Nr. [Nummer]
+    - "Prokurenregister Nr. [Nummer]" → Prokurenregister Nr. [Nummer]
+    - "Register zur Eintragung der Ausschließung ... Nr. [Nummer]" → Register zur Eintragung der Ausschließung ... Nr. [Nummer]
+    - Andere explizit genannte Registerarten → [Registername] Nr. [Nummer]
+
+  - Variationen und Phrasierungen zu beachten:
+    - "unter Nr. X unseres/des [Registername]s" → [Registername] Nr. X
+    - "unter Nr. X im/in unserem [Registername]" → [Registername] Nr. X
+    - "im [Registername] unter Nr. X" → [Registername] Nr. X
+    - "bei Nr. X des [Registername]s" → [Registername] Nr. X
+    - "[Registername] Nr. X" → [Registername] Nr. X
+    - "in unser [Registername] unter Nr. X eingetragen" → [Registername] Nr. X
+    - Achte auf Possessivformen: "unseres", "unserem", "unser"
+    - Achte auf Genitivformen: "des Gesellschaftsregisters", "des Firmenregisters"
+
+ - Wichtige Einschränkungen:
+    - Keine künstlichen Buchstaben hinzufügen (kein A/B, wenn nicht im Text steht).
+    - Immer den Registernamen beibehalten, außer beim Handelsregister ohne A/B → dann HRX [Nummer].
+    - Die Nummer kann vor oder nach dem Registernamen stehen
+    - Falls mehrere unterschiedliche Registereinträge zu verschiedenen Gesellschaften/Firmen in demselben Text erwähnt werden, soll die Ausgabe nicht eine Liste, sondern mehrere separate JSON-Objekte enthalten.
+    - Jedes JSON-Objekt beschreibt genau eine Gesellschaft/Firma mit ihrem eigenen Registereintrag.
+
 
 ### 5. Registration_year (Registrierungsjahr)
 - Extrahieren Sie das Jahr aus den im Kontext erwähnten Daten
@@ -43,6 +72,7 @@ Für jede einzelne rechtliche Bekanntmachung oder Geschäftsmeldung im Text extr
 ## ANALYSE-RICHTLINIEN
 
 ### Textstuktur-Erkennung
+- Einträge beginnen oft mit "Zu Nr. [X]" oder "unter Nr. [X]" - dies ist die Registernummer der folgenden Firma
 - Jede Bekanntmachung beginnt typischerweise mit einem Ortsnamen gefolgt von einem Absatzsymbol (¶)
 - Verfahren sind durch Ortsüberschriften und Gerichtsunterschriften getrennt
 - Mehrere Verfahren können in einem einzigen Textblock existieren
@@ -150,12 +180,51 @@ Für den bereitgestellten Beispieltext ist das erwartete Ausgabeformat:
   }
 ]
 
-Do not include ```json or any other Markdown formatting.
-Do not include any explanation before or after.
-Only return a valid JSON object, starting with `{` and ending with `}`.
-If a value is not available, set it to null. Do not return anything other than the JSON response.
+das Wichtigste ist, immer im JSON-Format zurückzukehren
+Fügen Sie kein ```json oder andere Markdown-Formatierungen ein.
+Fügen Sie davor oder danach keine Erklärungen ein.
+Gib nur ein gültiges JSON-Objekt zurück, das mit ``` beginnt und mit ``` endet.
+Wenn ein Wert nicht verfügbar ist, setzen Sie ihn auf null. Geben Sie nur die JSON-Antwort zurück.
 """
+# Do not include ```json or any other Markdown formatting.
+# Do not include any explanation before or after.
+# Only return a valid JSON object, starting with `{` and ending with `}`.
+# If a value is not available, set it to null. Do not return anything other than the JSON response.
 
+mistral_EXTRACTION_PROMPT_DE = """
+Analysieren Sie den folgenden historischen Handelsregistertext und extrahieren Sie strukturierte Informationen über jede einzelne Firmenbekanntmachung.
+
+Für jeden Eintrag geben Sie die folgenden Felder zurück:
+
+- "Court_name": z. B. "Amtsgericht Essen"
+- "Date_of_article": Datum im Format "12. August 1927"
+- "Company_name": Vollständiger Firmenname ohne Adresse
+- "Registration_Code": Handelsregisternummer gemäß folgenden Regeln:
+    - "Abt. A" → HRA [Nummer]
+    - "Abt. B" → HRB [Nummer]
+    - Keine Abteilung → HRX [Nummer]
+    - Formulierungen wie "Zu Nr." oder "unter Nr." ebenfalls berücksichtigen
+- "Registration_year": Jahr der Bekanntmachung (z. B. 1927)
+
+Weitere Hinweise:
+- Neue Bekanntmachungen beginnen meist mit "Zu Nr." oder "In das Handelsregister ...".
+- Gericht und Datum stehen oft am Ende des Abschnitts ("Amtsgericht Essen", "Essen, den 12. August 1927").
+- Ignorieren Sie OCR-Artefakte wie "⸗" oder doppelte Buchstaben.
+- Geben Sie ausschließlich ein gültiges JSON-Array zurück, ohne Text oder Markdown davor/danach.
+- Verwenden Sie null für fehlende Werte.
+
+Beispielausgabe:
+[
+  {
+    "Court_name": "Amtsgericht Greifswald",
+    "Date_of_article": "30. August 1927",
+    "Company_name": "Winter u. Looke, Buchhändler August Alt",
+    "Registration_Code": "HRA 219",
+    "Registration_year": "1927"
+  }
+]
+
+"""
 EXTRACTION_PROMPT_EN = """
 You are an expert historical document analyzer specializing in German legal and commercial records from the 1930s era. You will receive preprocessed text blocks extracted from historical German newspapers containing court proceedings, business registrations, and legal notices.
 

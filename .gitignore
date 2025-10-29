@@ -6,6 +6,9 @@ __pycache__/
 *.py[cod]
 *.so
 
+# text files 
+*.txt
+
 # Virtual environments
 .env/
 .venv/
@@ -25,6 +28,9 @@ ENV/
 # Windows
 Thumbs.db
 desktop.ini
+
+# json files inside folder data/processed/DE_newspapers_1920_45_processed/ 
+data/processed/DE_newspapers_1920_45_processed/**/*.json
 
 # Logs
 *.log
