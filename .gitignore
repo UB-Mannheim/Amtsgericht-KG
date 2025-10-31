@@ -36,9 +36,6 @@ data/processed/DE_newspapers_1920_45_processed/**/*.json
 # Logs
 *.log
 
-# html files
-*.html
-
 # Other large or temp files
 *.tar
 *.gz
