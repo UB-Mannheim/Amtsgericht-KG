@@ -96,7 +96,7 @@ With 780,000+ triples, this knowledge graph requires efficient querying of compl
 ### Setup
 
 **Note:** 
-> This repo contains already indexed RDFs to use them directly, you can skip steps 4–6.1 and directly start from step 6.2 (qlever start). 
+> This repo also contains already indexed RDFs. To use them directly, you can skip steps 4–6.1 and start from step 6.2 (qlever start). 
 
 #### 0. (Windows Only) Open WSL
 
