@@ -367,9 +367,9 @@ We welcome contributions in several areas:
 
 ## License
 
-**Data**: Available under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-- Contemporary court data: Derived from XRepository public registry
-- Historical company data: Extracted from public domain pre-1945 newspapers
+**Data**: please refer to repective pages for license information. 
+- Contemporary court data: Derived from [XRepository](https://www.xrepository.de/details/urn:xoev-de:xunternehmen:codeliste:registergerichte) public registry
+- Historical company data: Extracted from University of Mannheim managed [Reichanzeiger](https://digi.bib.uni-mannheim.de/periodika/reichsanzeiger/) newspapers
 
 **Code**: Available under [MIT License](LICENSE)
 
