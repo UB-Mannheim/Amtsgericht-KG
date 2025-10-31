@@ -84,7 +84,7 @@ def visualize_top200_courts(turtle_file_path):
 
     # Sort by number of connected companies
     sorted_courts = sorted(court_counts.items(), key=lambda x: len(x[1]), reverse=False)
-    top_courts = dict(sorted_courts[-20:])  # Keep top 20 courts
+    top_courts = dict(sorted_courts[-100:-90])  # Keep top 20 courts
 
     print(f"🏛️ Found {len(court_counts)} courts, keeping top {len(top_courts)} most connected.")
 
