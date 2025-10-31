@@ -3,7 +3,7 @@ from pyvis.network import Network
 from rdflib import Graph, Namespace, URIRef
 from rdflib.namespace import RDF
 from urllib.parse import urlparse
-from collections import defaultdict
+
 
 # ---------- Helpers ----------
 
@@ -38,7 +38,8 @@ def get_node_color(node_type):
         "Court": "#2196F3",    # Blue
         "Unknown": "#9E9E9E"   # Grey
     }
-    if "," in node_type:  # multiple types
+
+    if "," in node_type:  # if multiple types
         for t in node_type.split(", "):
             if t in colors:
                 return colors[t]
@@ -49,7 +50,7 @@ def get_node_label(uri, graph, EX):
     """Prefer human-readable names for labels"""
     for pred in [EX.companyName, EX.courtName]:
         for obj in graph.objects(uri, pred):
-            return str(obj)
+            return str(obj)  # take first value
     return clean_label(uri)
 
 
@@ -65,68 +66,49 @@ def get_node_info(uri, graph):
 
 # ---------- Main Visualization ----------
 
-def visualize_top200_courts(turtle_file_path):
+def visualize_turtle_graph(turtle_file_path):
     g = Graph()
     try:
         g.parse(turtle_file_path, format="turtle")
-        print(f"✅ Parsed {len(g)} triples from {turtle_file_path}")
+        print(f"Successfully parsed {len(g)} triples from {turtle_file_path}")
     except Exception as e:
-        print(f"❌ Error parsing turtle file: {e}")
+        print(f"Error parsing turtle file: {e}")
         return
 
-    EX = Namespace("http://example.org/schema/")
-
-    # Step 1 — Count companies per court
-    court_counts = defaultdict(set)  # court_uri → set of company_uris
-    for subj, pred, obj in g.triples((None, EX.registeredAt, None)):
-        if (subj, RDF.type, EX.Company) in g:
-            court_counts[obj].add(subj)
-
-    # Sort by number of connected companies
-    sorted_courts = sorted(court_counts.items(), key=lambda x: len(x[1]), reverse=False)
-    top_courts = dict(sorted_courts[:50])
-
-    print(f"🏛️ Found {len(court_counts)} courts, keeping top {len(top_courts)} most connected.")
-
-    # Step 2 — Collect all relevant companies linked to those top courts
-    top_companies = set()
-    for companies in top_courts.values():
-        top_companies.update(companies)
-
-    # Step 3 — Filter triples to keep only relevant courts & companies
-    filtered_graph = Graph()
-    for s, p, o in g:
-        if s in top_companies or s in top_courts or o in top_companies or o in top_courts:
-            filtered_graph.add((s, p, o))
-
-    print(f"📊 Filtered to {len(filtered_graph)} triples for visualization.")
-
-    # Step 4 — Build interactive PyVis graph
     net = Network(height="1200px", width="100%", directed=True,
                   notebook=False, bgcolor="#222222", font_color="white")
 
     nodes = set()
     edges = []
+    EX = Namespace("http://example.org/schema/")
 
-    for subj, pred, obj in filtered_graph:
+    for subj, pred, obj in g:
         if pred == RDF.type:
             nodes.add(subj)
             continue
+
+        # Subject always a node
         nodes.add(subj)
+
         if isinstance(obj, URIRef):
             nodes.add(obj)
-            edges.append({'source': subj, 'target': obj, 'label': clean_label(pred)})
+            edges.append({
+                'source': subj,
+                'target': obj,
+                'label': clean_label(pred)
+            })
 
-    print(f"🧩 Rendering {len(nodes)} nodes and {len(edges)} edges.")
+    print(f"Found {len(nodes)} nodes and {len(edges)} relationships")
 
     # Add nodes
     for node_uri in nodes:
-        node_type = get_node_type(node_uri, filtered_graph)
-        node_label = get_node_label(node_uri, filtered_graph, EX)
-        node_info = get_node_info(node_uri, filtered_graph)
+        node_type = get_node_type(node_uri, g)
+        node_label = get_node_label(node_uri, g, EX)
+        node_info = get_node_info(node_uri, g)
         node_color = get_node_color(node_type)
 
         size = 25 if "Company" in node_type else 35 if "Court" in node_type else 20
+
         net.add_node(
             str(node_uri),
             label=node_label,
@@ -149,7 +131,7 @@ def visualize_top200_courts(turtle_file_path):
             print(f"Skipping edge: {e}")
             continue
 
-    # Graph options
+    # Physics / styling
     net.set_options("""
     {
         "physics": {
@@ -178,16 +160,17 @@ def visualize_top200_courts(turtle_file_path):
     }
     """)
 
-    output_file = "top200_courts_graph.html"
+    output_file = "knowledge_graph.html"
     net.save_graph(output_file)
-    print(f"💾 Graph saved to: {os.path.abspath(output_file)}")
+    print(f"Graph saved to {os.path.abspath(output_file)}")
 
     try:
         import webbrowser
         webbrowser.open(f"file://{os.path.abspath(output_file)}")
     except:
-        print("⚠️ Could not open browser automatically")
+        print("Could not open browser automatically")
+
 
 if __name__ == "__main__":
-    turtle_file = r"C:\Users\abhijain\Documents\KG4CR\data\processed\DE_newspapers_1920_45_processed\Qlever_cleaned\DE_1920_45_comb_ontology_cleaned.ttl"
-    visualize_top200_courts(turtle_file)
+    turtle_file = r"C:\Users\abhijain\Documents\KG4CR\data\processed\json2rdf\DE_N_ontology.ttl"
+    visualize_turtle_graph(turtle_file)
