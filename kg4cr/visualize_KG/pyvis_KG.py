@@ -84,7 +84,7 @@ def visualize_top200_courts(turtle_file_path):
 
     # Sort by number of connected companies
     sorted_courts = sorted(court_counts.items(), key=lambda x: len(x[1]), reverse=False)
-    top_courts = dict(sorted_courts[:10])
+    top_courts = dict(sorted_courts[:50])
 
     print(f"🏛️ Found {len(court_counts)} courts, keeping top {len(top_courts)} most connected.")
 
@@ -187,7 +187,6 @@ def visualize_top200_courts(turtle_file_path):
         webbrowser.open(f"file://{os.path.abspath(output_file)}")
     except:
         print("⚠️ Could not open browser automatically")
-
 
 if __name__ == "__main__":
     turtle_file = r"C:\Users\abhijain\Documents\KG4CR\data\processed\DE_newspapers_1920_45_processed\Qlever_cleaned\DE_1920_45_comb_ontology_cleaned.ttl"
